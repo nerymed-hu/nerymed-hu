@@ -45,10 +45,13 @@ git pull origin main
 npm ci
 npm ci --prefix server
 npm run build
+find dist -type d -exec chmod 755 {} \; && find dist -type f -exec chmod 644 {} \;
 sudo systemctl restart nerymed-contact
 ```
 
 Apache serves `dist/` directly — no Apache restart needed after a build.
+
+> **Note:** The `chmod` step is required because Astro recreates `dist/` on every build and the new files inherit the umask (770), which blocks Apache's `www-data` user. The find+chmod lines fix this.
 
 ### First deploy only (start and enable the contact service)
 
