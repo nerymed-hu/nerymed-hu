@@ -1,6 +1,6 @@
 # NeryMed – Todo List
 
-Last updated: 2026-06-11
+Last updated: 2026-06-11 (server session)
 
 ## Project setup & scaffold
 
@@ -32,8 +32,8 @@ Last updated: 2026-06-11
 
 - [x] Node.js contact server skeleton (Express + Nodemailer)
 - [x] Fix deploy script — add `npm ci --prefix server` step
-- [ ] Create `server/.env` on EC2 (copy from `server/.env.example`, fill in SMTP config)
-- [ ] Start and enable systemd service: `sudo systemctl enable --now nerymed-contact`
+- [x] Create `server/.env` on EC2 (copy from `server/.env.example`, fill in SMTP config)
+- [x] Start and enable systemd service: `sudo systemctl enable --now nerymed-contact`
 - [ ] Test contact form end-to-end on staging (https://nerymed.kecskemethy.hu)
 
 ## SEO
@@ -48,5 +48,5 @@ Last updated: 2026-06-11
 
 ## Go-live
 
-- [ ] Verify staging site (https://nerymed.kecskemethy.hu) looks correct
+- [x] Verify staging site (https://nerymed.kecskemethy.hu) looks correct — live, 26 pages building
 - [ ] Switch DNS: `nerymed.hu` A record → `52.48.130.44`
