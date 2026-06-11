@@ -1,0 +1,140 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import ContactForm from '../../components/ContactForm.astro';
+---
+
+<BaseLayout
+  title="Életmódorvoslás – Cégeknek"
+  description="Vállalati wellbeing programok: egészséges munkavállalók, hatékonyabb cég. Dr. Nery Klaudia Krisztina életmódorvos."
+>
+  <Header />
+
+  <main>
+    <section class="bg-teal-700 text-white py-16">
+      <div class="container mx-auto px-4">
+        <p class="text-teal-200 text-sm font-medium mb-2">Életmódorvoslás</p>
+        <h1 class="text-4xl font-bold mb-4">Életmódorvoslás a cégek életében</h1>
+        <p class="text-teal-100 text-lg max-w-xl">
+          Az életmódorvoslás tudományosan megalapozott módszer, amely segít az egészségtelen szokások
+          pozitív, egészséges életmódbeli változtatásokkal történő helyettesítésében. Célom, hogy a vállalatok
+          számára is elérhetővé tegyem az életmódorvoslás előnyeit, így támogatva a dolgozók egészségét
+          és teljesítményét.
+        </p>
+      </div>
+    </section>
+
+    <section class="py-16">
+      <div class="container mx-auto px-4 max-w-5xl">
+        <div class="prose prose-gray max-w-none mb-12">
+          <p class="text-lg text-gray-600 leading-relaxed">
+            Alaptényként gondolom, hogy az egészséges munkavállalók hatékonyabbak, energikusabbak és
+            motiváltabbak. Az életmódorvoslás támogatása a munkahelyeken nem csupán a dolgozók jól létét
+            növeli, hanem közvetlen üzleti előnyöket is kínál a vállalatoknak. Az életmódorvoslás
+            nemcsak a betegségek megelőzésében és kezelésében segít, hanem képes akár vissza is fordítani
+            bizonyos krónikus állapotokat.
+          </p>
+        </div>
+
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Az életmódorvoslás 6 fő pillére</h2>
+        <p class="text-gray-600 mb-8">A közös munka során az alábbi területekre koncentrálunk, hogy a munkavállalók egészségi állapota javuljon:</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+          <ServiceCard
+            title="Táplálkozás"
+            description="Az egészséges étkezés javítja a koncentrációt és az általános jóllétet. A növényi alapú étrend magas rost- és tápanyagtartalmú ételekre épül, amelyek támogatják a munkahelyi produktivitást és csökkentik a krónikus betegségek kialakulásának kockázatát."
+            icon="🥗"
+          />
+          <ServiceCard
+            title="Testmozgás"
+            description="A rendszeres testmozgás nemcsak a munkavállalók fizikai állapotát javítja, hanem mentális teljesítményüket is. Napi séta vagy egyszerű munkahelyi mozgásgyakorlatok is jelentősen növelhetik a dolgozók energiaszintjét."
+            icon="🏃"
+          />
+          <ServiceCard
+            title="Káros szenvedélyek elhagyása"
+            description="A dohányzás és az alkoholfogyasztás elhagyása jelentősen javítja a dolgozók egészségi állapotát, csökkenti a munkahelyi hiányzások számát, és növeli a hosszú távú teljesítményt."
+            icon="🚭"
+          />
+          <ServiceCard
+            title="Stresszkezelés"
+            description="A munkahelyi stressz komoly egészségügyi problémákhoz vezethet, amelyek csökkentik a termelékenységet. Praktikus módszerekkel segítek a hatékony stresszkezelési technikák megtanításában, hogy a dolgozók jobban tudják kezelni a mindennapi nyomást."
+            icon="🧘"
+          />
+          <ServiceCard
+            title="Alvás"
+            description="A munkahelyi teljesítmény szoros kapcsolatban áll az alvás minőségével. Az elégtelen alvás rontja a koncentrációt és növeli a stressz szintjét. Az alvásminőség javításával a dolgozók energikusabbak és produktívabbak lesznek."
+            icon="😴"
+          />
+          <ServiceCard
+            title="Emberi kapcsolatok"
+            description="A munkahelyi közösségi kapcsolatok pozitív hatással vannak az egyének egészségi állapotára. A támogató környezet javítja a dolgozók motivációját és csökkenti az elszigetelődés érzését, amely pozitív hatással van a teljesítményre."
+            icon="🤝"
+          />
+        </div>
+
+        <div class="bg-teal-50 rounded-2xl p-8 mb-12">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">Az egészséges munkavállalók előnyei a cég számára</h2>
+          <p class="text-gray-600 mb-6">
+            Az életmódorvoslás alapelveinek támogatása nemcsak a dolgozók egészségét, hanem a vállalati
+            sikerességet is erősíti. Íme a legfontosabb érvek, amiért érdemes befektetni a munkavállalók egészségébe:
+          </p>
+          <ul class="space-y-3 text-gray-700">
+            {[
+              'Egészségtudatos munkahelyeken a dolgozók évente átlagosan 1,8 nappal kevesebb betegszabadságot vesznek ki!',
+              'Az egészségesen táplálkozó dolgozók teljesítménye átlagosan 25%-kal magasabb!',
+              'Az egészségtudatos dolgozók 91%-a érzi magát motiváltnak a munkájában!',
+              'Az egészségprogramokat előtérbe helyező vállalatok jobban teljesítenek (ROI 235% vs. S&P500 159%)!',
+            ].map(item => (
+              <li class="flex items-start gap-3">
+                <span class="text-teal-600 font-bold mt-0.5">✓</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="bg-white border border-gray-100 rounded-2xl p-8 mb-12 shadow-sm">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">Vállalati wellbeing programjaink</h2>
+          <p class="text-gray-600 mb-6">
+            A vállalati wellbeing programok segítenek fenntartani a munkavállalók fizikai és mentális
+            egészségét, miközben csökkentik a stresszt és növelik a teljesítményt. A jól megtervezett
+            programok a prevencióra és az életminőség javítására épülnek, beleértve a rendszeres szűréseket,
+            mozgásprogramokat és táplálkozási tanácsadást.
+          </p>
+          <ul class="space-y-2 text-gray-600">
+            {[
+              'Személyre szabott étrendi tanácsadás',
+              'Mozgásprogramok tervezése',
+              'Stresszkezelési módszerek',
+              'Alvásminőség javítása',
+              'Káros szenvedélyek kezelése',
+              'Támogató kapcsolatok építése',
+              'Inspiráló előadások és workshopok',
+            ].map(item => (
+              <li class="flex items-start gap-3">
+                <span class="text-teal-600 font-bold mt-0.5">✓</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="bg-teal-50 rounded-2xl p-8 text-center">
+          <h3 class="text-2xl font-bold text-gray-900 mb-3">Ajánlatot kér cégének?</h3>
+          <p class="text-gray-600 mb-6">
+            Amennyiben Ön is szeretne egy inspiráló előadást, vagy komplex életmódorvoslás alapjaira épülő
+            programot bevezetni cégénél, forduljon hozzám bizalommal!
+          </p>
+          <a href="#kapcsolat" class="bg-teal-700 hover:bg-teal-800 text-white font-semibold px-8 py-3 rounded-lg transition-colors inline-block">
+            Ajánlatot kérek
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <ContactForm />
+  <Footer />
+</BaseLayout>

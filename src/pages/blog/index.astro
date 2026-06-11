@@ -1,0 +1,66 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<BaseLayout title="Blog" description="Életmódorvoslási cikkek, táplálkozási tanácsok és egészséges életmóddal kapcsolatos írások Dr. Nery Klaudia Krisztinától.">
+  <Header />
+
+  <main>
+    <section class="bg-teal-700 text-white py-16">
+      <div class="container mx-auto px-4">
+        <h1 class="text-4xl font-bold mb-4">Blog</h1>
+        <p class="text-teal-100 text-lg">Életmódorvoslás, táplálkozás, egészség</p>
+      </div>
+    </section>
+
+    <section class="py-16">
+      <div class="container mx-auto px-4 max-w-4xl">
+        {posts.length === 0 ? (
+          <p class="text-gray-500 text-center py-16">Hamarosan cikkek érkeznek...</p>
+        ) : (
+          <div class="grid grid-cols-1 gap-8">
+            {posts.map(post => (
+              <article class="bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col sm:flex-row">
+                {post.data.image && (
+                  <img
+                    src={post.data.image}
+                    alt={post.data.title}
+                    class="w-full sm:w-48 h-48 object-cover shrink-0"
+                  />
+                )}
+                <div class="p-6 flex flex-col gap-2">
+                  <time class="text-sm text-gray-400">
+                    {post.data.pubDate.toLocaleDateString('hu-HU', { year: 'numeric', month: 'long', day: 'numeric' })}
+                  </time>
+                  <h2 class="text-xl font-bold text-gray-900">
+                    <a href={`/blog/${post.slug}`} class="hover:text-teal-700 transition-colors">
+                      {post.data.title}
+                    </a>
+                  </h2>
+                  {post.data.description && (
+                    <p class="text-gray-600 text-sm leading-relaxed">{post.data.description}</p>
+                  )}
+                  <a href={`/blog/${post.slug}`} class="text-teal-700 hover:text-teal-800 text-sm font-medium mt-auto inline-flex items-center gap-1 group">
+                    Tovább olvasom
+                    <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

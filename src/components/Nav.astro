@@ -1,0 +1,85 @@
+---
+const navLinks = [
+  { label: 'Bemutatkozás', href: '/bemutatkozas' },
+  {
+    label: 'Életmódorvoslás',
+    href: '#',
+    children: [
+      { label: 'Cégeknek', href: '/eletmodorvoslas/cegeknek' },
+      { label: 'Magánszemélyeknek', href: '/eletmodorvoslas/maganszemelyek' },
+    ],
+  },
+  { label: 'Foglalkozás-egészségügy', href: '/foglalkozas-egeszsegugy' },
+  { label: 'Háziorvos', href: '/haziorvos' },
+  { label: 'Insumed', href: '/insumed' },
+  { label: 'Blog', href: '/blog' },
+];
+
+const current = Astro.url.pathname;
+---
+
+<nav id="main-nav" class="hidden lg:flex items-center gap-6">
+  {navLinks.map(link => (
+    link.children ? (
+      <div class="relative group">
+        <button class="flex items-center gap-1 text-gray-700 hover:text-teal-700 font-medium transition-colors">
+          {link.label}
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div class="absolute top-full left-0 mt-1 bg-white border border-gray-100 rounded-lg shadow-lg py-2 min-w-[200px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+          {link.children.map(child => (
+            <a
+              href={child.href}
+              class:list={[
+                'block px-4 py-2 text-sm hover:bg-teal-50 hover:text-teal-700 transition-colors',
+                current.startsWith(child.href) ? 'text-teal-700 font-medium' : 'text-gray-700',
+              ]}
+            >
+              {child.label}
+            </a>
+          ))}
+        </div>
+      </div>
+    ) : (
+      <a
+        href={link.href}
+        class:list={[
+          'font-medium transition-colors hover:text-teal-700',
+          current === link.href || current.startsWith(link.href + '/') ? 'text-teal-700' : 'text-gray-700',
+        ]}
+      >
+        {link.label}
+      </a>
+    )
+  ))}
+</nav>
+
+<!-- Mobile menu -->
+<div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100">
+  <div class="container mx-auto px-4 py-4 flex flex-col gap-2">
+    {navLinks.map(link => (
+      link.children ? (
+        <div>
+          <span class="block px-2 py-1 text-xs font-semibold uppercase tracking-wider text-gray-400">{link.label}</span>
+          {link.children.map(child => (
+            <a href={child.href} class="block px-4 py-2 text-gray-700 hover:text-teal-700 hover:bg-teal-50 rounded transition-colors">
+              {child.label}
+            </a>
+          ))}
+        </div>
+      ) : (
+        <a href={link.href} class="block px-2 py-2 text-gray-700 hover:text-teal-700 font-medium transition-colors">
+          {link.label}
+        </a>
+      )
+    ))}
+  </div>
+</div>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  btn?.addEventListener('click', () => menu?.classList.toggle('hidden'));
+</script>

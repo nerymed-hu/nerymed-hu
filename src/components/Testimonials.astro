@@ -1,0 +1,52 @@
+---
+const testimonials = [
+  {
+    name: 'Kovács Péter',
+    result: '22 kg fogyás',
+    text: 'Az Insumed program és Dr. Nery személyes támogatása segítségével sikerült 22 kilógrammot leadnom 4 hónap alatt. Életmódom alapvetően megváltozott.',
+  },
+  {
+    name: 'Szabó Mária',
+    result: 'Inzulinrezisztencia rendezése',
+    text: 'Az életmód-tanácsadás és az egyénre szabott étrend után laborértékeim normalizálódtak. Gyógyszeres kezelés nélkül sikerült rendezni az inzulinrezisztenciámat.',
+  },
+  {
+    name: 'Horváth László',
+    result: 'Normális vérnyomás',
+    text: 'Évek óta küzdöttem a magas vérnyomással. Dr. Nery programja után a vérnyomásom gyógyszer nélkül is 120/80 körül van.',
+  },
+  {
+    name: 'Fekete Ágnes',
+    result: '15 kg fogyás',
+    text: 'Sportos életmódom ellenére nem tudtam fogyni. Az Insumed diétás terápia megmutatta, hogy mit etettem el rosszul. 15 kg ment le 3 hónap alatt.',
+  },
+  {
+    name: 'Nagy Gábor',
+    result: 'Sportteljesítmény javulás',
+    text: 'Versenysportoló vagyok. Dr. Nery segítségével optimalizáltam a táplálkozásomat és az idei szezonban személyes rekordot döntöttem.',
+  },
+  {
+    name: 'Tóth Zsuzsanna',
+    result: '18 kg fogyás',
+    text: 'Születésnapomra tűztem ki a célt: legyek egészséges és 18 kilóval könnyebb. Sikerült, és a mai napig tartom a súlyom.',
+  },
+];
+---
+
+<section class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center text-gray-900 mb-4">Pácienseink sikersztorijai</h2>
+    <p class="text-gray-500 text-center mb-12 max-w-2xl mx-auto">
+      Valódi emberek, valódi eredmények. Ismerje meg páciensei tapasztalatait.
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {testimonials.map(t => (
+        <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex flex-col gap-3">
+          <span class="text-sm font-semibold text-teal-700 bg-teal-50 px-3 py-1 rounded-full self-start">{t.result}</span>
+          <p class="text-gray-600 text-sm leading-relaxed flex-1">„{t.text}"</p>
+          <p class="text-gray-900 font-semibold text-sm">— {t.name}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
