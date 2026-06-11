@@ -1,0 +1,62 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(post => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<BaseLayout
+  title={post.data.title}
+  description={post.data.description}
+  ogImage={post.data.image}
+>
+  <Header />
+
+  <main>
+    <article class="py-16">
+      <div class="container mx-auto px-4 max-w-3xl">
+        <a href="/blog" class="inline-flex items-center gap-1 text-teal-700 hover:text-teal-800 text-sm font-medium mb-8 group">
+          <svg class="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          Vissza a blogra
+        </a>
+
+        <header class="mb-10">
+          {post.data.image && (
+            <img
+              src={post.data.image}
+              alt={post.data.title}
+              class="w-full h-64 object-cover rounded-2xl mb-8"
+            />
+          )}
+          <time class="text-sm text-gray-400">
+            {post.data.pubDate.toLocaleDateString('hu-HU', { year: 'numeric', month: 'long', day: 'numeric' })}
+          </time>
+          <h1 class="text-3xl lg:text-4xl font-bold text-gray-900 mt-2 mb-3">{post.data.title}</h1>
+          {post.data.description && (
+            <p class="text-lg text-gray-500">{post.data.description}</p>
+          )}
+          <p class="text-sm text-gray-400 mt-2">Szerző: {post.data.author}</p>
+        </header>
+
+        <div class="prose prose-gray prose-lg max-w-none">
+          <Content />
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <Footer />
+</BaseLayout>

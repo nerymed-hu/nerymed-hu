@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import Testimonials from '../components/Testimonials.astro';
+import ContactForm from '../components/ContactForm.astro';
+---
+
+<BaseLayout title="Főoldal" description="Dr. Nery Klaudia Krisztina – életmódorvoslás, foglalkozás-egészségügy, háziorvos, Insumed diétás terápia Érd környékén.">
+  <Header />
+
+  <!-- Hero -->
+  <section class="relative bg-gradient-to-br from-teal-700 to-teal-900 text-white">
+    <div class="container mx-auto px-4 py-24 flex flex-col lg:flex-row items-center gap-12">
+      <div class="flex-1 max-w-xl">
+        <h1 class="text-4xl lg:text-5xl font-bold leading-tight mb-6">
+          Az egészség a legjobb befektetés
+        </h1>
+        <p class="text-teal-100 text-lg leading-relaxed mb-8">
+          Dr. Nery Klaudia Krisztina életmódorvosként, foglalkozás-egészségügyi és háziorvosként
+          segíti pácienseit a tartós egészség megőrzésében — egyénileg és cégek számára egyaránt.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="#kapcsolat" class="bg-white text-teal-800 font-semibold px-7 py-3 rounded-lg hover:bg-teal-50 transition-colors text-center">
+            Időpontot kérek
+          </a>
+          <a href="/bemutatkozas" class="border border-white/40 text-white font-semibold px-7 py-3 rounded-lg hover:bg-white/10 transition-colors text-center">
+            Bemutatkozás
+          </a>
+        </div>
+      </div>
+      <div class="lg:flex-1 flex justify-center">
+        <img
+          src="/images/dr-nery.jpg"
+          alt="Dr. Nery Klaudia Krisztina"
+          class="w-72 h-72 object-cover rounded-full border-4 border-white/20 shadow-2xl"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Service pillars -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center text-gray-900 mb-4">Szolgáltatásaim</h2>
+      <p class="text-gray-500 text-center mb-12 max-w-2xl mx-auto">
+        Három fő területen nyújtok szakszerű orvosi és életmód-tanácsadói segítséget.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <ServiceCard
+          title="Életmódorvoslás"
+          description="Egyéni és vállalati programok a tartós egészségmegőrzés érdekében: táplálkozási tanácsadás, mozgásterápia, stresszkezelés."
+          icon="🌿"
+          href="/eletmodorvoslas/cegeknek"
+        />
+        <ServiceCard
+          title="Foglalkozás-egészségügy"
+          description="Vállalkozások számára teljes körű foglalkozás-egészségügyi ellátás: alkalmassági vizsgálatok, munkahelyi egészségvédelem."
+          icon="🏢"
+          href="/foglalkozas-egeszsegugy"
+        />
+        <ServiceCard
+          title="Insumed"
+          description="Orvosi felügyelet mellett alkalmazott Insumed diétás terápia, amely bizonyítottan hatékony a fogyásban és az anyagcsere rendezésében."
+          icon="⚕️"
+          href="/insumed"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- About teaser -->
+  <section class="py-16 bg-teal-50">
+    <div class="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-12">
+      <div class="lg:w-1/3 flex justify-center">
+        <img
+          src="/images/dr-nery.jpg"
+          alt="Dr. Nery Klaudia Krisztina"
+          class="w-64 h-64 object-cover rounded-2xl shadow-lg"
+        />
+      </div>
+      <div class="lg:w-2/3">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Dr. Nery Klaudia Krisztina</h2>
+        <p class="text-gray-600 leading-relaxed mb-6">
+          Életmódorvos, foglalkozás-egészségügyi szakorvos és háziorvos. Több mint 15 éves tapasztalattal
+          segíti pácienseit a tartós egészségmegőrzésben, a testsúly szabályozásában és a munkahelyi
+          egészségvédelemben.
+        </p>
+        <a href="/bemutatkozas" class="inline-flex items-center gap-2 text-teal-700 font-semibold hover:text-teal-800 transition-colors group">
+          Bővebben
+          <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Testimonials />
+
+  <ContactForm />
+
+  <Footer />
+</BaseLayout>

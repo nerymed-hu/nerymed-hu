@@ -1,0 +1,111 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="Bemutatkozás" description="Ismerje meg Dr. Nery Klaudia Krisztinát – életmódorvos, foglalkozás-egészségügyi szakorvos, háziorvos.">
+  <Header />
+
+  <main>
+    <section class="bg-teal-700 text-white py-16">
+      <div class="container mx-auto px-4">
+        <h1 class="text-4xl font-bold mb-4">Dr. Nery Klaudia Krisztina</h1>
+        <p class="text-teal-100 text-lg">Háziorvos, Diabetológus, Foglalkozás egészségügyi szakorvos, Életmódorvos</p>
+      </div>
+    </section>
+
+    <section class="py-16">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <div class="flex flex-col lg:flex-row gap-12 items-start">
+          <div class="lg:w-1/3 flex flex-col items-center gap-4">
+            <img
+              src="/images/dr-nery.jpg"
+              alt="Dr. Nery Klaudia Krisztina"
+              class="w-64 h-64 object-cover rounded-2xl shadow-lg"
+            />
+            <div class="text-center">
+              <h2 class="text-xl font-bold text-gray-900">Dr. Nery Klaudia Krisztina</h2>
+              <p class="text-teal-700 text-sm font-medium mt-1">Életmódorvos | Foglalkozás-egészségügy | Háziorvos</p>
+            </div>
+            <div class="bg-gray-50 rounded-xl p-4 w-full text-sm text-gray-600 space-y-2">
+              <p>📞 <a href="tel:+36204625517" class="hover:text-teal-700">+36 20 462 5517</a></p>
+              <p>📞 <a href="tel:+3623362291" class="hover:text-teal-700">06 23 362-291</a></p>
+              <p>✉️ <a href="mailto:nerymedkft@gmail.com" class="hover:text-teal-700">nerymedkft@gmail.com</a></p>
+            </div>
+          </div>
+
+          <div class="lg:w-2/3 prose prose-gray max-w-none">
+            <p class="text-lg text-gray-600 leading-relaxed mb-6">
+              Üdvözlöm! Dr. Nery Klaudia vagyok, több mint 15 éve dolgozom orvosként Érden. A komplexebb
+              segítségnyújtás érdekében háziorvosként, foglalkozás egészségügyi szakorvosként és
+              életmódorvosként is gyógyítok. Szakmai pályafutásom során arra törekszem, hogy pácienseimnek
+              a legjobb ellátást nyújtsam, és támogassam őket az egészséges életmód kialakításában.
+            </p>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">Szakterületek</h3>
+            <ul class="space-y-4 text-gray-600 mb-8">
+              <li class="flex items-start gap-2">
+                <span class="text-teal-600 mt-1">✓</span>
+                <div>
+                  <strong class="text-gray-900">Háziorvosi ellátás</strong> – Pácienseim általános egészségügyi ellátása, megelőzés és gondozás Érden.
+                </div>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-teal-600 mt-1">✓</span>
+                <div>
+                  <strong class="text-gray-900">Diabetológia</strong> – Cukorbetegség diagnosztikája, kezelése és gondozása, inzulinrezisztencia kezelése.
+                </div>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-teal-600 mt-1">✓</span>
+                <div>
+                  <strong class="text-gray-900">Életmódorvoslás</strong> – Tudományosan megalapozott, személyre szabott életmódváltás támogatása egyének és vállalatok számára.
+                </div>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-teal-600 mt-1">✓</span>
+                <div>
+                  <strong class="text-gray-900">Foglalkozás-egészségügy</strong> – Munkaköri alkalmassági vizsgálatok és teljes körű foglalkozás-egészségügyi ellátás.
+                </div>
+              </li>
+            </ul>
+
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">Hitvallásom az életmódváltás és prevenció</h3>
+            <p class="text-gray-600 leading-relaxed mb-6">
+              Meggyőződésem, hogy a hosszú távú egészség titka a személyre szabott életmódváltás.
+              Az egészség megőrzéséhez elengedhetetlen a helyes táplálkozás, a rendszeres mozgás,
+              a káros szenvedélyek elhagyása, az alvás minőségének javítása, jó szociális kapcsolatok
+              kialakítása és a prevenció. Ezért törekszem arra, hogy pácienseimet ne csupán gyógyítsam,
+              hanem segítsem őket az egészséges életmód tartós kialakításában.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <h2 class="text-2xl font-bold text-gray-900 mb-10 text-center">Szakmai életút</h2>
+        <div class="space-y-6">
+          {[
+            { year: '2007', text: 'Általános orvosi diploma – Semmelweis Egyetem' },
+            { year: '2011', text: 'Háziorvosi szakvizsga' },
+            { year: '2014', text: 'Diabetológiai licence megszerzése' },
+            { year: '2023', text: 'IBLM életmódorvos minősítés' },
+            { year: '2023', text: 'Foglalkozás-egészségügyi szakvizsga' },
+            { year: '2024', text: 'Magyar Egészségmegőrzési és Életmódorvostani Egyesület elnökségi tagja' },
+          ].map(({ year, text }) => (
+            <div class="flex gap-6 items-start">
+              <div class="bg-teal-700 text-white text-sm font-bold rounded-lg px-3 py-1 shrink-0 w-16 text-center">
+                {year}
+              </div>
+              <p class="text-gray-700 pt-0.5">{text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ContactForm from '../components/ContactForm.astro';
+---
+
+<BaseLayout
+  title="Háziorvos"
+  description="Háziorvosi ellátás Dr. Nery Klaudia Krisztina rendelőjében."
+>
+  <Header />
+
+  <main>
+    <section class="bg-teal-700 text-white py-16">
+      <div class="container mx-auto px-4">
+        <h1 class="text-4xl font-bold mb-4">Háziorvos</h1>
+        <p class="text-teal-100 text-lg max-w-xl">
+          Személyre szabott, minőségi háziorvosi ellátás.
+        </p>
+      </div>
+    </section>
+
+    <section class="py-16">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <div class="prose prose-gray max-w-none">
+          <p class="text-lg text-gray-600 leading-relaxed mb-8">
+            <!-- TODO: port actual content from nerymed.hu/haziorvos -->
+            Dr. Nery Klaudia Krisztina háziorvosi rendelőjében megérez minden páciensét, figyelembe veszi
+            az egész embert – nem csupán a panaszt. Az integratív szemlélet ötvözi a hagyományos
+            háziorvosi ellátást az életmódorvoslás eszközeivel.
+          </p>
+
+          <h2 class="text-2xl font-bold text-gray-900 mb-6">Rendelési idő</h2>
+          <div class="bg-gray-50 rounded-xl p-6 mb-8">
+            <!-- TODO: fill in actual opening hours -->
+            <p class="text-gray-500 italic">A pontos rendelési időkért kérjük hívja a +36 20 462 5517-es számot.</p>
+          </div>
+
+          <h2 class="text-2xl font-bold text-gray-900 mb-6">Ellátás köre</h2>
+          <ul class="space-y-3 text-gray-600">
+            {[
+              'Általános orvosi vizsgálat, panaszok kivizsgálása',
+              'Krónikus betegségek gondozása',
+              'Receptírás, beutalók',
+              'Laborvizsgálatok értékelése',
+              'Megelőző orvosi tanácsadás',
+              'Betegdokumentáció kezelése',
+            ].map(item => (
+              <li class="flex items-start gap-3">
+                <span class="text-teal-600 font-bold mt-0.5">✓</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <ContactForm />
+  <Footer />
+</BaseLayout>

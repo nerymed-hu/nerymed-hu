@@ -1,0 +1,50 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="Cookie-tájékoztató" description="NeryMed Kft. cookie-tájékoztatója.">
+  <Header />
+
+  <main>
+    <section class="bg-teal-700 text-white py-16">
+      <div class="container mx-auto px-4">
+        <h1 class="text-4xl font-bold mb-4">Cookie-tájékoztató</h1>
+      </div>
+    </section>
+
+    <section class="py-16">
+      <div class="container mx-auto px-4 max-w-3xl prose prose-gray">
+        <!-- TODO: port actual cookie policy text from nerymed.hu/cookie -->
+        <p class="text-gray-500 italic">A cookie-tájékoztató feltöltése folyamatban van.</p>
+
+        <h2>Mik azok a cookie-k?</h2>
+        <p>A cookie-k (sütik) kis adatfájlok, amelyeket a weboldal helyez el az Ön eszközén, hogy javítsa a felhasználói élményt és emlékezzen beállításaira.</p>
+
+        <h2>Általunk használt cookie-k</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Cookie neve</th>
+              <th>Célja</th>
+              <th>Lejárat</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>cookie_consent</td>
+              <td>Cookie-hozzájárulás tárolása</td>
+              <td>1 év</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Cookie-k letiltása</h2>
+        <p>A cookie-kat böngészője beállításaiban bármikor letilthatja. Kérjük, vegye figyelembe, hogy egyes oldalfunkciók ekkor nem megfelelően működhetnek.</p>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

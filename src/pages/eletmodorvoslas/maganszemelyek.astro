@@ -1,0 +1,114 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import ContactForm from '../../components/ContactForm.astro';
+---
+
+<BaseLayout
+  title="Életmódorvoslás – Magánszemélyeknek"
+  description="Longevity programok az egészségért és jól létért. Egyéni életmód-tanácsadás Dr. Nery Klaudia Krisztina életmádorvosnál."
+>
+  <Header />
+
+  <main>
+    <section class="bg-teal-700 text-white py-16">
+      <div class="container mx-auto px-4">
+        <p class="text-teal-200 text-sm font-medium mb-2">Életmódorvoslás</p>
+        <h1 class="text-4xl font-bold mb-4">Életmódorvoslás az egyének életében</h1>
+        <p class="text-teal-100 text-lg max-w-xl">
+          Az életmódorvoslás egy tudományosan megalapozott módszer, amely az egészségtelen szokásokat
+          pozitív életmódbeli változtatásokkal helyettesíti. Célja nemcsak a betegségek megelőzése,
+          hanem azok kezelése és akár visszafordítása is.
+        </p>
+      </div>
+    </section>
+
+    <section class="py-16">
+      <div class="container mx-auto px-4 max-w-5xl">
+        <div class="prose prose-gray max-w-none mb-12">
+          <p class="text-lg text-gray-600 leading-relaxed">
+            Hiszem, hogy az életmódorvoslás hatékonyan támogatja az egészség megőrzését és a krónikus
+            betegségek kezelését, mint például a cukorbetegség, szív- és érrendszeri betegségek vagy
+            bizonyos autoimmun állapotok. Az életmódorvoslás célja, hogy minden egyén kezébe vegye az
+            egészsége irányítását, és tartós változtatásokat vezessen be a mindennapi életébe.
+          </p>
+        </div>
+
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Az életmódorvoslás 6 fő pillére</h2>
+        <p class="text-gray-600 mb-8">A közös munka során az alábbi területekre koncentrálunk, hogy az egészségi állapot javuljon:</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+          <ServiceCard
+            title="Táplálkozás"
+            description="Az étel valódi gyógyszer lehet, ha megfelelően választjuk meg. Az étrendnek főként teljes értékű növényi alapú ételekre kell épülnie, amelyek gazdagok rostokban és tápanyagokban, mint például a zöldségek, gyümölcsök, hüvelyesek, teljes kiőrlésű gabonák, csonthéjasok és magvak."
+            icon="🥗"
+          />
+          <ServiceCard
+            title="Testmozgás"
+            description="A rendszeres fizikai aktivitás elengedhetetlen az egészséges életmódhoz. Nem kell feltétlenül edzőterembe járni – egy séta, kertészkedés vagy napi tornagyakorlatok is elegendők lehetnek ahhoz, hogy javítsák az egészségi állapotot és fenntartsák a jó közérzetet."
+            icon="🏃"
+          />
+          <ServiceCard
+            title="Káros szenvedélyek elhagyása"
+            description="A dohányzás és a túlzott alkoholfogyasztás súlyosan károsítja az egészséget. Életmódorvosként segítek a káros szenvedélyek felszámolásában, hiszen ezek elhagyásával jelentősen csökkenthetők a rákos és szív-érrendszeri betegségek kockázatai."
+            icon="🚭"
+          />
+          <ServiceCard
+            title="Stresszkezelés"
+            description="A stressz nemcsak mentális, hanem fizikai betegségeket is okozhat. Segítek felismerni és kezelni a stressz okozta problémákat, valamint megtanítok hatékony stresszkezelési technikákat, amelyek hosszú távon javítják az életminőséget."
+            icon="🧘"
+          />
+          <ServiceCard
+            title="Alvás"
+            description="A megfelelő mennyiségű és minőségű alvás nélkülözhetetlen az immunrendszer egészséges működéséhez. Tanácsokat adok arra vonatkozóan, hogyan javítson alvási szokásain a jobb pihenés érdekében."
+            icon="😴"
+          />
+          <ServiceCard
+            title="Emberi kapcsolatok"
+            description="A társas kapcsolatok fenntartása alapvető fontosságú a testi és lelki egészség szempontjából. A megfelelő támogatói hálózat megléte segíti a gyógyulást és javítja az általános közérzetet."
+            icon="🤝"
+          />
+        </div>
+
+        <div class="bg-teal-50 rounded-2xl p-8 mb-12">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">A longevity koncepciója</h2>
+          <p class="text-gray-600 leading-relaxed">
+            A longevity, vagyis a hosszú és egészséges élet titka, az életmód tudatos alakításában rejlik.
+            A tudományos kutatások egyre inkább igazolják, hogy a megfelelő táplálkozás, a rendszeres
+            testmozgás és a stresszkezelési technikák kulcsfontosságúak a minőségi öregedés szempontjából.
+            A cél nem csupán az életévek számának növelése, hanem annak biztosítása, hogy ezek az évek
+            aktívan, energikusan és betegségek nélkül teljenek. A prevenció, a kiegyensúlyozott életmód
+            és a mentális egészség megőrzése mind hozzájárulnak ahhoz, hogy az időskor ne a leépülés,
+            hanem a vitalitás időszaka legyen.
+          </p>
+        </div>
+
+        <div class="bg-white border border-gray-100 rounded-2xl p-8 mb-12 shadow-sm">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">Miért fontos az életmódorvoslás?</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            Az életmódorvoslás célja az, hogy minden egyén kezébe vegye az egészsége irányítását, és tartós
+            változtatásokat vezessen be a mindennapi életébe. A megfelelő életmód támogatja a szervezet
+            öngyógyító mechanizmusait, és megelőzi a súlyos betegségek kialakulását.
+          </p>
+          <p class="text-gray-600 leading-relaxed">
+            Többéves szakmai tapasztalattal a hátam mögött segíthetek Önnek is az egészséges életmód
+            kialakításában, amely hosszú távon biztosítja a jól létet és az egészség fenntartását.
+          </p>
+        </div>
+
+        <div class="bg-teal-50 rounded-2xl p-8 text-center">
+          <h3 class="text-2xl font-bold text-gray-900 mb-3">Ismerje meg az életmódorvoslás előnyeit!</h3>
+          <p class="text-gray-600 mb-6">Foglaljon konzultációs időpontot még ma! Az első konzultáció 30–60 percet vesz igénybe.</p>
+          <a href="#kapcsolat" class="bg-teal-700 hover:bg-teal-800 text-white font-semibold px-8 py-3 rounded-lg transition-colors inline-block">
+            Időpontot kérek
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <ContactForm />
+  <Footer />
+</BaseLayout>

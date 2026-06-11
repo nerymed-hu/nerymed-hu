@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48" fill="none">
+  <rect x="2" y="2" width="44" height="44" rx="10" fill="#0f766e"/>
+  <path d="M12 34V14h4l8 12 8-12h4v20h-4V22l-8 11-8-11v12h-4z" fill="white"/>
+  <text x="56" y="33" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="700" fill="#0f766e">NeryMed</text>
+</svg>
