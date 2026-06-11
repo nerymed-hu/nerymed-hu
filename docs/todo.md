@@ -38,13 +38,13 @@ Last updated: 2026-06-11 (server session)
 
 ## SEO
 
-- [ ] Set `site: 'https://nerymed.hu'` in `astro.config.mjs`
-- [ ] Add `@astrojs/sitemap` integration (auto-generates `sitemap-index.xml`)
-- [ ] Review per-page meta descriptions and Open Graph tags
+- [x] Set `site: 'https://nerymed.hu'` in `astro.config.mjs`
+- [x] Add `@astrojs/sitemap` integration (auto-generates `sitemap-index.xml`)
+- [x] Review per-page meta descriptions and Open Graph tags
 
 ## GDPR (legally required for medical site in HU)
 
-- [ ] Cookie consent banner — must fire before any tracking scripts load
+- [x] Cookie consent banner — accept/decline, persists to localStorage + cookie
 
 ## Go-live
 
