@@ -1,0 +1,71 @@
+---
+---
+
+<div
+  id="cookie-banner"
+  class="fixed bottom-0 left-0 right-0 z-50 bg-gray-900 text-white shadow-2xl border-t border-gray-700 hidden"
+  role="dialog"
+  aria-label="Cookie hozzájárulás"
+>
+  <div class="container mx-auto px-4 py-4 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+    <p class="text-sm text-gray-300 flex-1 leading-relaxed">
+      Weboldalunk sütiket (cookie-kat) használ az alapvető működéshez. Részletek a
+      <a href="/cookie" class="underline hover:text-teal-400 transition-colors">cookie-tájékoztatóban</a>
+      és az
+      <a href="/adatvedelem" class="underline hover:text-teal-400 transition-colors">adatvédelmi tájékoztatóban</a>.
+    </p>
+    <div class="flex gap-3 shrink-0">
+      <button
+        id="cookie-accept"
+        class="bg-teal-700 hover:bg-teal-600 text-white text-sm font-semibold px-5 py-2 rounded-lg transition-colors"
+      >
+        Elfogadom
+      </button>
+      <button
+        id="cookie-decline"
+        class="bg-gray-700 hover:bg-gray-600 text-white text-sm font-medium px-5 py-2 rounded-lg transition-colors"
+      >
+        Elutasítom
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const COOKIE_KEY = 'cookie_consent';
+  const banner = document.getElementById('cookie-banner')!;
+
+  function getConsent(): string | null {
+    try {
+      return localStorage.getItem(COOKIE_KEY);
+    } catch {
+      return null;
+    }
+  }
+
+  function setConsent(value: 'accepted' | 'declined') {
+    try {
+      localStorage.setItem(COOKIE_KEY, value);
+      // also set a real cookie so the server can read it if needed
+      const expires = new Date();
+      expires.setFullYear(expires.getFullYear() + 1);
+      document.cookie = `${COOKIE_KEY}=${value};expires=${expires.toUTCString()};path=/;SameSite=Lax`;
+    } catch {
+      // storage blocked — silently ignore
+    }
+  }
+
+  if (!getConsent()) {
+    banner.classList.remove('hidden');
+  }
+
+  document.getElementById('cookie-accept')!.addEventListener('click', () => {
+    setConsent('accepted');
+    banner.classList.add('hidden');
+  });
+
+  document.getElementById('cookie-decline')!.addEventListener('click', () => {
+    setConsent('declined');
+    banner.classList.add('hidden');
+  });
+</script>

@@ -1,4 +1,6 @@
 ---
+import CookieBanner from '../components/CookieBanner.astro';
+
 export interface Props {
   title: string;
   description?: string;
@@ -7,11 +9,12 @@ export interface Props {
 
 const {
   title,
-  description = 'Dr. Nery Klaudia Krisztina – életmódorvoslás, foglalkozás-egészségügy, háziorvos, Insumed diétás terápia',
+  description = 'Dr. Nery Klaudia Krisztina – életmódorvoslás, foglalkozás-egészségügy, háziorvos, Insumed diétás terápia Érden.',
   ogImage = '/images/og-default.jpg',
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://nerymed.hu');
+const ogImageURL = new URL(ogImage, Astro.site ?? 'https://nerymed.hu');
 ---
 <!doctype html>
 <html lang="hu">
@@ -19,10 +22,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://nerymed.
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    <meta property="og:title" content={title} />
+    <meta property="og:title" content={`${title} | NeryMed`} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={ogImage} />
+    <meta property="og:image" content={ogImageURL} />
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="hu_HU" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="canonical" href={canonicalURL} />
     <link rel="icon" href="/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -32,5 +37,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://nerymed.
   </head>
   <body class="bg-white text-gray-800 font-sans">
     <slot />
+    <CookieBanner />
   </body>
 </html>
