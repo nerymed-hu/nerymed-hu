@@ -43,6 +43,7 @@ SSH into the server, then:
 cd /srv/opt/www/kecskemethy.hu/nerymed.kecskemethy.hu
 git pull origin main
 npm ci
+npm ci --prefix server
 npm run build
 sudo systemctl restart nerymed-contact
 ```
