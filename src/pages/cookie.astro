@@ -4,44 +4,91 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<BaseLayout title="Cookie-tájékoztató" description="NeryMed Kft. cookie-tájékoztatója.">
+<BaseLayout title="Cookie-tájékoztató" description="NeryMed Kft. cookie-tájékoztatója – sütik kezelése és letiltása.">
   <Header />
 
   <main>
     <section class="bg-teal-700 text-white py-16">
       <div class="container mx-auto px-4">
         <h1 class="text-4xl font-bold mb-4">Cookie-tájékoztató</h1>
+        <p class="text-teal-100">Hatályos: 2024. január 1-től</p>
       </div>
     </section>
 
     <section class="py-16">
       <div class="container mx-auto px-4 max-w-3xl prose prose-gray">
-        <!-- TODO: port actual cookie policy text from nerymed.hu/cookie -->
-        <p class="text-gray-500 italic">A cookie-tájékoztató feltöltése folyamatban van.</p>
 
-        <h2>Mik azok a cookie-k?</h2>
-        <p>A cookie-k (sütik) kis adatfájlok, amelyeket a weboldal helyez el az Ön eszközén, hogy javítsa a felhasználói élményt és emlékezzen beállításaira.</p>
+        <h2>1. Mik azok a cookie-k (sütik)?</h2>
+        <p>
+          A cookie-k kis adatfájlok, amelyeket a weboldal helyez el az Ön böngészőjében vagy
+          eszközén, amikor meglátogatja az oldalt. Segítségükkel a weboldal megjegyzi az Ön
+          beállításait és javítja a felhasználói élményt.
+        </p>
 
-        <h2>Általunk használt cookie-k</h2>
+        <h2>2. Milyen cookie-kat használunk?</h2>
+
+        <h3>Feltétlenül szükséges cookie-k</h3>
+        <p>
+          Ezek a cookie-k a weboldal alapvető működéséhez szükségesek, és nem tilthatók le.
+          Általában csak az Ön által elvégzett műveletekre (pl. adatvédelmi beállítások) reagálva
+          kerülnek beállításra.
+        </p>
         <table>
           <thead>
             <tr>
-              <th>Cookie neve</th>
+              <th>Neve</th>
               <th>Célja</th>
               <th>Lejárat</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>cookie_consent</td>
+              <td><code>cookie_consent</code></td>
               <td>Cookie-hozzájárulás tárolása</td>
               <td>1 év</td>
             </tr>
           </tbody>
         </table>
 
-        <h2>Cookie-k letiltása</h2>
-        <p>A cookie-kat böngészője beállításaiban bármikor letilthatja. Kérjük, vegye figyelembe, hogy egyes oldalfunkciók ekkor nem megfelelően működhetnek.</p>
+        <h3>Analitikai cookie-k (csak hozzájárulással)</h3>
+        <p>
+          Analitikai cookie-kat jelenleg nem használunk. Amennyiben a jövőben bevezetnénk
+          (pl. Google Analytics), azt kizárólag az Ön előzetes hozzájárulásával tesszük, és
+          erről jelen tájékoztatót frissítjük.
+        </p>
+
+        <h2>3. Harmadik féltől származó cookie-k</h2>
+        <p>
+          Weboldalunk jelenleg nem tölt be harmadik féltől (pl. Facebook, Google Ads) származó
+          követő cookie-kat.
+        </p>
+
+        <h2>4. A cookie-k kezelése és letiltása</h2>
+        <p>
+          A cookie-kat böngészője beállításaiban bármikor megtekintheti, törölheti vagy letilthatja.
+          Kérjük, vegye figyelembe, hogy egyes oldalfunkciók a cookie-k letiltása esetén
+          nem, vagy csak korlátozottan működhetnek.
+        </p>
+        <p>Böngészőnkénti útmutatók:</p>
+        <ul>
+          <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener">Google Chrome</a></li>
+          <li><a href="https://support.mozilla.org/hu/kb/sutik-engedelyezese-es-tiltasa" target="_blank" rel="noopener">Mozilla Firefox</a></li>
+          <li><a href="https://support.microsoft.com/hu-hu/microsoft-edge/cookie-k-t%C3%B6rl%C3%A9se-a-microsoft-edge-ben" target="_blank" rel="noopener">Microsoft Edge</a></li>
+          <li><a href="https://support.apple.com/hu-hu/guide/safari/sfri11471/mac" target="_blank" rel="noopener">Safari</a></li>
+        </ul>
+
+        <h2>5. Kapcsolat</h2>
+        <p>
+          Cookie-kezeléssel kapcsolatos kérdéseivel forduljon hozzánk:<br />
+          <a href="mailto:nerymedkft@gmail.com">nerymedkft@gmail.com</a>
+        </p>
+
+        <h2>6. A tájékoztató módosítása</h2>
+        <p>
+          Fenntartjuk a jogot, hogy jelen tájékoztatót módosítsuk. Kérjük, rendszeresen
+          látogasson vissza az esetleges változások megismeréséhez.
+        </p>
+
       </div>
     </section>
   </main>

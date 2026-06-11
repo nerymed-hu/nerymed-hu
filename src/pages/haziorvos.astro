@@ -7,16 +7,16 @@ import ContactForm from '../components/ContactForm.astro';
 
 <BaseLayout
   title="Háziorvos"
-  description="Háziorvosi ellátás Dr. Nery Klaudia Krisztina rendelőjében."
+  description="Háziorvosi ellátás Dr. Nery Klaudia Krisztina rendelőjében Érden. Rendelési idők, időpontfoglalás, ellátás köre."
 >
   <Header />
 
   <main>
     <section class="bg-teal-700 text-white py-16">
       <div class="container mx-auto px-4">
-        <h1 class="text-4xl font-bold mb-4">Háziorvos</h1>
+        <h1 class="text-4xl font-bold mb-4">Háziorvosi rendelés Érden</h1>
         <p class="text-teal-100 text-lg max-w-xl">
-          Személyre szabott, minőségi háziorvosi ellátás.
+          Dr. Nery Klaudia Krisztina háziorvos – Érd, Kossuth Lajos utca 42.
         </p>
       </div>
     </section>
@@ -24,27 +24,80 @@ import ContactForm from '../components/ContactForm.astro';
     <section class="py-16">
       <div class="container mx-auto px-4 max-w-4xl">
         <div class="prose prose-gray max-w-none">
-          <p class="text-lg text-gray-600 leading-relaxed mb-8">
-            <!-- TODO: port actual content from nerymed.hu/haziorvos -->
-            Dr. Nery Klaudia Krisztina háziorvosi rendelőjében megérez minden páciensét, figyelembe veszi
-            az egész embert – nem csupán a panaszt. Az integratív szemlélet ötvözi a hagyományos
-            háziorvosi ellátást az életmódorvoslás eszközeivel.
+          <p class="text-lg text-gray-600 leading-relaxed mb-10">
+            Szeretettel várom pácienseimet érdi háziorvosi rendelőmben a megadott időpontokban.
+            Sürgős, akut esetekben nem szükséges bejelentkeznie. Amennyiben orvosi tanácsadásra,
+            megelőző ellátásra vagy egyéb, nem sürgős ellátásra van szüksége, kérjük, foglaljon
+            időpontot előzetesen!
           </p>
 
-          <h2 class="text-2xl font-bold text-gray-900 mb-6">Rendelési idő</h2>
-          <div class="bg-gray-50 rounded-xl p-6 mb-8">
-            <!-- TODO: fill in actual opening hours -->
-            <p class="text-gray-500 italic">A pontos rendelési időkért kérjük hívja a +36 20 462 5517-es számot.</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <!-- Opening hours -->
+            <div class="bg-gray-50 rounded-xl p-6">
+              <h2 class="text-xl font-bold text-gray-900 mb-4">Rendelési idő</h2>
+              <table class="w-full text-sm">
+                <tbody class="divide-y divide-gray-200">
+                  {[
+                    ['Hétfő',    '11:30 – 15:30'],
+                    ['Kedd',     '07:30 – 11:30'],
+                    ['Szerda',   '14:00 – 18:00'],
+                    ['Csütörtök','07:30 – 11:30'],
+                    ['Péntek',   '07:30 – 11:30'],
+                  ].map(([day, hours]) => (
+                    <tr>
+                      <td class="py-2 font-medium text-gray-700">{day}</td>
+                      <td class="py-2 text-gray-600 text-right">{hours}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Contact & address -->
+            <div class="bg-teal-50 rounded-xl p-6">
+              <h2 class="text-xl font-bold text-gray-900 mb-4">Elérhetőség</h2>
+              <ul class="space-y-3 text-sm text-gray-700">
+                <li class="flex items-start gap-2">
+                  <span class="text-teal-600 mt-0.5">📍</span>
+                  <span>Érd, Kossuth Lajos utca 42.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-teal-600 mt-0.5">📞</span>
+                  <a href="tel:+3623362291" class="hover:text-teal-700">06 23 362-291</a>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-teal-600 mt-0.5">📞</span>
+                  <a href="tel:+36204625517" class="hover:text-teal-700">+36 20 462 5517</a>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-teal-600 mt-0.5">✉️</span>
+                  <a href="mailto:nerymedkft@gmail.com" class="hover:text-teal-700">nerymedkft@gmail.com</a>
+                </li>
+              </ul>
+            </div>
           </div>
 
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">Időpontfoglalás</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            A rendelés előjegyzés alapján történik, kivéve akut (napokban hirtelen kialakult)
+            megbetegedés esetén. Lázas, felsőlégúti, egyéb fertőzéses jellegű megbetegedés esetén
+            érdemes előbb telefonálni a hosszú várakozási idő elkerülése miatt — időpont nélkül
+            soron kívül látjuk el, de várakozási idővel számolni kell.
+          </p>
+          <p class="text-gray-600 leading-relaxed mb-10">
+            Online időpontfoglalásra lehetőség van az <strong>EgészségAblak alkalmazáson</strong> keresztül,
+            vagy az ingyenesen hívható <strong>1812-es telefonszámon</strong>.
+          </p>
+
           <h2 class="text-2xl font-bold text-gray-900 mb-6">Ellátás köre</h2>
-          <ul class="space-y-3 text-gray-600">
+          <ul class="space-y-3 text-gray-600 mb-10">
             {[
               'Általános orvosi vizsgálat, panaszok kivizsgálása',
-              'Krónikus betegségek gondozása',
-              'Receptírás, beutalók',
+              'Krónikus betegségek gondozása (diabetológia, kardiovaszkuláris betegségek)',
+              'Receptírás, beutalók, igazolások',
               'Laborvizsgálatok értékelése',
-              'Megelőző orvosi tanácsadás',
+              'Megelőző orvosi tanácsadás, életmód-szemléletű ellátás',
+              'Védőoltások beadása',
               'Betegdokumentáció kezelése',
             ].map(item => (
               <li class="flex items-start gap-3">
@@ -53,6 +106,15 @@ import ContactForm from '../components/ContactForm.astro';
               </li>
             ))}
           </ul>
+
+          <div class="bg-amber-50 border border-amber-200 rounded-xl p-6">
+            <h3 class="font-semibold text-amber-900 mb-2">Sürgős esetben rendelési időn kívül</h3>
+            <p class="text-amber-800 text-sm leading-relaxed">
+              Rendelési időn kívül (16:00–08:00) sürgős esetben hívja az ügyeletet a
+              <strong>1830-as telefonszámon</strong>. 2024. február 1-től a Pest megyei ügyeleti
+              rendszer megváltozott — délután 16 óra után az 1830-as számot kell hívni.
+            </p>
+          </div>
         </div>
       </div>
     </section>

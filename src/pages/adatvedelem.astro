@@ -4,40 +4,105 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<BaseLayout title="Adatvédelmi tájékoztató" description="NeryMed Kft. adatvédelmi tájékoztatója a GDPR szerint.">
+<BaseLayout title="Adatvédelmi tájékoztató" description="NeryMed Kft. adatvédelmi tájékoztatója a GDPR és az Info tv. alapján.">
   <Header />
 
   <main>
     <section class="bg-teal-700 text-white py-16">
       <div class="container mx-auto px-4">
         <h1 class="text-4xl font-bold mb-4">Adatvédelmi tájékoztató</h1>
+        <p class="text-teal-100">Hatályos: 2024. január 1-től</p>
       </div>
     </section>
 
     <section class="py-16">
       <div class="container mx-auto px-4 max-w-3xl prose prose-gray">
-        <!-- TODO: port actual privacy policy text from nerymed.hu/adatvedelem -->
-        <p class="text-gray-500 italic">Az adatvédelmi tájékoztató feltöltése folyamatban van.</p>
 
-        <h2>Adatkezelő</h2>
-        <p>NeryMed Kft.<br />
-        E-mail: nerymedkft@gmail.com<br />
-        Telefon: +36 20 462 5517</p>
+        <h2>1. Az adatkezelő adatai</h2>
+        <p>
+          <strong>Név:</strong> NeryMed Kft.<br />
+          <strong>Székhely:</strong> Érd, Kossuth Lajos utca 42.<br />
+          <strong>E-mail:</strong> <a href="mailto:nerymedkft@gmail.com">nerymedkft@gmail.com</a><br />
+          <strong>Telefon:</strong> +36 20 462 5517
+        </p>
 
-        <h2>Kezelt adatok köre</h2>
-        <p>A kapcsolatfelvételi űrlap kitöltésekor az alábbi adatokat kezeljük: név, e-mail cím, telefonszám, cégnév, üzenet szövege.</p>
+        <h2>2. Az adatkezelés jogalapja és célja</h2>
+        <p>
+          A weboldal kapcsolatfelvételi űrlapján keresztül megadott személyes adatokat az alábbi
+          célokból és jogalapokon kezeljük:
+        </p>
+        <ul>
+          <li>
+            <strong>Kapcsolatfelvételi megkeresések megválaszolása</strong> – jogalap: az érintett
+            hozzájárulása (GDPR 6. cikk (1) bek. a) pont).
+          </li>
+          <li>
+            <strong>Időpontfoglalás lebonyolítása</strong> – jogalap: szerződés teljesítése vagy
+            az érintett kérésére tett szerződéskötést megelőző lépések (GDPR 6. cikk (1) bek. b) pont).
+          </li>
+          <li>
+            <strong>Egészségügyi ellátás nyújtása</strong> – jogalap: egészségügyi ellátás céljából
+            szükséges adatkezelés (GDPR 9. cikk (2) bek. h) pont, Eütv.).
+          </li>
+        </ul>
 
-        <h2>Az adatkezelés célja</h2>
-        <p>A kapcsolatfelvételre érkező megkeresések megválaszolása és az időpontfoglalás lebonyolítása.</p>
+        <h2>3. A kezelt adatok köre</h2>
+        <p>A kapcsolatfelvételi űrlap kitöltésekor az alábbi adatokat kezeljük:</p>
+        <ul>
+          <li>Teljes név</li>
+          <li>E-mail cím</li>
+          <li>Telefonszám (opcionális)</li>
+          <li>Cégnév (opcionális)</li>
+          <li>Az üzenet szövege</li>
+        </ul>
 
-        <h2>Az adatkezelés jogalapja</h2>
-        <p>Az érintett hozzájárulása (GDPR 6. cikk (1) bekezdés a) pont).</p>
+        <h2>4. Adatmegőrzési idő</h2>
+        <p>
+          A kapcsolatfelvétel során megadott adatokat a megkeresés megválaszolásáig, illetve a
+          hozzájárulás visszavonásáig tároljuk. Egészségügyi dokumentációt a vonatkozó jogszabályok
+          (Eütv. 136. §) szerint minimum 30 évig megőrizzük.
+        </p>
 
-        <h2>Adatmegőrzési idő</h2>
-        <p>Az adatokat a kapcsolatfelvétel megválaszolásáig, illetve hozzájárulás visszavonásáig kezeljük.</p>
+        <h2>5. Adattovábbítás, adatfeldolgozók</h2>
+        <p>
+          Személyes adatait harmadik félnek nem adjuk át, kivéve, ha arra jogszabály kötelez
+          (pl. hatósági megkeresés). A weboldal üzemeltetése során igénybe vett tárhelyszolgáltatók
+          adatfeldolgozóként járnak el, az adatokat kizárólag az adatkezelő utasítása szerint kezelik.
+        </p>
 
-        <h2>Érintetti jogok</h2>
-        <p>Önnek joga van hozzáférni adataihoz, kérni azok helyesbítését, törlését vagy kezelésük korlátozását. Jogsértés esetén a Nemzeti Adatvédelmi és Információszabadság Hatósághoz (naih.hu) fordulhat.</p>
+        <h2>6. Az érintett jogai</h2>
+        <p>Önnek joga van:</p>
+        <ul>
+          <li><strong>Hozzáféréshez</strong> – tájékoztatást kérhet az általunk tárolt adatairól.</li>
+          <li><strong>Helyesbítéshez</strong> – kérheti pontatlan adatai javítását.</li>
+          <li><strong>Törléshez</strong> – kérheti adatai törlését (az „elfeledtetéshez való jog").</li>
+          <li><strong>Korlátozáshoz</strong> – kérheti az adatkezelés korlátozását.</li>
+          <li><strong>Adathordozhatósághoz</strong> – kérheti adatai géppel olvasható formátumban való kiadását.</li>
+          <li><strong>Tiltakozáshoz</strong> – tiltakozhat a jogos érdeken alapuló adatkezelés ellen.</li>
+        </ul>
+        <p>
+          Jogai gyakorlásához írjon a <a href="mailto:nerymedkft@gmail.com">nerymedkft@gmail.com</a>
+          e-mail-címre. Kérelmére 30 napon belül válaszolunk.
+        </p>
+
+        <h2>7. Jogorvoslat</h2>
+        <p>
+          Ha úgy ítéli meg, hogy adatainak kezelése sérti a vonatkozó jogszabályokat, panasszal
+          élhet a felügyeleti hatóságnál:
+        </p>
+        <p>
+          <strong>Nemzeti Adatvédelmi és Információszabadság Hatóság (NAIH)</strong><br />
+          Cím: 1055 Budapest, Falk Miksa utca 9–11.<br />
+          Web: <a href="https://www.naih.hu" target="_blank" rel="noopener">www.naih.hu</a><br />
+          Telefon: +36 1 391 1400
+        </p>
+
+        <h2>8. A tájékoztató módosítása</h2>
+        <p>
+          Fenntartjuk a jogot, hogy jelen tájékoztatót módosítsuk. A módosítások hatályba lépéséről
+          a weboldalon tájékoztatjuk látogatóinkat.
+        </p>
+
       </div>
     </section>
   </main>
