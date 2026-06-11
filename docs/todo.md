@@ -23,10 +23,10 @@ Last updated: 2026-06-11
 - [x] Port real Hungarian content — Életmódorvoslás: Magánszemélyeknek
 - [x] Port real Hungarian content — Foglalkozás-egészségügy
 - [x] Port real Hungarian content — Insumed
-- [ ] Fill in opening hours — Háziorvos
-- [ ] Port full Adatvédelem (privacy policy) text
-- [ ] Port full Cookie-tájékoztató text
-- [ ] Port remaining blog posts from WordPress to `src/content/blog/*.md`
+- [x] Fill in opening hours — Háziorvos (Mon–Fri schedule, address, EgészségAblak booking, 1830 after-hours)
+- [x] Port full Adatvédelem (privacy policy) text
+- [x] Port full Cookie-tájékoztató text
+- [x] Port remaining blog posts from WordPress to `src/content/blog/*.md` (15 posts)
 
 ## Server wiring
 
