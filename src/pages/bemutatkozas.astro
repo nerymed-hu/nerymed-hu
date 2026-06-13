@@ -2,21 +2,47 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import ContactForm from '../components/ContactForm.astro';
 
 const specializations = [
-  { icon: '🏥', title: 'Háziorvosi ellátás', desc: 'Általános egészségügyi ellátás, megelőzés és krónikus betegségek gondozása Érden.' },
-  { icon: '💉', title: 'Diabetológia', desc: 'Cukorbetegség diagnosztikája, kezelése, inzulinrezisztencia felismerése és gondozása.' },
-  { icon: '🌿', title: 'Életmódorvoslás', desc: 'Tudományosan megalapozott, személyre szabott életmódváltás egyéneknek és vállalkozásoknak.' },
-  { icon: '🏢', title: 'Foglalkozás-egészségügy', desc: 'Munkaköri alkalmassági vizsgálatok és teljes körű foglalkozás-egészségügyi ellátás.' },
+  {
+    icon: '🏥',
+    title: 'Háziorvosi ellátás',
+    desc: 'Több mint egy évtizedes tapasztalattal rendelkezem a háziorvosi ellátás terén, ahol a betegségek megelőzése és kezelése áll a középpontban.',
+  },
+  {
+    icon: '💉',
+    title: 'Diabetológia',
+    desc: 'Cukorbetegség kezelése és kontrollálása, valamint személyre szabott tanácsadás a helyes étrend és életmód kialakításához.',
+  },
+  {
+    icon: '🌿',
+    title: 'Életmódorvoslás',
+    desc: 'Egészséges életmód kialakítása, egyénre szabott étrendtervezéssel és mozgásprogramokkal prevenciós fókusszal.',
+  },
+  {
+    icon: '🏢',
+    title: 'Foglalkozás-egészségügy',
+    desc: 'A dolgozók egészségének megőrzése érdekében üzemorvosi vizsgálatok és egészségügyi tanácsadás vállalatok számára.',
+  },
+];
+
+const lifestylePillars = [
+  { icon: '🥗', label: 'Táplálkozás' },
+  { icon: '🏃', label: 'Testmozgás' },
+  { icon: '🚭', label: 'Káros szenvedélyek elhagyása' },
+  { icon: '🧘', label: 'Stresszkezelés' },
+  { icon: '😴', label: 'Alvás' },
+  { icon: '🤝', label: 'Emberi kapcsolatok' },
 ];
 
 const timeline = [
   { year: '2007', text: 'Általános orvosi diploma – Semmelweis Egyetem' },
   { year: '2011', text: 'Háziorvosi szakvizsga' },
   { year: '2014', text: 'Diabetológiai licence megszerzése' },
-  { year: '2023', text: 'IBLM életmódorvos minősítés' },
+  { year: '2023', text: 'IBLM által képesített életmódorvos' },
   { year: '2023', text: 'Foglalkozás-egészségügyi szakvizsga' },
-  { year: '2024', text: 'MEÉOE elnökségi tagság' },
+  { year: '2024', text: 'Magyar Egészségmegőrzési és Életmódorvostani Egyesület elnökségi tagja' },
 ];
 ---
 
@@ -28,79 +54,59 @@ const timeline = [
 
   <main>
 
-    <!-- Hero -->
-    <section class="bg-blue-50 py-20">
-      <div class="container mx-auto px-4 max-w-5xl">
-        <div class="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
+    <!-- Hero: split layout matching original -->
+    <section class="bg-blue-900 relative overflow-hidden">
+      <div class="absolute inset-0 bg-blue-900/50"></div>
+      <div class="relative container mx-auto px-4 max-w-6xl">
+        <div class="flex flex-col lg:flex-row items-stretch min-h-[560px]">
 
           <!-- Left: text -->
-          <div class="lg:w-1/2 order-2 lg:order-1">
-            <p class="text-blue-500 font-semibold text-sm uppercase tracking-widest mb-3">Bemutatkozás</p>
-            <h1 class="text-4xl lg:text-5xl font-bold text-blue-900 leading-tight mb-5">
-              Dr. Nery<br />Klaudia Krisztina
+          <div class="lg:w-1/2 flex flex-col justify-center py-20 lg:pr-12 z-10">
+            <p class="text-blue-300 font-semibold text-sm uppercase tracking-widest mb-3">Bemutatkozás</p>
+            <h1 class="text-4xl lg:text-5xl font-bold text-white leading-tight mb-3">
+              Dr. Nery Klaudia<br />Krisztina
             </h1>
-            <div class="flex flex-wrap gap-2 mb-6">
-              {['Életmódorvos', 'Háziorvos', 'Diabetológus', 'Foglalkozás-eü.'].map(tag => (
-                <span class="bg-white border border-blue-200 text-blue-600 text-sm px-3 py-1 rounded-full font-medium">{tag}</span>
-              ))}
-            </div>
-            <p class="text-gray-600 leading-relaxed mb-8">
-              Több mint 15 éve dolgozom orvosként Érden. Háziorvosként, foglalkozás-egészségügyi
-              szakorvosként és életmódorvosként egyaránt segítem pácienseimet — nem csupán a
-              betegségek kezelésében, hanem az egészséges életmód tartós kialakításában is.
+            <h2 class="text-lg text-blue-200 font-medium mb-6 leading-snug">
+              Háziorvos · Diabetológus ·<br />Foglalkozás-egészségügyi szakorvos · Életmódorvos
+            </h2>
+            <p class="text-blue-100 leading-relaxed mb-8 max-w-md">
+              Üdvözlöm! Dr. Nery Klaudia vagyok, több mint 15 éve dolgozom orvosként Érden.
+              A komplexebb segítségnyújtás érdekében háziorvosként, foglalkozás-egészségügyi
+              szakorvosként és életmódorvosként is gyógyítok. Arra törekszem, hogy pácienseimnek
+              a legjobb ellátást nyújtsam, és támogassam őket az egészséges életmód kialakításában.
             </p>
-            <div class="flex flex-col sm:flex-row gap-3">
-              <a href="/haziorvos" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors text-center">
-                Időpontot foglalok
-              </a>
-              <a href="tel:+36204625517" class="border border-blue-300 text-blue-700 hover:bg-blue-100 font-medium px-6 py-3 rounded-lg transition-colors text-center">
-                +36 20 462 5517
+            <div>
+              <a
+                href="#kapcsolat"
+                class="inline-block bg-blue-500 hover:bg-blue-400 text-white font-semibold px-7 py-3 rounded-full transition-colors"
+              >
+                Forduljon hozzám bizalommal
               </a>
             </div>
           </div>
 
-          <!-- Right: photo + floating badges -->
-          <div class="lg:w-1/2 order-1 lg:order-2 flex justify-center">
-            <div class="relative">
-              <img
-                src="/images/dr-nery.jpg"
-                alt="Dr. Nery Klaudia Krisztina"
-                class="w-72 h-80 lg:w-80 lg:h-96 object-cover rounded-2xl shadow-xl"
-              />
-              <!-- Badge: experience -->
-              <div class="absolute -bottom-5 -left-5 bg-white rounded-xl shadow-lg px-4 py-3 flex items-center gap-3">
-                <div class="bg-blue-100 rounded-lg w-10 h-10 flex items-center justify-center shrink-0">
-                  <span class="text-blue-700 font-bold text-sm">15+</span>
-                </div>
-                <div>
-                  <p class="text-xs text-gray-400 leading-none mb-0.5">év</p>
-                  <p class="text-sm font-semibold text-gray-800 leading-none">tapasztalat</p>
-                </div>
-              </div>
-              <!-- Badge: IBLM -->
-              <div class="absolute -top-4 -right-4 bg-white rounded-xl shadow-lg px-4 py-3">
-                <p class="text-xs text-gray-400 leading-none mb-0.5">Minősítés</p>
-                <p class="text-sm font-semibold text-blue-700 leading-none">IBLM életmódorvos</p>
-              </div>
-            </div>
+          <!-- Right: portrait photo -->
+          <div class="lg:w-1/2 relative flex justify-center lg:justify-end items-end pt-10 lg:pt-0">
+            <img
+              src="/images/dr-nery-hero.jpg"
+              alt="Dr. Nery Klaudia Krisztina"
+              class="h-[420px] lg:h-[560px] w-auto object-cover object-top rounded-t-2xl lg:rounded-t-none lg:rounded-tl-2xl shadow-2xl"
+            />
           </div>
 
         </div>
       </div>
     </section>
 
-    <!-- Specializations -->
+    <!-- Specializációk -->
     <section class="py-20 bg-white">
       <div class="container mx-auto px-4 max-w-5xl">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl font-bold text-blue-900 mb-3">Szakterületek</h2>
-          <div class="w-12 h-1 bg-blue-500 mx-auto rounded-full"></div>
-        </div>
+        <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">Specializációk</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {specializations.map(({ icon, title, desc }) => (
-            <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 border-t-4 border-t-blue-500 p-6">
-              <div class="text-3xl mb-4">{icon}</div>
-              <h3 class="font-bold text-blue-900 mb-2">{title}</h3>
+            <div class="bg-white rounded-xl p-8 shadow-[0_0_30px_rgba(0,0,0,0.08)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.12)] transition-shadow border border-gray-50">
+              <div class="text-4xl mb-5">{icon}</div>
+              <h3 class="font-bold text-blue-900 text-lg mb-3">{title}</h3>
               <p class="text-gray-500 text-sm leading-relaxed">{desc}</p>
             </div>
           ))}
@@ -108,30 +114,93 @@ const timeline = [
       </div>
     </section>
 
-    <!-- Philosophy -->
+    <!-- Hitvallásom -->
     <section class="py-20 bg-blue-50">
       <div class="container mx-auto px-4 max-w-3xl text-center">
-        <h2 class="text-3xl font-bold text-blue-900 mb-3">Hitvallásom</h2>
+        <h2 class="text-3xl font-bold text-blue-900 mb-4">Hitvallásom az életmódváltás és prevenció</h2>
         <div class="w-12 h-1 bg-blue-500 mx-auto rounded-full mb-8"></div>
         <p class="text-gray-600 leading-relaxed text-lg">
           Meggyőződésem, hogy a hosszú távú egészség titka a személyre szabott életmódváltás.
           Az egészség megőrzéséhez elengedhetetlen a helyes táplálkozás, a rendszeres mozgás,
           a káros szenvedélyek elhagyása, az alvás minőségének javítása, jó szociális kapcsolatok
-          kialakítása és a prevenció. Ezért törekszem arra, hogy pácienseimet ne csupán gyógyítsam,
-          hanem segítsem őket az egészséges életmód tartós kialakításában.
+          kialakítása és a prevenció — amelyekkel felvehetjük a harcot a divatdiéták hatásaival szemben.
         </p>
       </div>
     </section>
 
-    <!-- Career timeline -->
+    <!-- Egyénre szabott életmódtanácsadás -->
     <section class="py-20 bg-white">
       <div class="container mx-auto px-4 max-w-5xl">
-        <div class="text-center mb-14">
-          <h2 class="text-3xl font-bold text-blue-900 mb-3">Szakmai életút</h2>
-          <div class="w-12 h-1 bg-blue-500 mx-auto rounded-full"></div>
+        <div class="flex flex-col lg:flex-row gap-12 items-start">
+          <div class="lg:w-1/2">
+            <h2 class="text-3xl font-bold text-blue-900 mb-4">Egyénre szabott életmódtanácsadás</h2>
+            <div class="w-12 h-1 bg-blue-500 rounded-full mb-6"></div>
+            <p class="text-gray-600 leading-relaxed mb-8">
+              Szolgáltatásaim magánszemélyek és cégek számára is elérhetők, személyesen vagy online
+              formában. Az életmódtanácsadások során kiemelten foglalkozom az alábbiakkal:
+            </p>
+            <div class="flex flex-wrap gap-3 mb-10">
+              {lifestylePillars.map(({ icon, label }) => (
+                <div class="flex items-center gap-2 bg-blue-50 text-blue-800 rounded-full px-4 py-2 text-sm font-medium">
+                  <span>{icon}</span>
+                  <span>{label}</span>
+                </div>
+              ))}
+            </div>
+            <div class="flex flex-col sm:flex-row gap-3">
+              <a
+                href="/eletmodorvoslas/maganszemelyek"
+                class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors text-center"
+              >
+                Magánszemélyek
+              </a>
+              <a
+                href="/eletmodorvoslas/cegeknek"
+                class="border border-blue-300 text-blue-700 hover:bg-blue-50 font-medium px-6 py-3 rounded-lg transition-colors text-center"
+              >
+                Vállalati megoldások
+              </a>
+            </div>
+          </div>
+          <div class="lg:w-1/2">
+            <div class="bg-blue-900 rounded-2xl p-8 text-white">
+              <h3 class="text-xl font-bold mb-4">Foglalkozás-egészségügy a vállalatok számára</h3>
+              <p class="text-blue-200 leading-relaxed mb-6">
+                Egy jól szervezett foglalkozás-egészségügyi program nemcsak a dolgozók egészségét
+                védi, hanem hosszú távon hozzájárul a vállalat hatékonyságához. Szolgáltatásaim
+                segítik a cégeket abban, hogy megvalósítsák:
+              </p>
+              <ul class="space-y-3 mb-8">
+                {[
+                  'Munkavállalók egészségügyi problémáinak megelőzését',
+                  'Helyes életmód kialakításának ösztönzését',
+                  'Dolgozói elégedettség és jóllét növekedését',
+                ].map(item => (
+                  <li class="flex items-start gap-3 text-blue-100 text-sm">
+                    <span class="text-blue-400 mt-0.5 shrink-0">✓</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <a
+                href="/foglalkozas-egeszsegugy"
+                class="inline-block bg-blue-500 hover:bg-blue-400 text-white font-semibold px-6 py-2.5 rounded-lg transition-colors text-sm"
+              >
+                Foglalkozás-egészségügy →
+              </a>
+            </div>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Desktop: horizontal timeline -->
+    <!-- Timeline -->
+    <section class="py-20 bg-blue-50">
+      <div class="container mx-auto px-4 max-w-5xl">
+        <h2 class="text-3xl font-bold text-center text-blue-900 mb-3">Képzettségem és tapasztalatom</h2>
+        <div class="w-12 h-1 bg-blue-500 mx-auto rounded-full mb-14"></div>
+
+        <!-- Desktop horizontal -->
         <div class="hidden md:block relative">
           <div class="absolute top-5 left-[8.33%] right-[8.33%] h-0.5 bg-blue-200"></div>
           <div class="grid grid-cols-6 gap-4">
@@ -147,7 +216,7 @@ const timeline = [
           </div>
         </div>
 
-        <!-- Mobile: vertical timeline -->
+        <!-- Mobile vertical -->
         <div class="md:hidden space-y-6 relative">
           <div class="absolute top-0 bottom-0 left-5 w-0.5 bg-blue-200"></div>
           {timeline.map(({ year, text }) => (
@@ -165,23 +234,18 @@ const timeline = [
       </div>
     </section>
 
-    <!-- Contact CTA strip -->
-    <section class="bg-blue-700 py-14">
-      <div class="container mx-auto px-4 max-w-5xl flex flex-col sm:flex-row items-center justify-between gap-6">
-        <div>
-          <p class="text-blue-200 text-sm mb-1">Szeretne időpontot foglalni?</p>
-          <p class="text-white text-xl font-semibold">Hívjon minket vagy írjon üzenetet!</p>
-        </div>
-        <div class="flex flex-wrap gap-3">
-          <a href="tel:+36204625517" class="bg-white text-blue-700 font-semibold px-5 py-2.5 rounded-lg hover:bg-blue-50 transition-colors">
-            +36 20 462 5517
-          </a>
-          <a href="/#kapcsolat" class="border border-blue-400 text-white font-medium px-5 py-2.5 rounded-lg hover:bg-blue-600 transition-colors">
-            Üzenetet küldök
-          </a>
-        </div>
+    <!-- Szakmai oktatások -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4 max-w-3xl text-center">
+        <h2 class="text-2xl font-bold text-blue-900 mb-4">Szakmai oktatások</h2>
+        <p class="text-gray-600 leading-relaxed">
+          Szakmai továbbképzésben is számíthatnak rám a kedves kollégák!
+          Keressenek bizalommal az alábbi elérhetőségeken.
+        </p>
       </div>
     </section>
+
+    <ContactForm />
 
   </main>
 
