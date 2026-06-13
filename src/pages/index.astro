@@ -2,97 +2,272 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import ServiceCard from '../components/ServiceCard.astro';
 import Testimonials from '../components/Testimonials.astro';
 import ContactForm from '../components/ContactForm.astro';
+
+const slides = [
+  {
+    image: '/images/hero-slide-1.png',
+    heading: 'Wellbeing orvosi szolgáltatások cégeknek',
+    description: 'A wellbeing orvosi szolgáltatásainkkal segítünk az alkalmazottak teljes körű jóllétének támogatásában, beleértve testi, szellemi és érzelmi egészségüket.',
+    href: '/eletmodorvoslas/cegeknek',
+  },
+  {
+    image: '/images/hero-slide-2.jpg',
+    heading: 'Életmódorvoslás és egészségmegőrzés mindenkinek',
+    description: 'Egészségmegőrzés és a krónikus betegségek kezelése és akár visszafordítása is hatékonyan.',
+    href: '/eletmodorvoslas/maganszemelyek',
+  },
+  {
+    image: '/images/hero-slide-3.png',
+    heading: 'INSUMED diétaterápia',
+    description: 'Személyre szabott diétaterápia, amelynek célja a testösszetétel optimalizálása, az izomtömeg megőrzésével és a zsírégetéssel.',
+    href: '/insumed',
+  },
+];
+
+const pillars = [
+  { icon: '❤️', title: 'Egészség', desc: 'Testi, szellemi és érzelmi egészség komplex támogatása.' },
+  { icon: '📈', title: 'Növekedés', desc: 'Produktivitás és teljesítmény fejlesztése tudományos alapon.' },
+  { icon: '🛡️', title: 'Biztonság', desc: 'Megelőzés, szűrések és folyamatos egészségügyi háttér.' },
+];
+
+const services = [
+  {
+    title: 'Prevenciós vizsgálatok és szűrések',
+    desc: 'Rendszeres egészségügyi ellenőrzéseket és vizsgálatokat biztosítunk a betegségek korai felismerése és megelőzése céljából.',
+    icon: '🔬',
+    href: '/foglalkozas-egeszsegugy',
+  },
+  {
+    title: 'Táplálkozási tanácsadás',
+    desc: 'Az egészséges életmód és a helyes táplálkozás fontosságára helyezzük a hangsúlyt, személyre szabott étrenddel.',
+    icon: '🥗',
+    href: '/eletmodorvoslas/maganszemelyek',
+  },
+  {
+    title: 'Mozgásterápia',
+    desc: 'Egyénre szabott mozgásprogramok a fizikai kondíció javítására és a krónikus betegségek kezelésére.',
+    icon: '🏃',
+    href: '/eletmodorvoslas/maganszemelyek',
+  },
+  {
+    title: 'Életmódorvoslás',
+    desc: 'Életmód',
+    icon: '🌿',
+    href: '/eletmodorvoslas/cegeknek',
+  },
+  {
+    title: 'Insumed terápia',
+    desc: 'Insumed',
+    icon: '⚕️',
+    href: '/insumed',
+  },
+];
 ---
 
-<BaseLayout title="Főoldal" description="Dr. Nery Klaudia Krisztina háziorvos és életmódorvos Érden. Életmódorvoslás cégeknek és magánszemélyeknek, foglalkozás-egészségügy, Insumed diétás terápia.">
+<BaseLayout
+  title="Főoldal"
+  description="Dr. Nery Klaudia Krisztina háziorvos és életmódorvos Érden. Életmódorvoslás cégeknek és magánszemélyeknek, foglalkozás-egészségügy, Insumed diétás terápia."
+>
   <Header />
 
-  <!-- Hero -->
-  <section class="relative bg-gradient-to-br from-blue-700 to-blue-900 text-white">
-    <div class="container mx-auto px-4 py-24 flex flex-col lg:flex-row items-center gap-12">
-      <div class="flex-1 max-w-xl">
-        <h1 class="text-4xl lg:text-5xl font-bold leading-tight mb-6">
-          Az egészség a legjobb befektetés
-        </h1>
-        <p class="text-blue-100 text-lg leading-relaxed mb-8">
-          Dr. Nery Klaudia Krisztina életmódorvosként, foglalkozás-egészségügyi és háziorvosként
-          segíti pácienseit a tartós egészség megőrzésében — egyénileg és cégek számára egyaránt.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a href="#kapcsolat" class="bg-white text-blue-800 font-semibold px-7 py-3 rounded-lg hover:bg-blue-50 transition-colors text-center">
-            Időpontot kérek
-          </a>
-          <a href="/bemutatkozas" class="border border-white/40 text-white font-semibold px-7 py-3 rounded-lg hover:bg-white/10 transition-colors text-center">
-            Bemutatkozás
+  <!-- Hero slider -->
+  <div class="relative h-[420px] md:h-[650px] overflow-hidden" id="hero-slider">
+    {slides.map((slide, i) => (
+      <div
+        class={`hero-slide absolute inset-0 transition-opacity duration-700 ${i === 0 ? 'opacity-100' : 'opacity-0'}`}
+        data-index={i}
+      >
+        <div
+          class="absolute inset-0 bg-cover bg-center"
+          style={`background-image: url('${slide.image}')`}
+        ></div>
+        <div class="absolute inset-0" style="background-color: rgba(15, 68, 105, 0.50)"></div>
+        <div class="relative h-full flex items-center px-8 md:px-0">
+          <div class="md:pl-[20%] md:pr-[38%] w-full">
+            <h2 class="text-white text-2xl md:text-5xl font-bold leading-tight mb-4 md:mb-6">
+              {slide.heading}
+            </h2>
+            <p class="text-white/90 text-sm md:text-lg leading-relaxed mb-6 md:mb-8">
+              {slide.description}
+            </p>
+            <a
+              href={slide.href}
+              class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold px-7 py-3 rounded-full transition-colors text-sm md:text-base"
+            >
+              Tovább
+            </a>
+          </div>
+        </div>
+      </div>
+    ))}
+
+    <!-- Prev/Next arrows -->
+    <button
+      id="slider-prev"
+      aria-label="Előző dia"
+      class="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 bg-white/20 hover:bg-white/40 text-white rounded-full flex items-center justify-center transition-colors"
+    >
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+    </button>
+    <button
+      id="slider-next"
+      aria-label="Következő dia"
+      class="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 bg-white/20 hover:bg-white/40 text-white rounded-full flex items-center justify-center transition-colors"
+    >
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+      </svg>
+    </button>
+
+    <!-- Dot indicators -->
+    <div class="absolute bottom-5 left-1/2 -translate-x-1/2 z-10 flex gap-2">
+      {slides.map((_, i) => (
+        <button
+          class={`slider-dot w-2.5 h-2.5 rounded-full transition-colors ${i === 0 ? 'bg-white' : 'bg-white/40'}`}
+          data-index={i}
+          aria-label={`Dia ${i + 1}`}
+        ></button>
+      ))}
+    </div>
+  </div>
+
+  <!-- "Kiknek ajánljuk?" — overlapping card -->
+  <div class="container mx-auto px-4 relative z-10 -mt-10 md:-mt-16 mb-0">
+    <div class="bg-white rounded-xl shadow-xl overflow-hidden">
+      <div class="grid grid-cols-1 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-gray-100">
+        <div class="p-6 md:p-8">
+          <h3 class="text-2xl md:text-3xl font-semibold text-blue-800 leading-tight mb-3">
+            Kiknek ajánljuk?
+          </h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            Azon cégeknek és magánszemélyeknek, akiknek fontos a testi, szellemi és lelki egészség.
+          </p>
+        </div>
+        {pillars.map(({ icon, title, desc }) => (
+          <div class="p-6 md:p-8 flex flex-col items-start md:items-center md:text-center gap-3">
+            <div class="text-3xl">{icon}</div>
+            <h4 class="font-bold text-blue-900 text-lg">{title}</h4>
+            <p class="text-gray-500 text-sm leading-relaxed">{desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <!-- About "Ismerj meg!" -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 max-w-5xl">
+      <div class="flex flex-col lg:flex-row gap-12 items-center">
+        <div class="lg:w-2/5 flex justify-center">
+          <img
+            src="/images/dr-nery-about.jpg"
+            alt="Dr. Nery Klaudia Krisztina"
+            class="w-72 h-72 lg:w-80 lg:h-80 object-cover rounded-2xl shadow-xl"
+          />
+        </div>
+        <div class="lg:w-3/5">
+          <p class="text-blue-500 font-semibold text-sm uppercase tracking-widest mb-2">Ismerj meg!</p>
+          <h2 class="text-3xl font-bold text-blue-900 mb-5">Dr. Nery Klaudia Krisztina</h2>
+          <p class="text-gray-600 leading-relaxed mb-6">
+            Hivatásom az egészség és jóllét szolgáltatása. Csapatommal integrált orvosi ellátást nyújtunk,
+            figyelembe véve a testi, szellemi és érzelmi egészséget. Célunk, hogy segítsünk ügyfeleinknek
+            elérni és megtartani az optimális egészségi állapotot — olyan szolgáltatásokkal, amelyek
+            nemcsak a betegségek kezelésére, hanem az egészség megőrzésére és a teljes élet élésére is
+            összpontosítanak.
+          </p>
+          <div class="flex gap-8 mb-8">
+            <div class="text-center">
+              <p class="text-4xl font-bold text-blue-700">15+</p>
+              <p class="text-gray-500 text-sm">év tapasztalat</p>
+            </div>
+            <div class="text-center">
+              <p class="text-4xl font-bold text-blue-700">4</p>
+              <p class="text-gray-500 text-sm">szakterület</p>
+            </div>
+          </div>
+          <a
+            href="/bemutatkozas"
+            class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
+          >
+            Tovább a bemutatkozáshoz
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
           </a>
         </div>
       </div>
-      <div class="lg:flex-1 flex justify-center">
-        <img
-          src="/images/dr-nery.jpg"
-          alt="Dr. Nery Klaudia Krisztina"
-          class="w-72 h-72 object-cover rounded-full border-4 border-white/20 shadow-2xl"
-        />
-      </div>
     </div>
   </section>
 
-  <!-- Service pillars -->
-  <section class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center text-gray-900 mb-4">Szolgáltatásaim</h2>
-      <p class="text-gray-500 text-center mb-12 max-w-2xl mx-auto">
-        Három fő területen nyújtok szakszerű orvosi és életmód-tanácsadói segítséget.
-      </p>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <ServiceCard
-          title="Életmódorvoslás"
-          description="Egyéni és vállalati programok a tartós egészségmegőrzés érdekében: táplálkozási tanácsadás, mozgásterápia, stresszkezelés."
-          icon="🌿"
-          href="/eletmodorvoslas/cegeknek"
-        />
-        <ServiceCard
-          title="Foglalkozás-egészségügy"
-          description="Vállalkozások számára teljes körű foglalkozás-egészségügyi ellátás: alkalmassági vizsgálatok, munkahelyi egészségvédelem."
-          icon="🏢"
-          href="/foglalkozas-egeszsegugy"
-        />
-        <ServiceCard
-          title="Insumed"
-          description="Orvosi felügyelet mellett alkalmazott Insumed diétás terápia, amely bizonyítottan hatékony a fogyásban és az anyagcsere rendezésében."
-          icon="⚕️"
-          href="/insumed"
-        />
-      </div>
-    </div>
-  </section>
-
-  <!-- About teaser -->
-  <section class="py-16 bg-blue-50">
-    <div class="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-12">
-      <div class="lg:w-1/3 flex justify-center">
-        <img
-          src="/images/dr-nery.jpg"
-          alt="Dr. Nery Klaudia Krisztina"
-          class="w-64 h-64 object-cover rounded-2xl shadow-lg"
-        />
-      </div>
-      <div class="lg:w-2/3">
-        <h2 class="text-3xl font-bold text-gray-900 mb-4">Dr. Nery Klaudia Krisztina</h2>
-        <p class="text-gray-600 leading-relaxed mb-6">
-          Életmódorvos, foglalkozás-egészségügyi szakorvos és háziorvos. Több mint 15 éves tapasztalattal
-          segíti pácienseit a tartós egészségmegőrzésben, a testsúly szabályozásában és a munkahelyi
-          egészségvédelemben.
+  <!-- Wellbeing services -->
+  <section class="py-20 bg-blue-900 text-white">
+    <div class="container mx-auto px-4 max-w-5xl">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-3">Munkaerő támogatás egészségtámogató eszközökkel</h2>
+        <p class="text-blue-200 max-w-2xl mx-auto leading-relaxed">
+          Cégek számára nyújtott wellbeing orvosi szolgáltatásaink teljes körű egészségügyi támogatást
+          biztosítanak — a fizikai, mentális és érzelmi egészség fenntartásával hozzájárulva a
+          produktivitás növekedéséhez.
         </p>
-        <a href="/bemutatkozas" class="inline-flex items-center gap-2 text-blue-700 font-semibold hover:text-blue-800 transition-colors group">
-          Bővebben
-          <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-          </svg>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {services.slice(0, 3).map(({ icon, title, desc, href }) => (
+          <a href={href} class="bg-white/10 hover:bg-white/20 rounded-xl p-6 transition-colors group">
+            <div class="text-3xl mb-4">{icon}</div>
+            <h3 class="font-bold text-white text-lg mb-2 group-hover:text-blue-200 transition-colors">{title}</h3>
+            <p class="text-blue-200 text-sm leading-relaxed">{desc}</p>
+          </a>
+        ))}
+      </div>
+      <div class="text-center mt-10">
+        <a
+          href="/eletmodorvoslas/cegeknek"
+          class="inline-block border border-white/40 hover:bg-white/10 text-white font-semibold px-7 py-3 rounded-lg transition-colors"
+        >
+          Életmódorvoslás
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Életmódorvoslás magánszemélyeknek teaser -->
+  <section class="py-20 bg-blue-50">
+    <div class="container mx-auto px-4 max-w-5xl">
+      <div class="flex flex-col lg:flex-row gap-12 items-center">
+        <div class="lg:w-1/2">
+          <p class="text-blue-500 font-semibold text-sm uppercase tracking-widest mb-2">Magánszemélyeknek</p>
+          <h2 class="text-3xl font-bold text-blue-900 mb-5">Életmódorvoslás magánszemélyeknek</h2>
+          <p class="text-gray-600 leading-relaxed mb-6">
+            Személyre szabott életmódváltás tudományos alapon. Segítünk a fogyásban, az anyagcsere
+            rendezésében, a krónikus betegségek visszafordításában és az optimális egészségi állapot
+            elérésében — hosszú távon, a gyógyszerek helyett az életmóddal.
+          </p>
+          <div class="flex gap-4">
+            <a
+              href="/eletmodorvoslas/maganszemelyek"
+              class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
+            >
+              Részletek
+            </a>
+            <a
+              href="/insumed"
+              class="border border-blue-300 text-blue-700 hover:bg-blue-100 font-medium px-6 py-3 rounded-lg transition-colors"
+            >
+              Insumed terápia
+            </a>
+          </div>
+        </div>
+        <div class="lg:w-1/2">
+          <img
+            src="/images/hero-slide-2.jpg"
+            alt="Életmódorvoslás"
+            class="w-full h-64 object-cover rounded-2xl shadow-lg"
+          />
+        </div>
       </div>
     </div>
   </section>
@@ -103,3 +278,35 @@ import ContactForm from '../components/ContactForm.astro';
 
   <Footer />
 </BaseLayout>
+
+<script>
+  const slides = document.querySelectorAll<HTMLElement>('.hero-slide');
+  const dots = document.querySelectorAll<HTMLElement>('.slider-dot');
+  let current = 0;
+  let timer: ReturnType<typeof setInterval>;
+
+  function goTo(n: number) {
+    slides[current].classList.remove('opacity-100');
+    slides[current].classList.add('opacity-0');
+    dots[current].classList.remove('bg-white');
+    dots[current].classList.add('bg-white/40');
+    current = ((n % slides.length) + slides.length) % slides.length;
+    slides[current].classList.remove('opacity-0');
+    slides[current].classList.add('opacity-100');
+    dots[current].classList.remove('bg-white/40');
+    dots[current].classList.add('bg-white');
+  }
+
+  function resetTimer() {
+    clearInterval(timer);
+    timer = setInterval(() => goTo(current + 1), 6000);
+  }
+
+  document.getElementById('slider-next')?.addEventListener('click', () => { goTo(current + 1); resetTimer(); });
+  document.getElementById('slider-prev')?.addEventListener('click', () => { goTo(current - 1); resetTimer(); });
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => { goTo(Number(dot.dataset.index)); resetTimer(); });
+  });
+
+  resetTimer();
+</script>
