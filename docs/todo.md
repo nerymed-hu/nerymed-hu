@@ -34,7 +34,7 @@ Last updated: 2026-06-11 (server session)
 - [x] Fix deploy script — add `npm ci --prefix server` step
 - [x] Create `server/.env` on EC2 (copy from `server/.env.example`, fill in SMTP config)
 - [x] Start and enable systemd service: `sudo systemctl enable --now nerymed-contact`
-- [ ] Test contact form end-to-end on staging (https://nerymed.kecskemethy.hu)
+- [x] Test contact form end-to-end on staging (https://nerymed.kecskemethy.hu)
 
 ## SEO
 
