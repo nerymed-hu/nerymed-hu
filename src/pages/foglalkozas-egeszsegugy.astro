@@ -2,148 +2,266 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Testimonials from '../components/Testimonials.astro';
 import ContactForm from '../components/ContactForm.astro';
+
+const examTypes = [
+  {
+    title: 'Előzetes vizsgálat',
+    desc: 'Ezt a vizsgálatot a munkavállaló alkalmazása előtt kell elvégezni.',
+    icon: '📋',
+  },
+  {
+    title: 'Időszakos vizsgálat',
+    desc: 'Rendszerint évente vagy a munkáltató által meghatározott felülvizsgálati időpontban szükséges.',
+    icon: '🗓️',
+  },
+  {
+    title: 'Soron kívüli vizsgálat',
+    desc: 'A munkáltató rendelheti el saját belátása szerint, vagy ha a munkavállaló 30 napnál hosszabb betegszabadságon volt.',
+    icon: '⚡',
+  },
+  {
+    title: 'Záró vizsgálat',
+    desc: 'Különösen fontos a rákkeltő anyagokkal dolgozók esetében, amikor a dolgozó kilép a vállalattól.',
+    icon: '✅',
+  },
+];
+
+const additionalServices = [
+  'Orvosi vélemény kiadása a munkaalkalmasságról (írásban, szóban vagy digitális formában)',
+  'Foglalkozási megbetegedések és expozíciós esetek jelentése, kivizsgálásban való részvétel',
+  'Egyéni védőeszközök kiválasztása és tanácsadás',
+  'Munkahelyi kémiai biztonsági feladatok ellátása',
+  'Gépjárművezetői engedélyek hosszabbítása, beleértve a hivatásos jogosítványokat',
+  'Targoncavezetői jogosítványok hosszabbításához szükséges vizsgálatok',
+  'Védőoltások beadása az előírások szerinti adminisztrációval',
+  'Hatóságok számára egészségügyi dokumentációk elkészítése és adminisztráció',
+];
+
+const categories = [
+  {
+    label: 'A',
+    title: '"A" kategória',
+    desc: 'A bányászat, kohászat fizikai munkakörei; rákkeltőkkel exponáltak; sugárzó anyagokkal, állatkísérletes munkakörben foglalkoztatottak; korkedvezményre jogosító munkakörben foglalkoztatottak; vasúti, légi és vízi közlekedésben dolgozók.',
+  },
+  {
+    label: 'B',
+    title: '"B" kategória',
+    desc: 'Mezőgazdaság, vadgazdálkodás, erdőgazdálkodás, építőipar, élelmiszer- és italgyártás, textil-, ruházati-, bőripar, fafeldolgozás, vegyipar, gumi- és műanyagipar, szállítás, egészségügyi és szociális ellátás fizikai munkakörei.',
+  },
+  {
+    label: 'C',
+    title: '"C" kategória',
+    desc: 'Az "A" osztályba nem tartozó ipari, szolgáltató, kutató, illetve számítástechnikai tevékenységgel kapcsolatos fizikai munkakörök, valamint azon nem fizikai munkakörök, amelyek "C" osztályt indokló munkakörnyezetben végzett munkával járnak.',
+  },
+  {
+    label: 'D',
+    title: '"D" kategória',
+    desc: 'Kutatás-szervezési, kulturális, oktatási és egyéb adminisztratív tevékenységet végző munkavállalók, valamint az "A", "B" és "C" osztályba sorolt tevékenységek nem fizikai munkaköreiben dolgozók.',
+  },
+];
+
+const legislation = [
+  '1993. évi XCIII. törvény a munkavédelemről (58. §)',
+  '89/1995. Kormányrendelet a foglalkozás-egészségügyi alapszolgálatról',
+  '27/1995. NM rendelet a foglalkozás-egészségügyi szolgáltatásról',
+  '33/1998. (VI.24.) NM rendelet a munkaköri alkalmassági vizsgálatok rendjéről',
+];
 ---
 
 <BaseLayout
   title="Foglalkozás-egészségügy"
-  description="Foglalkozás-egészségügyi ellátás cégek számára: alkalmassági vizsgálatok, munkahelyi egészségvédelem. Dr. Nery Klaudia Krisztina."
+  description="Munkaköri alkalmassági vizsgálatok és foglalkozás-egészségügyi ellátás cégeknek. Előzetes, időszakos, soron kívüli és záró vizsgálatok Dr. Nery Klaudia Krisztinával."
 >
   <Header />
 
   <main>
-    <section class="bg-blue-700 text-white py-16">
-      <div class="container mx-auto px-4">
-        <h1 class="text-4xl font-bold mb-4">Foglalkozás-egészségügyi vizsgálatok</h1>
-        <p class="text-blue-100 text-lg max-w-xl">
-          A magyar jogszabályok értelmében minden munkáltató köteles foglalkozás egészségügyi ellátást
-          biztosítani a munkavállalói számára – még akkor is, ha csak egyetlen alkalmazott van.
-        </p>
+
+    <!-- Hero -->
+    <section class="bg-blue-900 overflow-hidden">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <div class="flex flex-col lg:flex-row items-center">
+
+          <div class="lg:w-1/2 py-20 lg:pr-12">
+            <p class="text-blue-300 font-semibold text-sm uppercase tracking-widest mb-3">Foglalkozás-egészségügy</p>
+            <h1 class="text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
+              Foglalkozás-egészségügyi vizsgálatok a NeryMednél
+            </h1>
+            <p class="text-blue-100 leading-relaxed mb-8 max-w-md">
+              A magyar jogszabályok értelmében minden munkáltató köteles foglalkozás-egészségügyi ellátást
+              biztosítani a munkavállalói számára — még akkor is, ha csak egyetlen alkalmazott van.
+            </p>
+            <a
+              href="#kapcsolat"
+              class="inline-block bg-blue-500 hover:bg-blue-400 text-white font-semibold px-7 py-3 rounded-full transition-colors"
+            >
+              Kérjen egyedi ajánlatot
+            </a>
+          </div>
+
+          <div class="lg:w-1/2 flex justify-end items-end pt-10 lg:pt-0">
+            <img
+              src="/images/foglalkozas-hero.png"
+              alt="Foglalkozás-egészségügyi vizsgálat"
+              class="h-[420px] lg:h-[560px] w-auto object-cover object-top rounded-t-2xl shadow-2xl"
+            />
+          </div>
+
+        </div>
       </div>
     </section>
 
-    <section class="py-16">
-      <div class="container mx-auto px-4 max-w-4xl">
-        <div class="prose prose-gray max-w-none">
-          <p class="text-lg text-gray-600 leading-relaxed mb-8">
-            A 89/1995. Kormányrendelet alapján minden szervezett munkavállalásra kötelező a foglalkozás
-            egészségügyi ellátás biztosítása. Dr. Nery Klaudia Krisztina foglalkozás-egészségügyi
-            szakorvosként biztosítja cégének a szükséges vizsgálatokat és dokumentációt, figyelembe
-            véve az egyedi igényeket is.
-          </p>
-
-          <div class="bg-amber-50 border border-amber-200 rounded-xl p-6 mb-10">
-            <h3 class="font-semibold text-amber-900 mb-2">Jogszabályi háttér</h3>
-            <p class="text-amber-800 text-sm leading-relaxed">
-              Az 1993. évi XCIII. törvény a Munkavédelemről (58. §), a 89/1995. Kormányrendelet a
-              foglalkozás egészségügyi alapszolgálatról, a 27/1995. NM rendelet a foglalkozás egészségügyi
-              szolgáltatásról, valamint a 33/1998. (VI.24.) NM rendelet a munkaköri alkalmassági vizsgálatok
-              rendjéről alapján biztosítjuk a szolgáltatást.
+    <!-- Törvényi háttér -->
+    <section class="py-16 bg-blue-50">
+      <div class="container mx-auto px-4 max-w-5xl">
+        <div class="flex flex-col lg:flex-row gap-10 items-start">
+          <div class="lg:w-2/3">
+            <h2 class="text-2xl font-bold text-blue-900 mb-4">A vizsgálatok törvényi háttere</h2>
+            <div class="w-12 h-1 bg-blue-500 rounded-full mb-6"></div>
+            <p class="text-gray-600 leading-relaxed mb-6">
+              Az alábbi jogszabályok alapján biztosítjuk az Ön cége számára a foglalkozás-egészségügyi
+              szolgáltatást, figyelembe véve az egyedi igényeket is:
             </p>
+            <ul class="space-y-3">
+              {legislation.map(item => (
+                <li class="flex items-start gap-3 text-gray-600 text-sm">
+                  <span class="text-blue-500 mt-0.5 shrink-0 font-bold">§</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
           </div>
-
-          <h2 class="text-2xl font-bold text-gray-900 mb-4">Mely munkaköri alkalmassági vizsgálatokra jelentkezhet?</h2>
-          <p class="text-gray-600 mb-6">
-            A munkaalkalmassági vizsgálatok különböző típusai segítenek biztosítani, hogy a munkavállalók
-            egészségileg alkalmasak legyenek az adott munkakör betöltésére. Rendelőnkben az alábbi
-            vizsgálattípusokra jelentkezhet:
-          </p>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-            {[
-              {
-                title: 'Előzetes vizsgálat',
-                desc: 'Ezt a vizsgálatot a munkavállaló alkalmazása előtt kell elvégezni.',
-              },
-              {
-                title: 'Időszakos vizsgálat',
-                desc: 'Rendszerint évente vagy a munkáltató által meghatározott felülvizsgálati időpontban szükséges.',
-              },
-              {
-                title: 'Soron kívüli vizsgálat',
-                desc: 'A munkáltató rendelheti el saját belátása szerint, vagy ha a munkavállaló 30 napnál hosszabb betegszabadságon volt.',
-              },
-              {
-                title: 'Záró vizsgálat',
-                desc: 'Különösen fontos a rákkeltő anyagokkal dolgozók esetében, amikor a dolgozó kilép a vállalattól.',
-              },
-            ].map(({ title, desc }) => (
-              <div class="bg-gray-50 rounded-xl p-6">
-                <h3 class="font-semibold text-gray-900 mb-2">{title}</h3>
-                <p class="text-gray-600 text-sm">{desc}</p>
-              </div>
-            ))}
-          </div>
-
-          <h2 class="text-2xl font-bold text-gray-900 mb-6">Egyéb egészségügyi szolgáltatások</h2>
-          <p class="text-gray-600 mb-4">
-            A foglalkozás egészségügyi szolgáltatásunk további feladatokat is ellát, amelyek segítik a
-            munkáltatókat a biztonságos és egészséges munkakörnyezet fenntartásában:
-          </p>
-          <ul class="space-y-3 text-gray-600 mb-10">
-            {[
-              'Orvosi vélemény kiadása a munkaalkalmasságról – írásban, szóban vagy digitális formában',
-              'Foglalkozási megbetegedések és expozíciós esetek jelentése, kivizsgálásban való részvétel',
-              'Egyéni védőeszközök kiválasztása és tanácsadás',
-              'Munkahelyi kémiai biztonsági feladatok ellátása',
-              'Gépjárművezetői engedélyek hosszabbítása, beleértve a hivatásos jogosítványokat is',
-              'Targoncavezetői jogosítványok hosszabbításához szükséges vizsgálatok elvégzése',
-              'Védőoltások beadása az előírások szerinti adminisztrációval',
-              'Hatóságok számára egészségügyi dokumentációk elkészítése és adminisztráció',
-              'Helyszíni vizsgálatok közvetlenül a vállalat telephelyén',
-            ].map(item => (
-              <li class="flex items-start gap-3">
-                <span class="text-blue-600 font-bold mt-0.5">✓</span>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-
-          <h2 class="text-2xl font-bold text-gray-900 mb-6">Foglalkozás-egészségügyi kategóriák (A, B, C, D)</h2>
-          <p class="text-gray-600 mb-6">A törvényben előírtak szerint az egyes kategóriákba a következő munkavállalók tartoznak:</p>
-
-          <div class="space-y-4 mb-10">
-            {[
-              {
-                cat: '"A" kategória',
-                desc: 'A bányászat, kohászat fizikai munkakörei, valamint a rákkeltőkkel, sugárzó anyagokkal exponáltak, állatkísérletes munkakörben foglalkoztatottak, korkedvezményre jogosító munkakörben foglalkoztatottak, a vasúti, légi és vízi közlekedésben dolgozók.',
-              },
-              {
-                cat: '"B" kategória',
-                desc: 'A mezőgazdaság, erdőgazdálkodás, építőipar, élelmiszergyártás, textil- és ruházati ipar, bőripar, vegyipar, gumi- és műanyagipar, nyersanyag-visszanyerés, szárazföldi és csővezetékes szállítás, egészségügyi és szociális ellátás fizikai munkaköreinek munkavállalói.',
-              },
-              {
-                cat: '"C" kategória',
-                desc: 'Az "A" kategóriába nem tartozó ipari, szolgáltató, kutató, illetve számítástechnikai tevékenységgel kapcsolatos fizikai munkakörök, valamint azon nem fizikai munkakörök, ahol a munkavállaló a "C" osztályt indokoló munkakörnyezetben tölti munkaideje több mint 50%-át.',
-              },
-              {
-                cat: '"D" kategória',
-                desc: 'A kutatás-szervezési, kulturális, oktatási és egyéb adminisztratív tevékenységet végző munkavállalók, valamint az "A", "B" és "C" kategóriás tevékenységek nem fizikai munkaköreiben dolgozók.',
-              },
-            ].map(({ cat, desc }) => (
-              <div class="border border-gray-200 rounded-xl p-5">
-                <h3 class="font-semibold text-gray-900 mb-2">{cat}</h3>
-                <p class="text-gray-600 text-sm leading-relaxed">{desc}</p>
-              </div>
-            ))}
-          </div>
-
-          <div class="bg-blue-50 rounded-2xl p-8 text-center">
-            <h3 class="text-xl font-bold text-gray-900 mb-3">Kérjen egyedi ajánlatot!</h3>
-            <p class="text-gray-600 mb-6">
-              A foglalkozás egészségügyi vizsgálat biztosítja, hogy a munkavállalók biztonságosan és
-              egészségesen végezhessék munkájukat. Írjon nekem vagy hívjon közvetlenül és kérjen
-              személyre szabott ajánlatot!
-            </p>
-            <a href="#kapcsolat" class="bg-blue-700 hover:bg-blue-800 text-white font-semibold px-8 py-3 rounded-lg transition-colors inline-block">
-              Ajánlatot kérek
-            </a>
+          <div class="lg:w-1/3">
+            <div class="bg-blue-900 rounded-2xl p-7 text-white">
+              <p class="text-blue-300 text-sm font-semibold uppercase tracking-wide mb-3">Tudta?</p>
+              <p class="text-white leading-relaxed text-sm">
+                A 89/1995-ös kormányrendelet alapján minden szervezett munkavállalásra vonatkozik a
+                foglalkozás-egészségügyi ellátás kötelezettsége — még akkor is, ha csak egyetlen
+                alkalmazott van.
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Exam types -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4 max-w-5xl">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-blue-900 mb-3">Mely munkaköri alkalmassági vizsgálatokra jelentkezhet be hozzánk?</h2>
+          <div class="w-12 h-1 bg-blue-500 mx-auto rounded-full"></div>
+          <p class="text-gray-500 mt-4 max-w-2xl mx-auto">
+            A munkaalkalmassági vizsgálatok különböző típusai segítenek biztosítani, hogy a munkavállalók
+            egészségileg alkalmasak legyenek az adott munkakör betöltésére.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {examTypes.map(({ icon, title, desc }) => (
+            <div class="bg-white rounded-xl p-7 shadow-[0_0_30px_rgba(0,0,0,0.08)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.12)] transition-shadow border border-gray-50 border-t-4 border-t-blue-500">
+              <div class="text-4xl mb-4">{icon}</div>
+              <h3 class="font-bold text-blue-900 text-lg mb-3">{title}</h3>
+              <p class="text-gray-500 text-sm leading-relaxed">{desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Additional services -->
+    <section class="py-20 bg-blue-900 text-white">
+      <div class="container mx-auto px-4 max-w-5xl">
+        <div class="flex flex-col lg:flex-row gap-12 items-start">
+          <div class="lg:w-1/2">
+            <h2 class="text-3xl font-bold mb-4">Egyéb egészségügyi szolgáltatások</h2>
+            <div class="w-12 h-1 bg-blue-400 rounded-full mb-6"></div>
+            <p class="text-blue-200 leading-relaxed mb-8">
+              A foglalkozás-egészségügyi szolgáltatásunk további feladatokat is ellát, amelyek segítik
+              a munkáltatókat a biztonságos és egészséges munkakörnyezet fenntartásában.
+            </p>
+            <ul class="space-y-4">
+              {additionalServices.map(item => (
+                <li class="flex items-start gap-3 text-blue-100 text-sm">
+                  <span class="text-blue-400 mt-0.5 shrink-0">✓</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div class="lg:w-1/2">
+            <div class="bg-white/10 rounded-2xl p-8">
+              <h3 class="text-xl font-bold text-white mb-4">Szolgáltatási helyszínek</h3>
+              <p class="text-blue-200 text-sm leading-relaxed mb-6">
+                Az alkalmassági vizsgálatokat rugalmasan biztosítjuk az Ön és cége igényei szerint.
+              </p>
+              <div class="space-y-3">
+                <div class="flex items-start gap-3 bg-white/10 rounded-lg p-4">
+                  <span class="text-2xl">🏥</span>
+                  <div>
+                    <p class="font-semibold text-white text-sm">Rendelőnkben</p>
+                    <p class="text-blue-200 text-xs mt-0.5">Érd, Kossuth Lajos utca 42.</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3 bg-white/10 rounded-lg p-4">
+                  <span class="text-2xl">🏢</span>
+                  <div>
+                    <p class="font-semibold text-white text-sm">Helyszíni vizsgálatok</p>
+                    <p class="text-blue-200 text-xs mt-0.5">Közvetlenül a vállalat telephelyén</p>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-6">
+                <a href="#kapcsolat" class="inline-block bg-blue-500 hover:bg-blue-400 text-white font-semibold px-6 py-2.5 rounded-lg transition-colors text-sm">
+                  Foglaljon időpontot még ma →
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- A/B/C/D categories -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4 max-w-5xl">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-blue-900 mb-3">Foglalkozás-egészségügyi kategóriák A, B, C, D</h2>
+          <div class="w-12 h-1 bg-blue-500 mx-auto rounded-full"></div>
+          <p class="text-gray-500 mt-4 max-w-2xl mx-auto">
+            A törvényben előírtak szerint az egyes kategóriákba a következő munkavállalók tartoznak:
+          </p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {categories.map(({ label, title, desc }) => (
+            <div class="rounded-xl border border-gray-100 p-7 hover:border-blue-200 hover:shadow-md transition-all">
+              <div class="flex items-center gap-4 mb-4">
+                <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center shrink-0">
+                  <span class="text-white font-bold text-xl">{label}</span>
+                </div>
+                <h3 class="font-bold text-blue-900 text-lg">{title}</h3>
+              </div>
+              <p class="text-gray-500 text-sm leading-relaxed">{desc}</p>
+            </div>
+          ))}
+        </div>
+        <div class="mt-10 text-center">
+          <p class="text-gray-600 mb-6">
+            A foglalkozás-egészségügyi vizsgálat biztosítja, hogy a munkavállalók biztonságosan és
+            egészségesen végezhessék munkájukat, megfelelve a törvényi előírásoknak.
+          </p>
+          <a href="#kapcsolat" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-7 py-3 rounded-lg transition-colors">
+            Foglaljon időpontot még ma!
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <Testimonials />
+
+    <ContactForm />
+
   </main>
 
-  <ContactForm />
   <Footer />
 </BaseLayout>
