@@ -3,6 +3,75 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import ContactForm from '../components/ContactForm.astro';
+
+const schedule = [
+  { day: 'Hétfő',     hours: '11:30 – 15:30' },
+  { day: 'Kedd',      hours: '07:30 – 11:30' },
+  { day: 'Szerda',    hours: '14:00 – 18:00' },
+  { day: 'Csütörtök', hours: '07:30 – 11:30' },
+  { day: 'Péntek',    hours: '07:30 – 11:30' },
+];
+
+const urgentYes = [
+  'Jelentős vérnyomás-kiugrás (180 Hgmm felett), melyet az otthoni vérnyomáscsökkentőkkel nem tud lejjebb vinni.',
+  'Akut allergiás reakció: jelentős bőrpír, csalánkiütés, viszketés.',
+  'Természetes halál bekövetkezte (idős és/vagy ismert, súlyos beteg).',
+];
+
+const urgentNo = [
+  'Torokfájás, köhögés, láz, derék- vagy végtagfájdalom — ezekkel a panaszokkal a következő rendelést kell felkeresni, addig vény nélkül kapható fájdalomcsillapító szedése javasolt.',
+  'Injekció adása a legtöbbször felesleges és elkerülhető — szájon át is remekül felszívódnak rendszerint a gyógyszerek.',
+];
+
+const emergencySymptoms = [
+  'Nehézlégzés, mellkasi fájdalom',
+  'Vérzéses állapot',
+  'Hirtelen fellépő mozgás- vagy beszédképtelenség',
+  'Ájulás, mérgezés, allergiás reakció',
+  'Vérköpés, vérhányás, elhúzódó hányás',
+  'Mentális állapot megváltozása, zavartság',
+  'Öngyilkossági gondolatok',
+  'Hirtelen, soha nem tapasztalt erősségű fejfájás',
+  'Látászavar, égési sérülés, törött csont',
+  'Tartós, csillapíthatatlan láz',
+  'Szapora és/vagy rendszertelen szívdobogásérzés',
+];
+
+const recentNews = [
+  { slug: 'munkakori-alkalmassagi-vizsgalat-mit-vizsgal-az-uzemorvos', title: 'Munkaköri alkalmassági vizsgálat: mit vizsgál az üzemorvos?' },
+  { slug: 'ingyenes-influenza-elleni-vedooltas', title: 'Ingyenes influenza elleni védőoltás' },
+  { slug: 'szamarkohoges-pertussis-elleni-oltas', title: 'Szamárköhögés (pertussis) elleni oltás fontossága' },
+  { slug: 'korai-felismeres-eletet-menthet-ingyenes-ldct-tudorakszures-a-koranyi-intezetben', title: 'Korai felismerés életet menthet: ingyenes LDCT tüdőrákszűrés' },
+  { slug: 'haziorvos-idopontfoglalas-hir', title: 'Új lehetőség: Országszerte foglalható online időpont' },
+  { slug: 'vallalati-wellbeing-egeszseg-eredmenyek', title: 'Vállalati wellbeing – Sikeres céges egészségprogram' },
+];
+
+const faqs = [
+  {
+    q: 'Minden esetben szükséges időpontot kérni?',
+    a: 'Igen, kivéve sürgősségi esetekben, mint például lázas állapot, hányás, hasmenés, hirtelen mellkasi nyomás, nehézlégzés, vagy erős fájdalom. Ezekben az esetekben nem szükséges időpontot foglalnia.',
+  },
+  {
+    q: 'Hogyan kérhetek receptet rendszeresen szedett gyógyszerekről?',
+    a: 'Receptet igényelhet e-mailben, telefonon, személyesen vagy a rendelő falán található postaládába bedobott levélben.',
+  },
+  {
+    q: 'Melyek a beutaló nélkül látogatható szakrendelések?',
+    a: 'Az alábbi szakrendelések beutaló nélkül is látogathatók: Urológia, Nőgyógyászat, Bőrgyógyászat, 40 év felett tüdőszűrő, Fül-Orr-Gégészet, Pszichiátria, Sebészet, Szemészet.',
+  },
+  {
+    q: 'Táppénzt szeretnék. Mi a teendőm?',
+    a: 'A táppénz igénylése személyes orvosi vizsgálathoz vagy legalább telefonos konzultációhoz kötött. E-mailes megkeresés esetén sajnos nem tudunk táppénzes igazolást kiállítani.',
+  },
+  {
+    q: 'Krónikus betegségem van, de nincs panaszom. Milyen gyakran kell megjelennem?',
+    a: 'Amennyiben panaszmentes és betegsége jól be van állítva, évente legalább egyszer mindenképpen szükséges megjelennie orvosi vizsgálaton, és részt kell vennie az elrendelt vizsgálatokon (labor, EKG, stb.).',
+  },
+  {
+    q: 'Jogosítványt szeretnék hosszabbítani, mi a teendőm?',
+    a: 'Előzetesen kérjük, keresse fel rendelőnket e-mailben vagy telefonon, hogy tájékoztathassuk a szükséges vizsgálatokról és szükség esetén beutalót biztosíthassunk.',
+  },
+];
 ---
 
 <BaseLayout
@@ -12,114 +81,227 @@ import ContactForm from '../components/ContactForm.astro';
   <Header />
 
   <main>
-    <section class="bg-blue-700 text-white py-16">
-      <div class="container mx-auto px-4">
-        <h1 class="text-4xl font-bold mb-4">Háziorvosi rendelés Érden</h1>
-        <p class="text-blue-100 text-lg max-w-xl">
-          Dr. Nery Klaudia Krisztina háziorvos – Érd, Kossuth Lajos utca 42.
-        </p>
+
+    <!-- Hero -->
+    <section class="bg-blue-900 overflow-hidden">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <div class="flex flex-col lg:flex-row items-center">
+
+          <div class="lg:w-1/2 py-20 lg:pr-12">
+            <p class="text-blue-300 font-semibold text-sm uppercase tracking-widest mb-3">Háziorvos</p>
+            <h1 class="text-4xl lg:text-5xl font-bold text-white leading-tight mb-3">
+              Háziorvosi rendelés Érden
+            </h1>
+            <h2 class="text-xl text-blue-200 font-medium mb-2">Dr. Nery Klaudia Krisztina háziorvos</h2>
+            <p class="text-blue-300 mb-6">Érd, Kossuth Lajos utca 42.</p>
+            <p class="text-blue-100 leading-relaxed mb-8 max-w-md">
+              Szeretettel várom pácienseimet érdi háziorvosi rendelőmben a megadott időpontokban.
+              Sürgős, akut esetekben nem szükséges bejelentkeznie. Amennyiben orvosi tanácsadásra,
+              megelőző ellátásra vagy egyéb nem sürgős ellátásra van szüksége, kérjük, foglaljon
+              időpontot előzetesen!
+            </p>
+            <div class="flex flex-col sm:flex-row gap-3">
+              <a href="#kapcsolat" class="bg-blue-500 hover:bg-blue-400 text-white font-semibold px-7 py-3 rounded-full transition-colors text-center">
+                Időpontot foglalok
+              </a>
+              <a href="tel:+3623362291" class="border border-white/30 text-white hover:bg-white/10 font-medium px-7 py-3 rounded-full transition-colors text-center">
+                06 23 362-291
+              </a>
+            </div>
+          </div>
+
+          <div class="lg:w-1/2 flex justify-end items-end pt-10 lg:pt-0">
+            <img
+              src="/images/dr-nery-haziorvos.jpg"
+              alt="Dr. Nery Klaudia Krisztina háziorvos"
+              class="h-[420px] lg:h-[560px] w-auto object-cover object-top rounded-t-2xl shadow-2xl"
+            />
+          </div>
+
+        </div>
       </div>
     </section>
 
-    <section class="py-16">
-      <div class="container mx-auto px-4 max-w-4xl">
-        <div class="prose prose-gray max-w-none">
-          <p class="text-lg text-gray-600 leading-relaxed mb-10">
-            Szeretettel várom pácienseimet érdi háziorvosi rendelőmben a megadott időpontokban.
-            Sürgős, akut esetekben nem szükséges bejelentkeznie. Amennyiben orvosi tanácsadásra,
-            megelőző ellátásra vagy egyéb, nem sürgős ellátásra van szüksége, kérjük, foglaljon
-            időpontot előzetesen!
-          </p>
+    <!-- Schedule + Contact -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4 max-w-5xl">
+        <div class="flex flex-col lg:flex-row gap-8">
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            <!-- Opening hours -->
-            <div class="bg-gray-50 rounded-xl p-6">
-              <h2 class="text-xl font-bold text-gray-900 mb-4">Rendelési idő</h2>
-              <table class="w-full text-sm">
-                <tbody class="divide-y divide-gray-200">
-                  {[
-                    ['Hétfő',    '11:30 – 15:30'],
-                    ['Kedd',     '07:30 – 11:30'],
-                    ['Szerda',   '14:00 – 18:00'],
-                    ['Csütörtök','07:30 – 11:30'],
-                    ['Péntek',   '07:30 – 11:30'],
-                  ].map(([day, hours]) => (
-                    <tr>
-                      <td class="py-2 font-medium text-gray-700">{day}</td>
-                      <td class="py-2 text-gray-600 text-right">{hours}</td>
+          <!-- Schedule -->
+          <div class="lg:w-1/2">
+            <h2 class="text-2xl font-bold text-blue-900 mb-4">Háziorvos rendelési idők</h2>
+            <div class="w-10 h-1 bg-blue-500 rounded-full mb-6"></div>
+            <div class="bg-white rounded-xl shadow-[0_0_30px_rgba(0,0,0,0.08)] overflow-hidden border border-gray-50">
+              <table class="w-full">
+                <tbody class="divide-y divide-gray-100">
+                  {schedule.map(({ day, hours }) => (
+                    <tr class="hover:bg-blue-50 transition-colors">
+                      <td class="px-6 py-4 font-semibold text-blue-900">{day}</td>
+                      <td class="px-6 py-4 text-gray-600 text-right font-medium">{hours}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
+          </div>
 
-            <!-- Contact & address -->
-            <div class="bg-blue-50 rounded-xl p-6">
-              <h2 class="text-xl font-bold text-gray-900 mb-4">Elérhetőség</h2>
-              <ul class="space-y-3 text-sm text-gray-700">
-                <li class="flex items-start gap-2">
-                  <span class="text-blue-600 mt-0.5">📍</span>
-                  <span>Érd, Kossuth Lajos utca 42.</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-blue-600 mt-0.5">📞</span>
-                  <a href="tel:+3623362291" class="hover:text-blue-700">06 23 362-291</a>
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-blue-600 mt-0.5">📞</span>
-                  <a href="tel:+36204625517" class="hover:text-blue-700">+36 20 462 5517</a>
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-blue-600 mt-0.5">✉️</span>
-                  <a href="mailto:nerymedkft@gmail.com" class="hover:text-blue-700">nerymedkft@gmail.com</a>
-                </li>
+          <!-- Appointment info -->
+          <div class="lg:w-1/2">
+            <h2 class="text-2xl font-bold text-blue-900 mb-4">Időpontfoglalás</h2>
+            <div class="w-10 h-1 bg-blue-500 rounded-full mb-6"></div>
+            <p class="text-gray-600 leading-relaxed mb-4">
+              A rendelés előjegyzés alapján történik, kivéve akut (napokban hirtelen kialakult)
+              megbetegedés esetén. Lázas, felsőlégúti, egyéb fertőzéses jellegű megbetegedés esetén
+              érdemes előbb telefonálni a hosszú várakozási idő elkerülése miatt — időpont nélkül
+              soron kívül látjuk el, de várakozási idővel számolni kell.
+            </p>
+            <div class="space-y-3 mb-6">
+              <a href="mailto:nerymedkft@gmail.com" class="flex items-center gap-3 bg-blue-50 hover:bg-blue-100 rounded-lg px-4 py-3 transition-colors group">
+                <span class="text-blue-600 text-xl">✉️</span>
+                <span class="text-blue-800 font-medium text-sm group-hover:text-blue-900">nerymedkft@gmail.com</span>
+              </a>
+              <a href="tel:+3623362291" class="flex items-center gap-3 bg-blue-50 hover:bg-blue-100 rounded-lg px-4 py-3 transition-colors group">
+                <span class="text-blue-600 text-xl">📞</span>
+                <span class="text-blue-800 font-medium text-sm group-hover:text-blue-900">06 23 362-291</span>
+              </a>
+              <a href="tel:+36204625517" class="flex items-center gap-3 bg-blue-50 hover:bg-blue-100 rounded-lg px-4 py-3 transition-colors group">
+                <span class="text-blue-600 text-xl">📞</span>
+                <span class="text-blue-800 font-medium text-sm group-hover:text-blue-900">+36 20 462 5517</span>
+              </a>
+              <div class="flex items-center gap-3 bg-blue-50 rounded-lg px-4 py-3">
+                <span class="text-blue-600 text-xl">📍</span>
+                <span class="text-blue-800 font-medium text-sm">Érd, Kossuth Lajos utca 42.</span>
+              </div>
+            </div>
+            <div class="bg-blue-900 rounded-xl p-5 text-white text-sm">
+              <p class="font-semibold mb-1">Online időpontfoglalás</p>
+              <p class="text-blue-200 leading-relaxed">
+                Az <strong class="text-white">EgészségAblak alkalmazáson</strong> keresztül, vagy az ingyenesen hívható
+                <strong class="text-white">1812-es telefonszámon</strong>.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Sürgős esetben -->
+    <section class="py-20 bg-blue-50">
+      <div class="container mx-auto px-4 max-w-5xl">
+        <div class="flex flex-col lg:flex-row gap-8">
+
+          <div class="lg:w-1/2">
+            <h2 class="text-2xl font-bold text-blue-900 mb-4">Sürgős esetben</h2>
+            <div class="w-10 h-1 bg-blue-500 rounded-full mb-6"></div>
+            <div class="space-y-4 mb-6">
+              <div class="bg-white rounded-xl p-5 shadow-sm border border-blue-100">
+                <p class="text-sm font-semibold text-blue-900 mb-1">Rendelési időben (8:00–16:00)</p>
+                <p class="text-gray-600 text-sm">Hívja a háziorvosát!</p>
+              </div>
+              <div class="bg-white rounded-xl p-5 shadow-sm border border-blue-100">
+                <p class="text-sm font-semibold text-blue-900 mb-1">Rendelési időn kívül (16:00–08:00)</p>
+                <p class="text-gray-600 text-sm">Az ügyelet elérhető a <strong class="text-blue-700">1830-as telefonszámon</strong>.</p>
+              </div>
+            </div>
+            <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
+              <p class="text-amber-900 font-semibold text-sm mb-2">⚠️ Helyi háziorvosi ügyelet — Fontos változás</p>
+              <p class="text-amber-800 text-sm leading-relaxed">
+                2024. február 1-től a Pest megyei ügyeleti rendszer megváltozott. Mostantól
+                délután 16 óra után sürgős esetben a <strong>1830-as telefonszámot</strong> kell hívni.
+              </p>
+            </div>
+          </div>
+
+          <div class="lg:w-1/2 space-y-4">
+            <div>
+              <h3 class="font-bold text-blue-900 mb-3">Az ügyelet igénybevétele indokolt:</h3>
+              <ul class="space-y-2">
+                {urgentYes.map(item => (
+                  <li class="flex items-start gap-2 text-sm text-gray-600 bg-white rounded-lg p-3 shadow-sm border border-gray-50">
+                    <span class="text-green-500 font-bold mt-0.5 shrink-0">✓</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h3 class="font-bold text-blue-900 mb-3">Az ügyelet igénybevétele NEM indokolt:</h3>
+              <ul class="space-y-2">
+                {urgentNo.map(item => (
+                  <li class="flex items-start gap-2 text-sm text-gray-600 bg-white rounded-lg p-3 shadow-sm border border-gray-50">
+                    <span class="text-red-400 font-bold mt-0.5 shrink-0">✗</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
 
-          <h2 class="text-2xl font-bold text-gray-900 mb-4">Időpontfoglalás</h2>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            A rendelés előjegyzés alapján történik, kivéve akut (napokban hirtelen kialakult)
-            megbetegedés esetén. Lázas, felsőlégúti, egyéb fertőzéses jellegű megbetegedés esetén
-            érdemes előbb telefonálni a hosszú várakozási idő elkerülése miatt — időpont nélkül
-            soron kívül látjuk el, de várakozási idővel számolni kell.
-          </p>
-          <p class="text-gray-600 leading-relaxed mb-10">
-            Online időpontfoglalásra lehetőség van az <strong>EgészségAblak alkalmazáson</strong> keresztül,
-            vagy az ingyenesen hívható <strong>1812-es telefonszámon</strong>.
-          </p>
+        </div>
 
-          <h2 class="text-2xl font-bold text-gray-900 mb-6">Ellátás köre</h2>
-          <ul class="space-y-3 text-gray-600 mb-10">
-            {[
-              'Általános orvosi vizsgálat, panaszok kivizsgálása',
-              'Krónikus betegségek gondozása (diabetológia, kardiovaszkuláris betegségek)',
-              'Receptírás, beutalók, igazolások',
-              'Laborvizsgálatok értékelése',
-              'Megelőző orvosi tanácsadás, életmód-szemléletű ellátás',
-              'Védőoltások beadása',
-              'Betegdokumentáció kezelése',
-            ].map(item => (
-              <li class="flex items-start gap-3">
-                <span class="text-blue-600 font-bold mt-0.5">✓</span>
+        <!-- Emergency symptoms -->
+        <div class="mt-10 bg-red-50 border border-red-200 rounded-2xl p-7">
+          <h3 class="font-bold text-red-900 mb-2 text-lg">
+            Az alábbi tünetek esetén egyenesen menjen a SÜRGŐSSÉGI OSZTÁLYRA (Szent Imre Kórház) vagy HÍVJA A MENTŐKET (112):
+          </h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 mt-4">
+            {emergencySymptoms.map(item => (
+              <div class="flex items-start gap-2 text-sm text-red-800">
+                <span class="text-red-500 shrink-0 mt-0.5">🚨</span>
                 <span>{item}</span>
-              </li>
+              </div>
             ))}
-          </ul>
-
-          <div class="bg-amber-50 border border-amber-200 rounded-xl p-6">
-            <h3 class="font-semibold text-amber-900 mb-2">Sürgős esetben rendelési időn kívül</h3>
-            <p class="text-amber-800 text-sm leading-relaxed">
-              Rendelési időn kívül (16:00–08:00) sürgős esetben hívja az ügyeletet a
-              <strong>1830-as telefonszámon</strong>. 2024. február 1-től a Pest megyei ügyeleti
-              rendszer megváltozott — délután 16 óra után az 1830-as számot kell hívni.
-            </p>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Recent news -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4 max-w-5xl">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-blue-900 mb-3">Aktuális híreink</h2>
+          <div class="w-12 h-1 bg-blue-500 mx-auto rounded-full"></div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {recentNews.map(({ slug, title }) => (
+            <a
+              href={`/blog/${slug}`}
+              class="flex items-start gap-3 p-5 rounded-xl border border-gray-100 hover:border-blue-200 hover:bg-blue-50 transition-colors group"
+            >
+              <span class="text-blue-500 mt-0.5 shrink-0 text-lg">→</span>
+              <span class="text-gray-700 group-hover:text-blue-800 text-sm font-medium leading-snug transition-colors">
+                {title}
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20 bg-blue-50">
+      <div class="container mx-auto px-4 max-w-3xl">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-blue-900 mb-3">Gyakori kérdések</h2>
+          <div class="w-12 h-1 bg-blue-500 mx-auto rounded-full"></div>
+          <p class="text-gray-500 mt-4">Általános kérdése van a szolgáltatással kapcsolatban?</p>
+        </div>
+        <div class="space-y-4">
+          {faqs.map(({ q, a }) => (
+            <div class="bg-white border border-gray-100 rounded-xl p-6 hover:border-blue-200 hover:shadow-sm transition-all">
+              <h3 class="font-bold text-blue-900 mb-3">{q}</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">{a}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <ContactForm />
+
   </main>
 
-  <ContactForm />
   <Footer />
 </BaseLayout>
