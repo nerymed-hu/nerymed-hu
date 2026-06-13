@@ -13,10 +13,10 @@ const posts = (await getCollection('blog')).sort(
   <Header />
 
   <main>
-    <section class="bg-teal-700 text-white py-16">
+    <section class="bg-blue-700 text-white py-16">
       <div class="container mx-auto px-4">
         <h1 class="text-4xl font-bold mb-4">Blog</h1>
-        <p class="text-teal-100 text-lg">Életmódorvoslás, táplálkozás, egészség</p>
+        <p class="text-blue-100 text-lg">Életmódorvoslás, táplálkozás, egészség</p>
       </div>
     </section>
 
@@ -40,14 +40,14 @@ const posts = (await getCollection('blog')).sort(
                     {post.data.pubDate.toLocaleDateString('hu-HU', { year: 'numeric', month: 'long', day: 'numeric' })}
                   </time>
                   <h2 class="text-xl font-bold text-gray-900">
-                    <a href={`/blog/${post.slug}`} class="hover:text-teal-700 transition-colors">
+                    <a href={`/blog/${post.slug}`} class="hover:text-blue-700 transition-colors">
                       {post.data.title}
                     </a>
                   </h2>
                   {post.data.description && (
                     <p class="text-gray-600 text-sm leading-relaxed">{post.data.description}</p>
                   )}
-                  <a href={`/blog/${post.slug}`} class="text-teal-700 hover:text-teal-800 text-sm font-medium mt-auto inline-flex items-center gap-1 group">
+                  <a href={`/blog/${post.slug}`} class="text-blue-700 hover:text-blue-800 text-sm font-medium mt-auto inline-flex items-center gap-1 group">
                     Tovább olvasom
                     <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
