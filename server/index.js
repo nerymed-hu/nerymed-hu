@@ -16,6 +16,7 @@ const transport = nodemailer.createTransport({
   host: process.env.SMTP_HOST || 'localhost',
   port: Number(process.env.SMTP_PORT) || 25,
   secure: false,
+  tls: { rejectUnauthorized: false },
 });
 
 app.post('/api/contact', async (req, res) => {
