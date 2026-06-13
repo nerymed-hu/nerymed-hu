@@ -2,113 +2,209 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
-import ServiceCard from '../../components/ServiceCard.astro';
+import Testimonials from '../../components/Testimonials.astro';
 import ContactForm from '../../components/ContactForm.astro';
+
+const pillars = [
+  {
+    icon: '🥗',
+    title: 'Táplálkozás',
+    desc: 'Az étel valódi gyógyszer lehet, ha megfelelően választjuk meg. Az étrendnek főként teljes értékű növényi alapú ételekre kell épülnie, amelyek gazdagok rostokban és tápanyagokban, mint például a zöldségek, gyümölcsök, hüvelyesek, teljes kiőrlésű gabonák, csonthéjasok és magvak.',
+  },
+  {
+    icon: '🏃',
+    title: 'Testmozgás',
+    desc: 'A rendszeres fizikai aktivitás elengedhetetlen az egészséges életmódhoz. Nem kell feltétlenül edzőterembe járni – egy séta, kertészkedés vagy napi tornagyakorlatok is elegendők lehetnek ahhoz, hogy javítsák az egészségi állapotot és fenntartsák a jó közérzetet.',
+  },
+  {
+    icon: '🚭',
+    title: 'Káros szenvedélyek elhagyása',
+    desc: 'A dohányzás és a túlzott alkoholfogyasztás súlyosan károsítja az egészséget. Életmódorvosként segítek a káros szenvedélyek felszámolásában, hiszen ezek elhagyásával jelentősen csökkenthetők a rákos és szív-érrendszeri betegségek kockázatai.',
+  },
+  {
+    icon: '🧘',
+    title: 'Stresszkezelés',
+    desc: 'A stressz nemcsak mentális, hanem fizikai betegségeket is okozhat. Segítek felismerni és kezelni a stressz okozta problémákat, valamint megtanítom a hatékony stresszkezelési technikákat, amelyek hosszú távon javítják az életminőséget.',
+  },
+  {
+    icon: '😴',
+    title: 'Alvás',
+    desc: 'A megfelelő mennyiségű és minőségű alvás nélkülözhetetlen az immunrendszer egészséges működéséhez. Tanácsokat adok arra vonatkozóan, hogyan javítsunk alvási szokásainkon a jobb pihenés érdekében.',
+  },
+  {
+    icon: '🤝',
+    title: 'Emberi kapcsolatok',
+    desc: 'A társas kapcsolatok fenntartása alapvető fontosságú a testi és lelki egészség szempontjából. A megfelelő támogatói hálózat megléte segíti a betegek gyógyulását és javítja az általános közérzetüket.',
+  },
+];
+
+const successStories = [
+  { slug: 'az-en-tortenetem-hogyan-talaltam-vissza-onmagamhoz-32-kilo-fogyassal', title: 'Az én történetem – hogyan találtam vissza önmagamhoz 32 kiló fogyással' },
+  { slug: 'eletmodvaltas-gyerekkel-sikertortenet', title: 'Egy év, egy új élet – Köszönjük, Nery Doktornő!' },
+  { slug: 'koszonolevel-nery-klaudia-doktorno', title: 'Köszönőlevél Dr. Nery Klaudia doktornőnek' },
+  { slug: '40-napos-bojt-sikertortenet', title: 'Sikertörténet: 40 napos húsvéti böjt – közös siker' },
+  { slug: 'tudatos-varandossag-egeszseges-terhesseg', title: 'Az én sikertörténetem – Tudatos várandósság' },
+  { slug: 'atvaltozas-40-kg-fogyas-tortenet', title: 'Átváltozás, avagy a fogyásom története' },
+];
 ---
 
 <BaseLayout
   title="Életmódorvoslás – Magánszemélyeknek"
-  description="Longevity programok az egészségért és jól létért. Egyéni életmód-tanácsadás Dr. Nery Klaudia Krisztina életmádorvosnál."
+  description="Személyre szabott életmódorvoslás és longevity programok egyéneknek. Fogyás, krónikus betegségek kezelése, prevenciós tanácsadás Dr. Nery Klaudia Krisztinával."
 >
   <Header />
 
   <main>
-    <section class="bg-blue-700 text-white py-16">
-      <div class="container mx-auto px-4">
-        <p class="text-blue-200 text-sm font-medium mb-2">Életmódorvoslás</p>
-        <h1 class="text-4xl font-bold mb-4">Életmódorvoslás az egyének életében</h1>
-        <p class="text-blue-100 text-lg max-w-xl">
-          Az életmódorvoslás egy tudományosan megalapozott módszer, amely az egészségtelen szokásokat
-          pozitív életmódbeli változtatásokkal helyettesíti. Célja nemcsak a betegségek megelőzése,
-          hanem azok kezelése és akár visszafordítása is.
-        </p>
+
+    <!-- Hero -->
+    <section class="bg-blue-900 overflow-hidden">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <div class="flex flex-col lg:flex-row items-center">
+
+          <div class="lg:w-1/2 py-20 lg:pr-12">
+            <p class="text-blue-300 font-semibold text-sm uppercase tracking-widest mb-3">Életmódorvoslás</p>
+            <h1 class="text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
+              Életmódorvoslás<br />az egyének életében
+            </h1>
+            <p class="text-blue-200 text-xl font-medium mb-6">Longevity programok az egészségért és a jóllétért</p>
+            <div class="bg-white/10 rounded-xl p-5 mb-8 border border-white/20">
+              <p class="text-blue-300 text-sm font-semibold uppercase tracking-wide mb-2">Tudta?</p>
+              <p class="text-white leading-relaxed text-sm">
+                Az életmódorvoslás egy olyan tudományosan megalapozott módszer, amely az egészségtelen
+                szokásokat pozitív életmódbeli változtatásokkal helyettesíti. Célja nemcsak a betegségek
+                megelőzése, hanem azok kezelése és akár visszafordítása is.
+              </p>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-3">
+              <a href="#kapcsolat" class="bg-blue-500 hover:bg-blue-400 text-white font-semibold px-7 py-3 rounded-full transition-colors text-center">
+                Foglaljon konzultációs időpontot
+              </a>
+              <a href="#kapcsolat" class="border border-white/30 text-white hover:bg-white/10 font-medium px-7 py-3 rounded-full transition-colors text-center">
+                Kapcsolat
+              </a>
+            </div>
+          </div>
+
+          <div class="lg:w-1/2 flex justify-end items-end pt-10 lg:pt-0">
+            <img
+              src="/images/dr-nery-maganszemelyek.jpg"
+              alt="Dr. Nery Klaudia Krisztina – életmódorvoslás magánszemélyeknek"
+              class="h-[420px] lg:h-[560px] w-auto object-cover object-top rounded-t-2xl shadow-2xl"
+            />
+          </div>
+
+        </div>
       </div>
     </section>
 
-    <section class="py-16">
+    <!-- 6 pillars -->
+    <section class="py-20 bg-white">
       <div class="container mx-auto px-4 max-w-5xl">
-        <div class="prose prose-gray max-w-none mb-12">
-          <p class="text-lg text-gray-600 leading-relaxed">
-            Hiszem, hogy az életmódorvoslás hatékonyan támogatja az egészség megőrzését és a krónikus
-            betegségek kezelését, mint például a cukorbetegség, szív- és érrendszeri betegségek vagy
-            bizonyos autoimmun állapotok. Az életmódorvoslás célja, hogy minden egyén kezébe vegye az
-            egészsége irányítását, és tartós változtatásokat vezessen be a mindennapi életébe.
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-blue-900 mb-3">Az életmódorvoslás 6 fő pillére</h2>
+          <div class="w-12 h-1 bg-blue-500 mx-auto rounded-full"></div>
+          <p class="text-gray-500 mt-4 max-w-2xl mx-auto">
+            A közös munka során az alábbi területekre koncentrálunk, hogy az egészségi állapot javuljon:
           </p>
         </div>
-
-        <h2 class="text-2xl font-bold text-gray-900 mb-4">Az életmódorvoslás 6 fő pillére</h2>
-        <p class="text-gray-600 mb-8">A közös munka során az alábbi területekre koncentrálunk, hogy az egészségi állapot javuljon:</p>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-          <ServiceCard
-            title="Táplálkozás"
-            description="Az étel valódi gyógyszer lehet, ha megfelelően választjuk meg. Az étrendnek főként teljes értékű növényi alapú ételekre kell épülnie, amelyek gazdagok rostokban és tápanyagokban, mint például a zöldségek, gyümölcsök, hüvelyesek, teljes kiőrlésű gabonák, csonthéjasok és magvak."
-            icon="🥗"
-          />
-          <ServiceCard
-            title="Testmozgás"
-            description="A rendszeres fizikai aktivitás elengedhetetlen az egészséges életmódhoz. Nem kell feltétlenül edzőterembe járni – egy séta, kertészkedés vagy napi tornagyakorlatok is elegendők lehetnek ahhoz, hogy javítsák az egészségi állapotot és fenntartsák a jó közérzetet."
-            icon="🏃"
-          />
-          <ServiceCard
-            title="Káros szenvedélyek elhagyása"
-            description="A dohányzás és a túlzott alkoholfogyasztás súlyosan károsítja az egészséget. Életmódorvosként segítek a káros szenvedélyek felszámolásában, hiszen ezek elhagyásával jelentősen csökkenthetők a rákos és szív-érrendszeri betegségek kockázatai."
-            icon="🚭"
-          />
-          <ServiceCard
-            title="Stresszkezelés"
-            description="A stressz nemcsak mentális, hanem fizikai betegségeket is okozhat. Segítek felismerni és kezelni a stressz okozta problémákat, valamint megtanítok hatékony stresszkezelési technikákat, amelyek hosszú távon javítják az életminőséget."
-            icon="🧘"
-          />
-          <ServiceCard
-            title="Alvás"
-            description="A megfelelő mennyiségű és minőségű alvás nélkülözhetetlen az immunrendszer egészséges működéséhez. Tanácsokat adok arra vonatkozóan, hogyan javítson alvási szokásain a jobb pihenés érdekében."
-            icon="😴"
-          />
-          <ServiceCard
-            title="Emberi kapcsolatok"
-            description="A társas kapcsolatok fenntartása alapvető fontosságú a testi és lelki egészség szempontjából. A megfelelő támogatói hálózat megléte segíti a gyógyulást és javítja az általános közérzetet."
-            icon="🤝"
-          />
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {pillars.map(({ icon, title, desc }) => (
+            <div class="bg-white rounded-xl p-7 shadow-[0_0_30px_rgba(0,0,0,0.08)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.12)] transition-shadow border border-gray-50">
+              <div class="text-4xl mb-4">{icon}</div>
+              <h3 class="font-bold text-blue-900 text-lg mb-3">{title}</h3>
+              <p class="text-gray-500 text-sm leading-relaxed">{desc}</p>
+            </div>
+          ))}
         </div>
-
-        <div class="bg-blue-50 rounded-2xl p-8 mb-12">
-          <h2 class="text-2xl font-bold text-gray-900 mb-4">A longevity koncepciója</h2>
-          <p class="text-gray-600 leading-relaxed">
-            A longevity, vagyis a hosszú és egészséges élet titka, az életmód tudatos alakításában rejlik.
-            A tudományos kutatások egyre inkább igazolják, hogy a megfelelő táplálkozás, a rendszeres
-            testmozgás és a stresszkezelési technikák kulcsfontosságúak a minőségi öregedés szempontjából.
-            A cél nem csupán az életévek számának növelése, hanem annak biztosítása, hogy ezek az évek
-            aktívan, energikusan és betegségek nélkül teljenek. A prevenció, a kiegyensúlyozott életmód
-            és a mentális egészség megőrzése mind hozzájárulnak ahhoz, hogy az időskor ne a leépülés,
-            hanem a vitalitás időszaka legyen.
-          </p>
-        </div>
-
-        <div class="bg-white border border-gray-100 rounded-2xl p-8 mb-12 shadow-sm">
-          <h2 class="text-2xl font-bold text-gray-900 mb-4">Miért fontos az életmódorvoslás?</h2>
-          <p class="text-gray-600 leading-relaxed mb-4">
-            Az életmódorvoslás célja az, hogy minden egyén kezébe vegye az egészsége irányítását, és tartós
-            változtatásokat vezessen be a mindennapi életébe. A megfelelő életmód támogatja a szervezet
-            öngyógyító mechanizmusait, és megelőzi a súlyos betegségek kialakulását.
-          </p>
-          <p class="text-gray-600 leading-relaxed">
-            Többéves szakmai tapasztalattal a hátam mögött segíthetek Önnek is az egészséges életmód
-            kialakításában, amely hosszú távon biztosítja a jól létet és az egészség fenntartását.
-          </p>
-        </div>
-
-        <div class="bg-blue-50 rounded-2xl p-8 text-center">
-          <h3 class="text-2xl font-bold text-gray-900 mb-3">Ismerje meg az életmódorvoslás előnyeit!</h3>
-          <p class="text-gray-600 mb-6">Foglaljon konzultációs időpontot még ma! Az első konzultáció 30–60 percet vesz igénybe.</p>
-          <a href="#kapcsolat" class="bg-blue-700 hover:bg-blue-800 text-white font-semibold px-8 py-3 rounded-lg transition-colors inline-block">
-            Időpontot kérek
+        <div class="text-center mt-10">
+          <a href="#kapcsolat" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-7 py-3 rounded-lg transition-colors">
+            Ajánlatot kérek
           </a>
         </div>
       </div>
     </section>
+
+    <!-- Longevity -->
+    <section class="py-20 bg-blue-50">
+      <div class="container mx-auto px-4 max-w-5xl">
+        <div class="flex flex-col lg:flex-row gap-12 items-center">
+          <div class="lg:w-2/5">
+            <img
+              src="/images/hitvallasom.png"
+              alt="Hitvallásom az életmódváltás és prevenció"
+              class="w-full rounded-2xl shadow-lg object-cover"
+            />
+          </div>
+          <div class="lg:w-3/5">
+            <p class="text-blue-500 font-semibold text-sm uppercase tracking-widest mb-3">Longevity</p>
+            <h2 class="text-3xl font-bold text-blue-900 mb-4">
+              A longevity koncepciója az orvostudományban, a táplálkozástudományban és az életmódkutatásban
+            </h2>
+            <div class="w-12 h-1 bg-blue-500 rounded-full mb-6"></div>
+            <p class="text-gray-600 leading-relaxed mb-4">
+              A longevity, vagyis a hosszú és egészséges élet titka, az életmód tudatos alakításában rejlik.
+              A tudományos kutatások egyre inkább igazolják, hogy a megfelelő táplálkozás, a rendszeres
+              testmozgás és a stresszkezelési technikák kulcsfontosságúak a minőségi öregedés szempontjából.
+            </p>
+            <p class="text-gray-600 leading-relaxed">
+              A cél nem csupán az életévek számának növelése, hanem annak biztosítása, hogy ezek az évek
+              aktívan, energikusan és betegségek nélkül teljenek. A prevenció, a kiegyensúlyozott életmód
+              és a mentális egészség megőrzése mind hozzájárulnak ahhoz, hogy az időskor ne a leépülés,
+              hanem a vitalitás időszaka legyen.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Miért fontos -->
+    <section class="py-20 bg-blue-900 text-white">
+      <div class="container mx-auto px-4 max-w-3xl text-center">
+        <h2 class="text-3xl font-bold mb-4">Miért fontos az életmódorvoslás?</h2>
+        <div class="w-12 h-1 bg-blue-400 mx-auto rounded-full mb-8"></div>
+        <p class="text-blue-100 leading-relaxed text-lg mb-4">
+          Az életmódorvoslás célja az, hogy minden egyén kezébe vegye az egészsége irányítását,
+          és tartós változtatásokat vezessen be a mindennapi életében. A megfelelő életmód támogatja
+          a szervezet öngyógyító mechanizmusait, és megelőzi a súlyos betegségek kialakulását.
+        </p>
+        <p class="text-blue-200 leading-relaxed mb-10">
+          Többéves szakmai tapasztalattal a hátam mögött segíthetek Önnek is az egészséges életmód
+          kialakításában, amely hosszú távon biztosítja a jóllétet és az egészség fenntartását.
+        </p>
+        <a href="#kapcsolat" class="inline-block bg-blue-500 hover:bg-blue-400 text-white font-semibold px-8 py-3 rounded-full transition-colors">
+          Kapcsolat
+        </a>
+      </div>
+    </section>
+
+    <!-- Success stories -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4 max-w-5xl">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-blue-900 mb-3">Eredmények</h2>
+          <div class="w-12 h-1 bg-blue-500 mx-auto rounded-full"></div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {successStories.map(({ slug, title }) => (
+            <a
+              href={`/blog/${slug}`}
+              class="flex items-start gap-3 p-5 rounded-xl border border-gray-100 hover:border-blue-200 hover:bg-blue-50 transition-colors group"
+            >
+              <span class="text-blue-500 mt-0.5 shrink-0 text-lg">→</span>
+              <span class="text-gray-700 group-hover:text-blue-800 text-sm font-medium leading-snug transition-colors">
+                {title}
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <Testimonials />
+
+    <ContactForm />
+
   </main>
 
-  <ContactForm />
   <Footer />
 </BaseLayout>
