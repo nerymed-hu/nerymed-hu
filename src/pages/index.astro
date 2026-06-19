@@ -242,39 +242,60 @@ const services = [
   </section>
 
   <!-- Életmódorvoslás magánszemélyeknek teaser -->
-  <section class="py-20 bg-blue-50">
+  <section class="py-20 bg-white">
     <div class="container mx-auto px-4 max-w-5xl">
-      <div class="flex flex-col lg:flex-row gap-12 items-center">
-        <div class="lg:w-1/2">
-          <p class="text-blue-500 font-semibold text-sm uppercase tracking-widest mb-2">Magánszemélyeknek</p>
-          <h2 class="text-3xl font-bold text-blue-900 mb-5">Életmódorvoslás magánszemélyeknek</h2>
-          <p class="text-gray-600 leading-relaxed mb-6">
-            Személyre szabott életmódváltás tudományos alapon. Segítünk a fogyásban, az anyagcsere
-            rendezésében, a krónikus betegségek visszafordításában és az optimális egészségi állapot
-            elérésében — hosszú távon, a gyógyszerek helyett az életmóddal.
+      <div class="flex flex-col lg:flex-row gap-16 items-start">
+
+        <!-- Left: text + buttons -->
+        <div class="lg:w-5/12">
+          <p class="text-orange-500 font-semibold text-sm mb-3">Wellbeing szolgáltatások nem csak cégeknek</p>
+          <h2 class="text-4xl lg:text-5xl font-bold text-blue-900 leading-tight mb-6">
+            Életmódorvoslás<br/>magánszemélyeknek
+          </h2>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            Az egészség és a jól lét mindenkinek jár! Wellbeing szolgáltatásaink nemcsak a betegségek
+            megelőzésében, hanem azok kezelésében és akár visszafordításában is hatékony szerepet játszanak.
           </p>
-          <div class="flex gap-4">
-            <a
-              href="/eletmodorvoslas/maganszemelyek"
-              class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
-            >
-              Részletek
-            </a>
+          <p class="text-gray-600 leading-relaxed mb-8">
+            Ha Ön szeretné megőrizni egészségét, netán valamilyen krónikus betegségben szenved, például a
+            cukorbetegség, szív- és érrendszeri betegségek vagy bizonyos autoimmun állapotok – tekintse meg
+            szolgáltatásainkat.
+          </p>
+          <div class="flex flex-wrap gap-4">
             <a
               href="/insumed"
-              class="border border-blue-300 text-blue-700 hover:bg-blue-100 font-medium px-6 py-3 rounded-lg transition-colors"
+              class="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-full transition-colors"
             >
-              Insumed terápia
+              Insumed terápia <span aria-hidden="true">→</span>
+            </a>
+            <a
+              href="/eletmodorvoslas/maganszemelyek"
+              class="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-full transition-colors"
+            >
+              Életmódorvoslás <span aria-hidden="true">→</span>
             </a>
           </div>
         </div>
-        <div class="lg:w-1/2">
-          <img
-            src="/images/hero-slide-2.jpg"
-            alt="Életmódorvoslás"
-            class="w-full h-64 object-cover rounded-2xl shadow-lg"
-          />
+
+        <!-- Right: 5 bullet points -->
+        <div class="lg:w-7/12 space-y-6 pt-2">
+          {[
+            { title: 'Személyre szabott életmód terv', desc: 'Személyreszabott életmódprogramot állítunk össze, az egészségmegőrzés és az általános jóllét kialakításához.' },
+            { title: 'Táplálkozási és mozgásprogramok', desc: 'Egyéni programot alakítunk ki, ahol a táplálkozás és a testmozgás egyensúlyba kerül.' },
+            { title: 'Krónikus betegségek megelőzése', desc: 'Segítünk a krónikus betegségek megelőzésében és kezelésében az egészséges életmód által.' },
+            { title: 'Teljes körű egészségügyi felmérés', desc: 'A megelőzés kiemelten fontos! Rendelőnkben különböző vizsgálatokkal felmérjük egészségiállapotát.' },
+            { title: 'Testösszetétel vizsgálat (BIA mérés)', desc: 'A BIA-mérés (bioimpedancia-analízis) gyors és pontos módja a testösszetétel elemzésének. Megmutatja, hogy a szervezet mennyi zsírt, izmot, víztartalmat és más komponenseket tartalmaz.' },
+          ].map(({ title, desc }) => (
+            <div class="flex items-start gap-4">
+              <span class="text-orange-500 font-bold text-lg leading-none mt-1 shrink-0">»</span>
+              <div>
+                <h3 class="font-bold text-blue-900 text-base mb-1">{title}</h3>
+                <p class="text-gray-500 text-sm leading-relaxed">{desc}</p>
+              </div>
+            </div>
+          ))}
         </div>
+
       </div>
     </div>
   </section>
