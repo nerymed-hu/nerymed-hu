@@ -1,52 +1,97 @@
 ---
 const testimonials = [
   {
-    name: 'Kovács Péter',
-    result: '22 kg fogyás',
-    text: 'Az Insumed program és Dr. Nery személyes támogatása segítségével sikerült 22 kilógrammot leadnom 4 hónap alatt. Életmódom alapvetően megváltozott.',
+    category: 'Fogyás',
+    text: 'Bő 3 és fél hónap alatt -16 kg zsírtól szabadultam meg! Por napot nem tartottam, reggel és este INSUMED-et fogyasztok, az ebédemet néha elosztom, otthon súlyzózom munka és gyerekek mellett. Köszönöm a támogatást, Dr. Nery Klaudia!',
   },
   {
-    name: 'Szabó Mária',
-    result: 'Inzulinrezisztencia rendezése',
-    text: 'Az életmód-tanácsadás és az egyénre szabott étrend után laborértékeim normalizálódtak. Gyógyszeres kezelés nélkül sikerült rendezni az inzulinrezisztenciámat.',
+    category: 'Fogyás',
+    text: 'Dr. Nery Klaudia 1300 kalóriás étrendjével és rendszeres edzésekkel 9 hónap alatt 27 kg-ot adtam le. Eleinte nehéz volt, de a havi konzultációk és a folyamatos biztatás mindvégig motiváltak. Végre energikusnak érzem magam!',
   },
   {
-    name: 'Horváth László',
-    result: 'Normális vérnyomás',
-    text: 'Évek óta küzdöttem a magas vérnyomással. Dr. Nery programja után a vérnyomásom gyógyszer nélkül is 120/80 körül van.',
+    category: 'Inzulinrezisztencia',
+    text: 'Az IR-barát, 1300 kalóriás diétával és havi felülvizsgálatokkal stabilizáltam a vércukorértékeimet. A doktornő minden kérdésnél segített ételcserékkel és tanácsokkal. Így mentálisan is erősebbé váltam, és folytatom a kitartó munkát.',
   },
   {
-    name: 'Fekete Ágnes',
-    result: '15 kg fogyás',
+    category: '15 kg fogyás',
     text: 'Sportos életmódom ellenére nem tudtam fogyni. Az Insumed diétás terápia megmutatta, hogy mit etettem el rosszul. 15 kg ment le 3 hónap alatt.',
   },
   {
-    name: 'Nagy Gábor',
-    result: 'Sportteljesítmény javulás',
+    category: 'Sportteljesítmény javulás',
     text: 'Versenysportoló vagyok. Dr. Nery segítségével optimalizáltam a táplálkozásomat és az idei szezonban személyes rekordot döntöttem.',
   },
   {
-    name: 'Tóth Zsuzsanna',
-    result: '18 kg fogyás',
+    category: '18 kg fogyás',
     text: 'Születésnapomra tűztem ki a célt: legyek egészséges és 18 kilóval könnyebb. Sikerült, és a mai napig tartom a súlyom.',
   },
 ];
+
+const slides = [testimonials.slice(0, 3), testimonials.slice(3, 6)];
 ---
 
-<section class="py-16 bg-gray-50">
-  <div class="container mx-auto px-4">
-    <h2 class="text-3xl font-bold text-center text-gray-900 mb-4">Pácienseink sikersztorijai</h2>
-    <p class="text-gray-500 text-center mb-12 max-w-2xl mx-auto">
-      Valódi emberek, valódi eredmények. Ismerje meg páciensei tapasztalatait.
-    </p>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {testimonials.map(t => (
-        <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex flex-col gap-3">
-          <span class="text-sm font-semibold text-blue-700 bg-blue-50 px-3 py-1 rounded-full self-start">{t.result}</span>
-          <p class="text-gray-600 text-sm leading-relaxed flex-1">„{t.text}"</p>
-          <p class="text-gray-900 font-semibold text-sm">— {t.name}</p>
-        </div>
+<section class="py-20 bg-blue-50">
+  <div class="container mx-auto px-4 max-w-5xl">
+    <div class="text-center mb-12">
+      <p class="text-orange-500 font-semibold text-sm mb-3">Valós eredmények és sikertörténetek</p>
+      <h2 class="text-3xl lg:text-4xl font-semibold text-blue-900">Mit mondanak szolgáltatásainkról?</h2>
+    </div>
+
+    <!-- Slider wrapper -->
+    <div class="relative overflow-hidden">
+      <div id="t-track" class="flex transition-transform duration-500 ease-in-out">
+        {slides.map(group => (
+          <div class="w-full shrink-0 grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+            {group.map(t => (
+              <div class="flex flex-col gap-0">
+                <!-- Card: quote + stars only -->
+                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex flex-col gap-4">
+                  <p class="text-gray-600 text-sm leading-relaxed flex-1">„{t.text}"</p>
+                  <div class="flex gap-1 text-yellow-400 text-lg">
+                    {'★★★★★'}
+                  </div>
+                </div>
+                <!-- Category below card -->
+                <p class="text-center text-blue-900 font-semibold text-sm mt-3">{t.category}</p>
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Dots -->
+    <div class="flex justify-center gap-3 mt-8">
+      {slides.map((_, i) => (
+        <button
+          class:list={['t-dot w-3 h-3 rounded-full transition-colors', i === 0 ? 'bg-blue-600' : 'bg-blue-200']}
+          data-index={i}
+          aria-label={`${i + 1}. oldal`}
+        />
       ))}
     </div>
   </div>
 </section>
+
+<script>
+  const track = document.getElementById('t-track') as HTMLElement;
+  const dots = document.querySelectorAll<HTMLElement>('.t-dot');
+  let cur = 0;
+  let timer: ReturnType<typeof setInterval>;
+
+  function goTo(n: number) {
+    cur = n;
+    track.style.transform = `translateX(-${cur * 100}%)`;
+    dots.forEach((d, i) => {
+      d.classList.toggle('bg-blue-600', i === cur);
+      d.classList.toggle('bg-blue-200', i !== cur);
+    });
+  }
+
+  function reset() {
+    clearInterval(timer);
+    timer = setInterval(() => goTo((cur + 1) % dots.length), 6000);
+  }
+
+  dots.forEach(d => d.addEventListener('click', () => { goTo(Number(d.dataset.index)); reset(); }));
+  reset();
+</script>
