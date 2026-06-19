@@ -27,9 +27,9 @@ const slides = [
 ];
 
 const pillars = [
-  { icon: '❤️', title: 'Egészség', desc: 'Testi, szellemi és érzelmi egészség komplex támogatása.' },
-  { icon: '📈', title: 'Növekedés', desc: 'Produktivitás és teljesítmény fejlesztése tudományos alapon.' },
-  { icon: '🛡️', title: 'Biztonság', desc: 'Megelőzés, szűrések és folyamatos egészségügyi háttér.' },
+  { icon: 'ekit-icon ekit-icon-heart-pulse', title: 'Egészség', desc: 'Testi, szellemi és érzelmi egészség komplex támogatása.' },
+  { icon: 'ekit-icon ekit-icon-graph-2',     title: 'Növekedés', desc: 'Produktivitás és teljesítmény fejlesztése tudományos alapon.' },
+  { icon: 'ekit-icon ekit-icon-star',        title: 'Biztonság', desc: 'Megelőzés, szűrések és folyamatos egészségügyi háttér.' },
 ];
 
 const services = [
@@ -94,7 +94,7 @@ const services = [
             </p>
             <a
               href={slide.href}
-              class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold px-7 py-3 rounded-full transition-colors text-sm md:text-base"
+              class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold px-7 py-3 rounded-full transition-colors text-sm md:text-base"
             >
               Tovább
             </a>
@@ -149,7 +149,7 @@ const services = [
         </div>
         {pillars.map(({ icon, title, desc }) => (
           <div class="p-6 md:p-8 flex flex-col items-start md:items-center md:text-center gap-3">
-            <div class="text-3xl">{icon}</div>
+            <i class={`${icon} text-4xl text-blue-600`} aria-hidden="true"></i>
             <h4 class="font-bold text-blue-900 text-lg">{title}</h4>
             <p class="text-gray-500 text-sm leading-relaxed">{desc}</p>
           </div>
