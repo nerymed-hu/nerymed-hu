@@ -162,36 +162,33 @@ const services = [
   <section class="py-20 bg-white">
     <div class="container mx-auto px-4 max-w-5xl">
       <div class="flex flex-col lg:flex-row gap-12 items-center">
-        <div class="lg:w-2/5 flex justify-center">
-          <img
-            src="/images/dr-nery-about.jpg"
-            alt="Dr. Nery Klaudia Krisztina"
-            class="w-72 h-72 lg:w-80 lg:h-80 object-cover rounded-2xl shadow-xl"
-          />
-        </div>
-        <div class="lg:w-3/5">
-          <p class="text-blue-500 font-semibold text-sm uppercase tracking-widest mb-2">Ismerj meg!</p>
-          <h2 class="text-3xl font-bold text-blue-900 mb-5">Dr. Nery Klaudia Krisztina</h2>
-          <p class="text-gray-600 leading-relaxed mb-6">
-            Hivatásom az egészség és jóllét szolgáltatása. Csapatommal integrált orvosi ellátást nyújtunk,
-            figyelembe véve a testi, szellemi és érzelmi egészséget. Célunk, hogy segítsünk ügyfeleinknek
-            elérni és megtartani az optimális egészségi állapotot — olyan szolgáltatásokkal, amelyek
-            nemcsak a betegségek kezelésére, hanem az egészség megőrzésére és a teljes élet élésére is
-            összpontosítanak.
+
+        <!-- Text: LEFT -->
+        <div class="lg:w-1/2 order-2 lg:order-1">
+          <p class="text-orange-500 font-semibold text-sm uppercase tracking-widest mb-2">Ismerj meg!</p>
+          <h2 class="text-3xl lg:text-4xl font-bold text-blue-900 mb-5">Dr. Nery Klaudia Krisztina</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            <strong class="text-gray-800">Hivatásom</strong> az egészség és jóllét szolgáltatása. Csapatommal integrált
+            orvosi ellátást nyújtunk, figyelembe véve a testi, szellemi és érzelmi egészséget.
           </p>
-          <div class="flex gap-8 mb-8">
-            <div class="text-center">
+          <p class="text-gray-600 leading-relaxed mb-8">
+            <strong class="text-gray-800">Célunk,</strong> hogy segítsünk ügyfeleinknek elérni és megtartani az
+            optimális egészségi állapotot — olyan szolgáltatásokkal, amelyek nemcsak a betegségek
+            kezelésére, hanem az egészség megőrzésére és a teljes élet élésére is összpontosítanak.
+          </p>
+          <div class="flex gap-10 mb-8">
+            <div>
               <p class="text-4xl font-bold text-blue-700">15+</p>
               <p class="text-gray-500 text-sm">év tapasztalat</p>
             </div>
-            <div class="text-center">
+            <div>
               <p class="text-4xl font-bold text-blue-700">4</p>
               <p class="text-gray-500 text-sm">szakterület</p>
             </div>
           </div>
           <a
             href="/bemutatkozas"
-            class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
+            class="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-full transition-colors"
           >
             Tovább a bemutatkozáshoz
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -199,6 +196,30 @@ const services = [
             </svg>
           </a>
         </div>
+
+        <!-- Photo: RIGHT with badge and stethoscope -->
+        <div class="lg:w-1/2 order-1 lg:order-2 flex justify-center">
+          <div class="relative w-72 h-72 lg:w-80 lg:h-80">
+            <!-- Stethoscope icon top-right -->
+            <div class="absolute -top-3 -right-3 w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center z-10 shadow-lg">
+              <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 3H7a2 2 0 00-2 2v4a6 6 0 006 6 6 6 0 006-6V5a2 2 0 00-2-2h-2M9 3a1 1 0 000 2h6a1 1 0 000-2M9 3h6m-3 13v3m0 0a2 2 0 104 0 2 2 0 00-4 0z" />
+              </svg>
+            </div>
+            <!-- Circular photo -->
+            <img
+              src="/images/dr-nery-about.jpg"
+              alt="Dr. Nery Klaudia Krisztina"
+              class="w-full h-full object-cover object-top rounded-full shadow-2xl border-4 border-white"
+            />
+            <!-- 15+ badge bottom-right -->
+            <div class="absolute -bottom-4 -right-4 w-28 h-28 bg-blue-600 rounded-full flex flex-col items-center justify-center text-white shadow-xl z-10">
+              <span class="text-3xl font-bold leading-none">15+</span>
+              <span class="text-xs font-semibold mt-1 text-center leading-tight">Év<br/>Tapasztalat</span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
