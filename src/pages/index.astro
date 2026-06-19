@@ -36,32 +36,26 @@ const services = [
   {
     title: 'Prevenciós vizsgálatok és szűrések',
     desc: 'Rendszeres egészségügyi ellenőrzéseket és vizsgálatokat biztosítunk a betegségek korai felismerése és megelőzése céljából.',
-    icon: '🔬',
+    icon: 'ekit-icon ekit-icon-heart-pulse',
     href: '/foglalkozas-egeszsegugy',
   },
   {
-    title: 'Táplálkozási tanácsadás',
-    desc: 'Az egészséges életmód és a helyes táplálkozás fontosságára helyezzük a hangsúlyt, személyre szabott étrenddel.',
-    icon: '🥗',
-    href: '/eletmodorvoslas/maganszemelyek',
-  },
-  {
     title: 'Mozgásterápia',
-    desc: 'Egyénre szabott mozgásprogramok a fizikai kondíció javítására és a krónikus betegségek kezelésére.',
-    icon: '🏃',
+    desc: 'Személyre szabott edzésprogramokat alakítunk ki, amelyek segítik az egészséges testtartást, az izomerőt és az általános fizikai kondíciót.',
+    icon: 'ekit-icon ekit-icon-graph-2',
     href: '/eletmodorvoslas/maganszemelyek',
   },
   {
-    title: 'Életmódorvoslás',
-    desc: 'Életmód',
-    icon: '🌿',
-    href: '/eletmodorvoslas/cegeknek',
+    title: 'Táplálkozási tanácsadás',
+    desc: 'Az egészséges életmód és a helyes táplálkozás fontosságára helyezzük a hangsúlyt, ezáltal <strong>betegségek megelőzése és az általános jóllét támogatása érdekében.</strong>',
+    icon: 'ekit-icon ekit-icon-star',
+    href: '/eletmodorvoslas/maganszemelyek',
   },
   {
-    title: 'Insumed terápia',
-    desc: 'Insumed',
-    icon: '⚕️',
-    href: '/insumed',
+    title: 'Alternatív terápiák',
+    desc: 'Olyan terápiás módszereket alkalmazunk, amelyek kiegészítik a hagyományos orvoslást, például akupunktúra, masszázs vagy gyógynövényterápia.',
+    icon: 'ekit-icon ekit-icon-star',
+    href: '/eletmodorvoslas/cegeknek',
   },
 ];
 ---
@@ -219,32 +213,30 @@ const services = [
   </section>
 
   <!-- Wellbeing services -->
-  <section class="py-20 bg-blue-900 text-white">
+  <section class="py-20 bg-blue-50">
     <div class="container mx-auto px-4 max-w-5xl">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold mb-3">Munkaerő támogatás egészségtámogató eszközökkel</h2>
-        <p class="text-blue-200 max-w-2xl mx-auto leading-relaxed">
-          Cégek számára nyújtott wellbeing orvosi szolgáltatásaink teljes körű egészségügyi támogatást
-          biztosítanak — a fizikai, mentális és érzelmi egészség fenntartásával hozzájárulva a
-          produktivitás növekedéséhez.
+        <p class="text-orange-500 font-semibold text-sm uppercase tracking-widest mb-3">Mi is az a wellbeing orvosi szolgáltatás?</p>
+        <h2 class="text-3xl lg:text-4xl font-bold text-blue-900 mb-5">Munkaerő támogatás<br/>egészségtámogató eszközökkel</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          Cégek számára nyújtott <strong class="text-blue-900">wellbeing orvosi szolgáltatásaink</strong> teljes körű egészségügyi
+          támogatást biztosítanak. Ezek az <strong class="text-blue-900">integrált szolgáltatások</strong> nemcsak a <strong class="text-blue-900">fizikai</strong>, hanem a
+          <strong class="text-blue-900">mentális és érzelmi egészség</strong> fenntartását is elősegítik, ezzel hozzájárulva a <strong class="text-blue-900">produktivitás
+          növekedéséhez</strong> és az alkalmazottak <strong class="text-blue-900">jobb teljesítményéhez.</strong>
         </p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {services.slice(0, 3).map(({ icon, title, desc, href }) => (
-          <a href={href} class="bg-white/10 hover:bg-white/20 rounded-xl p-6 transition-colors group">
-            <div class="text-3xl mb-4">{icon}</div>
-            <h3 class="font-bold text-white text-lg mb-2 group-hover:text-blue-200 transition-colors">{title}</h3>
-            <p class="text-blue-200 text-sm leading-relaxed">{desc}</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {services.map(({ icon, title, desc, href }) => (
+          <a href={href} class="bg-white hover:shadow-md rounded-xl p-6 transition-shadow flex items-start gap-4 group border border-gray-100">
+            <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center shrink-0">
+              <i class={`${icon} text-xl text-white`} aria-hidden="true"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-blue-900 text-base mb-2">{title}</h3>
+              <p class="text-gray-500 text-sm leading-relaxed" set:html={desc}></p>
+            </div>
           </a>
         ))}
-      </div>
-      <div class="text-center mt-10">
-        <a
-          href="/eletmodorvoslas/cegeknek"
-          class="inline-block border border-white/40 hover:bg-white/10 text-white font-semibold px-7 py-3 rounded-lg transition-colors"
-        >
-          Életmódorvoslás
-        </a>
       </div>
     </div>
   </section>
