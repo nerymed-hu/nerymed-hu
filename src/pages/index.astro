@@ -138,9 +138,9 @@ const services = [
   <!-- "Kiknek ajánljuk?" — overlapping card -->
   <div class="container mx-auto px-4 relative z-10 -mt-10 md:-mt-16 mb-0">
     <div class="bg-white rounded-xl shadow-xl overflow-hidden">
-      <div class="grid grid-cols-1 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-gray-100">
-        <div class="p-6 md:p-8">
-          <h3 class="text-2xl md:text-3xl font-semibold text-blue-800 leading-tight mb-3">
+      <div class="grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr_1fr] divide-y md:divide-y-0 md:divide-x divide-gray-100">
+        <div class="p-8 md:p-10">
+          <h3 class="text-3xl md:text-4xl font-bold text-blue-800 leading-tight mb-4">
             Kiknek ajánljuk?
           </h3>
           <p class="text-gray-500 text-sm leading-relaxed">
@@ -192,8 +192,12 @@ const services = [
           <div class="relative w-72 h-72 lg:w-80 lg:h-80">
             <!-- Stethoscope icon top-right -->
             <div class="absolute -top-3 -right-3 w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center z-10 shadow-lg">
-              <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9 3H7a2 2 0 00-2 2v4a6 6 0 006 6 6 6 0 006-6V5a2 2 0 00-2-2h-2M9 3a1 1 0 000 2h6a1 1 0 000-2M9 3h6m-3 13v3m0 0a2 2 0 104 0 2 2 0 00-4 0z" />
+              <!-- proper stethoscope icon -->
+              <svg class="w-7 h-7 text-white" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8 C16 8 12 8 12 14 L12 28 C12 36 20 42 28 42 C36 42 44 36 44 28 L44 14 C44 8 40 8 40 8" />
+                <path d="M16 8 L40 8" />
+                <path d="M28 42 L28 50 C28 56 34 60 40 56 C44 53 44 48 44 48" />
+                <circle cx="46" cy="46" r="4" fill="currentColor" stroke="none"/>
               </svg>
             </div>
             <!-- Circular photo -->
@@ -202,8 +206,8 @@ const services = [
               alt="Dr. Nery Klaudia Krisztina"
               class="w-full h-full object-cover object-top rounded-full shadow-2xl border-4 border-white"
             />
-            <!-- 15+ badge bottom-right -->
-            <div class="absolute -bottom-4 -right-4 w-28 h-28 bg-blue-600 rounded-full flex flex-col items-center justify-center text-white shadow-xl z-10">
+            <!-- 15+ badge bottom-LEFT -->
+            <div class="absolute -bottom-4 -left-4 w-28 h-28 bg-blue-600 rounded-full flex flex-col items-center justify-center text-white shadow-xl z-10">
               <span class="text-3xl font-bold leading-none">15+</span>
               <span class="text-xs font-semibold mt-1 text-center leading-tight">Év<br/>Tapasztalat</span>
             </div>
