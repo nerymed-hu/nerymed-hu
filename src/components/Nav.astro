@@ -21,7 +21,7 @@ const current = Astro.url.pathname;
   {navLinks.map(link => (
     link.children ? (
       <div class="relative group">
-        <button class="flex items-center gap-1 text-gray-700 hover:text-blue-700 font-semibold text-base transition-colors">
+        <button class="flex items-center gap-1 text-blue-900 hover:text-blue-700 font-semibold text-base transition-colors">
           {link.label}
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -33,7 +33,7 @@ const current = Astro.url.pathname;
               href={child.href}
               class:list={[
                 'block px-4 py-2 text-sm hover:bg-blue-50 hover:text-blue-700 transition-colors',
-                current.startsWith(child.href) ? 'text-blue-700 font-medium' : 'text-gray-700',
+                current.startsWith(child.href) ? 'text-blue-700 font-medium' : 'text-blue-900',
               ]}
             >
               {child.label}
@@ -46,7 +46,7 @@ const current = Astro.url.pathname;
         href={link.href}
         class:list={[
           'font-semibold text-base transition-colors hover:text-blue-700',
-          current === link.href || current.startsWith(link.href + '/') ? 'text-blue-700' : 'text-gray-700',
+          current === link.href || current.startsWith(link.href + '/') ? 'text-blue-700' : 'text-blue-900',
         ]}
       >
         {link.label}
@@ -63,13 +63,13 @@ const current = Astro.url.pathname;
         <div>
           <span class="block px-2 py-1 text-xs font-semibold uppercase tracking-wider text-gray-400">{link.label}</span>
           {link.children.map(child => (
-            <a href={child.href} class="block px-4 py-2 text-gray-700 hover:text-blue-700 hover:bg-blue-50 rounded transition-colors">
+            <a href={child.href} class="block px-4 py-2 text-blue-900 hover:text-blue-700 hover:bg-blue-50 rounded transition-colors">
               {child.label}
             </a>
           ))}
         </div>
       ) : (
-        <a href={link.href} class="block px-2 py-2 text-gray-700 hover:text-blue-700 font-medium transition-colors">
+        <a href={link.href} class="block px-2 py-2 text-blue-900 hover:text-blue-700 font-medium transition-colors">
           {link.label}
         </a>
       )

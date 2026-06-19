@@ -37,6 +37,28 @@ const ogImageURL = new URL(ogImage, Astro.site ?? 'https://nerymed.hu');
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <title>{title} | NeryMed</title>
+    <style>
+      @font-face {
+        font-family: 'elementskit';
+        src: url('/fonts/elementskit.woff') format('woff');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+      .ekit-icon {
+        font-family: 'elementskit' !important;
+        font-style: normal;
+        font-weight: 400;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .ekit-icon-heart-pulse::before { content: "\e876"; }
+      .ekit-icon-graph-2::before     { content: "\ec05"; }
+      .ekit-icon-star::before        { content: "\eac1"; }
+    </style>
   </head>
   <body class="bg-white text-gray-800 font-sans">
     <slot />
