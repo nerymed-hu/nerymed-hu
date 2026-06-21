@@ -87,20 +87,19 @@ const timeline = [
           </div>
         </div>
 
-        <!-- Right: two stacked images -->
-        <div class="lg:w-1/2 flex flex-col">
-          <div class="flex-1 overflow-hidden">
-            <img
-              src="/images/hero-doctor.jpg"
-              alt="Orvosi rendelő"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="flex-1 overflow-hidden">
+        <!-- Right: background image with portrait overlaid bottom-left -->
+        <div class="lg:w-1/2 relative min-h-[400px] lg:min-h-[580px]">
+          <img
+            src="/images/footer-bg.png"
+            alt=""
+            class="absolute inset-0 w-full h-full object-cover"
+          />
+          <!-- Portrait: bottom-left, white border -->
+          <div class="absolute bottom-0 left-8 lg:left-12">
             <img
               src="/images/dr-nery-klaudia.jpg"
               alt="Dr. Nery Klaudia Krisztina"
-              class="w-full h-full object-cover object-top"
+              class="h-64 lg:h-80 w-auto object-cover object-top border-[10px] border-white shadow-xl"
             />
           </div>
         </div>
