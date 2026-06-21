@@ -324,25 +324,26 @@ const services = [
   <!-- További szolgáltatásaink -->
   <section class="py-20 bg-white">
     <div class="container mx-auto px-4 max-w-5xl">
-      <div class="text-center mb-12">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-12">
         <h2 class="text-3xl lg:text-4xl font-semibold text-blue-900">További szolgáltatásaink</h2>
+        <p class="text-gray-500 text-sm md:max-w-xs leading-relaxed">Ismerje meg bővebben a további szolgáltatásainkat, és tegyen az egészségéért még ma!</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         {[
           {
-            icon: 'ekit-icon ekit-icon-heart-pulse',
+            icon: 'ekit-icon ekit-icon-profile',
             title: 'Foglalkozás-egészségügy',
             desc: 'Munkahelyi egészségmegőrzés és biztonsági támogatásokat nyújt.',
             href: '/foglalkozas-egeszsegugy',
           },
           {
-            icon: 'ekit-icon ekit-icon-vegetables',
+            icon: 'ekit-icon ekit-icon-physiotherapy',
             title: 'Insumed',
             desc: 'Orvosi diétaterápia túlsúlyosoknak, cukorbetegeknek, 65+, hiányos tápláltságúaknak, vegánoknak, intoleranciával küzdőknek, inzulinrezisztenseknek, PCOS esetén, sportolóknak.',
             href: '/insumed',
           },
           {
-            icon: 'ekit-icon ekit-icon-heart',
+            icon: 'ekit-icon ekit-icon-doctor',
             title: 'Háziorvos',
             desc: 'Általános egészségügyi problémák kezelése és gondozása.',
             href: '/haziorvos',
