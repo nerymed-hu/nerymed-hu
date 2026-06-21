@@ -31,7 +31,7 @@ app.post('/api/contact', async (req, res) => {
     return res.status(400).json({ error: 'Érvénytelen e-mail cím' });
   }
 
-  const to = process.env.CONTACT_TO || 'nerymedkft@gmail.com';
+  const to = process.env.CONTACT_TO || 'dr.nery.klaudia@nerymed.hu';
   const from = process.env.CONTACT_FROM || 'noreply@nerymed.hu';
 
   const companyLine = company ? `\nCég: ${company}` : '';

@@ -4,35 +4,36 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import Testimonials from '../../components/Testimonials.astro';
 import ContactForm from '../../components/ContactForm.astro';
+import { pillarSvgs } from '../../data/lifestylePillarSvgs';
 
 const pillars = [
   {
-    icon: '🥗',
+    svg: pillarSvgs[0],
     title: 'Táplálkozás',
     desc: 'Az étel valódi gyógyszer lehet, ha megfelelően választjuk meg. Az étrendnek főként teljes értékű növényi alapú ételekre kell épülnie, amelyek gazdagok rostokban és tápanyagokban, mint például a zöldségek, gyümölcsök, hüvelyesek, teljes kiőrlésű gabonák, csonthéjasok és magvak.',
   },
   {
-    icon: '🏃',
+    svg: pillarSvgs[1],
     title: 'Testmozgás',
     desc: 'A rendszeres fizikai aktivitás elengedhetetlen az egészséges életmódhoz. Nem kell feltétlenül edzőterembe járni – egy séta, kertészkedés vagy napi tornagyakorlatok is elegendők lehetnek ahhoz, hogy javítsák az egészségi állapotot és fenntartsák a jó közérzetet.',
   },
   {
-    icon: '🚭',
+    svg: pillarSvgs[2],
     title: 'Káros szenvedélyek elhagyása',
     desc: 'A dohányzás és a túlzott alkoholfogyasztás súlyosan károsítja az egészséget. Életmódorvosként segítek a káros szenvedélyek felszámolásában, hiszen ezek elhagyásával jelentősen csökkenthetők a rákos és szív-érrendszeri betegségek kockázatai.',
   },
   {
-    icon: '🧘',
+    svg: pillarSvgs[3],
     title: 'Stresszkezelés',
     desc: 'A stressz nemcsak mentális, hanem fizikai betegségeket is okozhat. Segítek felismerni és kezelni a stressz okozta problémákat, valamint megtanítom a hatékony stresszkezelési technikákat, amelyek hosszú távon javítják az életminőséget.',
   },
   {
-    icon: '😴',
+    svg: pillarSvgs[4],
     title: 'Alvás',
     desc: 'A megfelelő mennyiségű és minőségű alvás nélkülözhetetlen az immunrendszer egészséges működéséhez. Tanácsokat adok arra vonatkozóan, hogyan javítsunk alvási szokásainkon a jobb pihenés érdekében.',
   },
   {
-    icon: '🤝',
+    svg: pillarSvgs[5],
     title: 'Emberi kapcsolatok',
     desc: 'A társas kapcsolatok fenntartása alapvető fontosságú a testi és lelki egészség szempontjából. A megfelelő támogatói hálózat megléte segíti a betegek gyógyulását és javítja az általános közérzetüket.',
   },
@@ -76,7 +77,7 @@ const successStories = [
               </p>
             </div>
             <div class="flex flex-col sm:flex-row gap-3">
-              <a href="#kapcsolat" class="bg-blue-500 hover:bg-blue-400 text-white font-semibold px-7 py-3 rounded-full transition-colors text-center">
+              <a href="#kapcsolat" class="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-7 py-3 rounded-full transition-colors text-center">
                 Foglaljon konzultációs időpontot
               </a>
               <a href="#kapcsolat" class="border border-white/30 text-white hover:bg-white/10 font-medium px-7 py-3 rounded-full transition-colors text-center">
@@ -108,16 +109,16 @@ const successStories = [
           </p>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {pillars.map(({ icon, title, desc }) => (
+          {pillars.map(({ svg, title, desc }) => (
             <div class="bg-white rounded-xl p-7 shadow-[0_0_30px_rgba(0,0,0,0.08)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.12)] transition-shadow border border-gray-50">
-              <div class="text-4xl mb-4">{icon}</div>
+              <span class="block w-14 h-14 mb-4" set:html={svg} aria-hidden="true"></span>
               <h3 class="font-bold text-blue-900 text-lg mb-3">{title}</h3>
               <p class="text-gray-500 text-sm leading-relaxed">{desc}</p>
             </div>
           ))}
         </div>
         <div class="text-center mt-10">
-          <a href="#kapcsolat" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-7 py-3 rounded-lg transition-colors">
+          <a href="#kapcsolat" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold px-7 py-3 rounded-full transition-colors">
             Ajánlatot kérek
           </a>
         </div>
