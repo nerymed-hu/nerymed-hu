@@ -68,12 +68,13 @@ const blogPosts = [
 
     </div>
 
-    <!-- Copyright bar — explicit light bg so image doesn't bleed through -->
-    <div class="border-t border-gray-200 py-5 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-gray-500 bg-white/60">
-      <p>© {year} NeryMed Kft. Minden jog fenntartva.</p>
+    <!-- Copyright bar — dark to match original -->
+    <div class="relative -mx-4 px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs" style="background-color: #0F4469;">
+      <p class="text-gray-300">Copyright © {year} nerymed.hu Minden jog fenntartva.</p>
       <div class="flex gap-4">
-        <a href="/adatvedelem" class="hover:text-orange-500 transition-colors">Adatvédelem</a>
-        <a href="/cookie" class="hover:text-orange-500 transition-colors">Cookie-k</a>
+        <a href="/adatvedelem" class="text-gray-300 hover:text-white transition-colors">Adatkezelési tájékoztató</a>
+        <span class="text-gray-500">|</span>
+        <a href="/cookie" class="text-gray-300 hover:text-white transition-colors">Süti tájékoztató</a>
       </div>
     </div>
   </div>
