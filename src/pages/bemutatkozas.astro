@@ -6,22 +6,22 @@ import ContactForm from '../components/ContactForm.astro';
 
 const specializations = [
   {
-    icon: '🏥',
+    icon: 'ekit-icon ekit-icon-shield',
     title: 'Háziorvosi ellátás',
     desc: 'Több mint egy évtizedes tapasztalattal rendelkezem a háziorvosi ellátás terén, ahol a betegségek megelőzése és kezelése áll a középpontban.',
   },
   {
-    icon: '💉',
+    icon: 'ekit-icon ekit-icon-stethoscope',
     title: 'Diabetológia',
     desc: 'Cukorbetegség kezelése és kontrollálása, valamint személyre szabott tanácsadás a helyes étrend és életmód kialakításához.',
   },
   {
-    icon: '🌿',
+    icon: 'ekit-icon ekit-icon-right-mark',
     title: 'Életmódorvoslás',
     desc: 'Egészséges életmód kialakítása, egyénre szabott étrendtervezéssel és mozgásprogramokkal prevenciós fókusszal.',
   },
   {
-    icon: '🏢',
+    icon: 'ekit-icon ekit-icon-manager',
     title: 'Foglalkozás-egészségügy',
     desc: 'A dolgozók egészségének megőrzése érdekében üzemorvosi vizsgálatok és egészségügyi tanácsadás vállalatok számára.',
   },
@@ -114,7 +114,9 @@ const timeline = [
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {specializations.map(({ icon, title, desc }) => (
             <div class="bg-white rounded-xl p-8 shadow-[0_0_30px_rgba(0,0,0,0.08)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.12)] transition-shadow border border-gray-50">
-              <div class="text-4xl mb-5">{icon}</div>
+              <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-5">
+                <i class={`${icon} text-3xl text-blue-600`} aria-hidden="true"></i>
+              </div>
               <h3 class="font-bold text-blue-900 text-lg mb-3">{title}</h3>
               <p class="text-gray-500 text-sm leading-relaxed">{desc}</p>
             </div>
