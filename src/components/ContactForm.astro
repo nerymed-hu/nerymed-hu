@@ -2,71 +2,78 @@
 ---
 
 <section id="kapcsolat" class="py-16 bg-blue-50">
-  <div class="container mx-auto px-4 max-w-2xl">
-    <h2 class="text-3xl font-bold text-gray-900 mb-2 text-center">Kapcsolat</h2>
-    <p class="text-gray-500 text-center mb-10">Küldjön üzenetet, és hamarosan felvesszük Önnel a kapcsolatot.</p>
+  <div class="container mx-auto px-4 max-w-3xl">
+    <div class="bg-white rounded-xl shadow-sm p-8 md:p-10">
+      <h2 class="text-3xl font-bold text-blue-900 mb-4">Írjon nekem közvetlenül!</h2>
+      <p class="text-gray-600 leading-relaxed mb-8">
+        Amennyiben igénybe venné bármely orvosi szolgáltatásom vagy szeretne bejelentkezni orvosi rendelésre,
+        konzultációra – írjon nekem vagy hívjon a&nbsp;<a href="tel:+36204625517" class="font-bold text-blue-900 hover:text-orange-500 transition-colors">+36 20 462 5517</a>
+        telefonszámon. Kivéve háziorvosi rendelésre a <a href="tel:+3623362291" class="font-bold text-blue-900 hover:text-orange-500 transition-colors">06 23 362-291</a>,
+        vagy <a href="mailto:nerymedkft@gmail.com" class="font-bold text-blue-900 hover:text-orange-500 transition-colors">nerymedkft@gmail.com</a> elérhetőségek bármikor.
+      </p>
 
-    <form id="contact-form" class="flex flex-col gap-5" novalidate>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-        <div class="flex flex-col gap-1">
-          <label for="name" class="text-sm font-medium text-gray-700">Név <span class="text-red-500">*</span></label>
-          <input
-            id="name" name="name" type="text" required autocomplete="name"
-            class="border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
-            placeholder="Kovács János"
-          />
+      <form id="contact-form" class="flex flex-col gap-5" novalidate>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div class="flex flex-col gap-1">
+            <label for="name" class="text-sm font-medium text-gray-700">Név <span class="text-red-500">*</span></label>
+            <input
+              id="name" name="name" type="text" required autocomplete="name"
+              class="border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+              placeholder="Kovács János"
+            />
+          </div>
+          <div class="flex flex-col gap-1">
+            <label for="company" class="text-sm font-medium text-gray-700">Cég neve</label>
+            <input
+              id="company" name="company" type="text" autocomplete="organization"
+              class="border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+              placeholder="Példa Kft."
+            />
+          </div>
         </div>
-        <div class="flex flex-col gap-1">
-          <label for="company" class="text-sm font-medium text-gray-700">Cég neve</label>
-          <input
-            id="company" name="company" type="text" autocomplete="organization"
-            class="border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
-            placeholder="Példa Kft."
-          />
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div class="flex flex-col gap-1">
+            <label for="phone" class="text-sm font-medium text-gray-700">Telefonszám</label>
+            <input
+              id="phone" name="phone" type="tel" autocomplete="tel"
+              class="border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+              placeholder="+36 20 123 4567"
+            />
+          </div>
+          <div class="flex flex-col gap-1">
+            <label for="email" class="text-sm font-medium text-gray-700">E-mail cím <span class="text-red-500">*</span></label>
+            <input
+              id="email" name="email" type="email" required autocomplete="email"
+              class="border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+              placeholder="pelda@email.hu"
+            />
+          </div>
         </div>
-      </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div class="flex flex-col gap-1">
-          <label for="phone" class="text-sm font-medium text-gray-700">Telefonszám</label>
-          <input
-            id="phone" name="phone" type="tel" autocomplete="tel"
-            class="border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
-            placeholder="+36 20 123 4567"
-          />
+          <label for="message" class="text-sm font-medium text-gray-700">Üzenet <span class="text-red-500">*</span></label>
+          <textarea
+            id="message" name="message" required rows="5"
+            class="border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition resize-y"
+            placeholder="Írja le röviden, miben tudunk segíteni..."
+          ></textarea>
         </div>
-        <div class="flex flex-col gap-1">
-          <label for="email" class="text-sm font-medium text-gray-700">E-mail cím <span class="text-red-500">*</span></label>
-          <input
-            id="email" name="email" type="email" required autocomplete="email"
-            class="border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
-            placeholder="pelda@email.hu"
-          />
-        </div>
-      </div>
 
-      <div class="flex flex-col gap-1">
-        <label for="message" class="text-sm font-medium text-gray-700">Üzenet <span class="text-red-500">*</span></label>
-        <textarea
-          id="message" name="message" required rows="5"
-          class="border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition resize-y"
-          placeholder="Írja le röviden, miben tudunk segíteni..."
-        ></textarea>
-      </div>
+        <div id="form-status" class="hidden text-sm rounded-lg px-4 py-3"></div>
 
-      <div id="form-status" class="hidden text-sm rounded-lg px-4 py-3"></div>
-
-      <button
-        type="submit"
-        id="submit-btn"
-        class="inline-flex items-center gap-3 bg-orange-500 hover:bg-blue-900 text-white font-semibold px-10 py-4 rounded-full transition-colors self-start text-base disabled:opacity-60 disabled:cursor-not-allowed"
-      >
-        <svg aria-hidden="true" class="w-5 h-5 shrink-0" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
-          <path d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"/>
-        </svg>
-        Küldés
-      </button>
-    </form>
+        <button
+          type="submit"
+          id="submit-btn"
+          class="inline-flex items-center justify-center gap-3 w-full bg-orange-500 hover:bg-blue-900 text-white font-semibold px-10 py-4 rounded-full transition-colors text-base disabled:opacity-60 disabled:cursor-not-allowed"
+        >
+          <svg aria-hidden="true" class="w-5 h-5 shrink-0" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+            <path d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"/>
+          </svg>
+          Küldés
+        </button>
+      </form>
+    </div>
   </div>
 </section>
 
