@@ -28,12 +28,12 @@ const specializations = [
 ];
 
 const lifestylePillars = [
-  { icon: '🥗', label: 'Táplálkozás' },
-  { icon: '🏃', label: 'Testmozgás' },
-  { icon: '🚭', label: 'Káros szenvedélyek elhagyása' },
-  { icon: '🧘', label: 'Stresszkezelés' },
-  { icon: '😴', label: 'Alvás' },
-  { icon: '🤝', label: 'Emberi kapcsolatok' },
+  { icon: 'ekit-icon ekit-icon-cutlery',      label: 'Táplálkozás' },
+  { icon: 'ekit-icon ekit-icon-physiotherapy', label: 'Testmozgás' },
+  { icon: 'ekit-icon ekit-icon-leaf',          label: 'Káros szenvedélyek elhagyása' },
+  { icon: 'ekit-icon ekit-icon-brain',         label: 'Stresszkezelés' },
+  { icon: 'ekit-icon ekit-icon-moon',          label: 'Alvás' },
+  { icon: 'ekit-icon ekit-icon-friendship',    label: 'Emberi kapcsolatok' },
 ];
 
 const timeline = [
@@ -126,79 +126,89 @@ const timeline = [
     </section>
 
     <!-- Hitvallásom -->
-    <section class="py-20 bg-blue-50">
-      <div class="container mx-auto px-4 max-w-3xl text-center">
-        <h2 class="text-3xl font-bold text-blue-900 mb-4">Hitvallásom az életmódváltás és prevenció</h2>
-        <div class="w-12 h-1 bg-blue-500 mx-auto rounded-full mb-8"></div>
-        <p class="text-gray-600 leading-relaxed text-lg">
-          Meggyőződésem, hogy a hosszú távú egészség titka a személyre szabott életmódváltás.
-          Az egészség megőrzéséhez elengedhetetlen a helyes táplálkozás, a rendszeres mozgás,
-          a káros szenvedélyek elhagyása, az alvás minőségének javítása, jó szociális kapcsolatok
-          kialakítása és a prevenció — amelyekkel felvehetjük a harcot a divatdiéták hatásaival szemben.
-        </p>
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4 max-w-5xl">
+        <div class="flex flex-col lg:flex-row gap-12 items-center">
+          <div class="lg:w-5/12 shrink-0">
+            <img src="/images/hitvallasom.png" alt="Hitvallásom az életmódváltás és prevenció" class="w-full rounded-xl shadow-md object-cover" />
+          </div>
+          <div class="lg:w-7/12">
+            <h2 class="text-3xl font-bold text-blue-900 mb-4">Hitvallásom az életmódváltás és prevenció</h2>
+            <div class="w-12 h-1 bg-blue-500 rounded-full mb-6"></div>
+            <p class="text-gray-600 leading-relaxed text-base">
+              Meggyőződésem, hogy a <strong class="text-gray-800">hosszú távú egészség</strong> titka a <strong class="text-gray-800">személyre szabott életmódváltás</strong>.
+              Az egészség megőrzéséhez elengedhetetlen a <strong class="text-gray-800">helyes táplálkozás</strong>, a
+              <strong class="text-gray-800">rendszeres mozgás</strong>, a káros szenvedélyek elhagyása, alvás minőség javítása, jó szociális
+              kapcsolatok kialakítása, <strong class="text-gray-800">prevenció</strong>, amelyekkel felvehetjük a harcot a divatdiéták hatásaival szemben.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- Egyénre szabott életmódtanácsadás -->
     <section class="py-20 bg-white">
       <div class="container mx-auto px-4 max-w-5xl">
-        <div class="flex flex-col lg:flex-row gap-12 items-start">
-          <div class="lg:w-1/2">
-            <h2 class="text-3xl font-bold text-blue-900 mb-4">Egyénre szabott életmódtanácsadás</h2>
-            <div class="w-12 h-1 bg-blue-500 rounded-full mb-6"></div>
-            <p class="text-gray-600 leading-relaxed mb-8">
-              Szolgáltatásaim magánszemélyek és cégek számára is elérhetők, személyesen vagy online
-              formában. Az életmódtanácsadások során kiemelten foglalkozom az alábbiakkal:
+        <h2 class="text-3xl font-bold text-blue-900 mb-4">Egyénre szabott életmódtanácsadás</h2>
+        <div class="w-12 h-1 bg-blue-500 rounded-full mb-6"></div>
+        <p class="text-gray-600 leading-relaxed mb-8">
+          Szolgáltatásaim <strong class="text-gray-800">magánszemélyek és cégek számára</strong> is elérhetők, személyesen vagy online
+          formában. Az életmódtanácsadások során kiemelten foglalkozom az alábbiakkal:
+        </p>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-10">
+          {lifestylePillars.map(({ icon, label }) => (
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center shrink-0">
+                <i class={`${icon} text-lg text-white`} aria-hidden="true"></i>
+              </div>
+              <span class="text-gray-700 text-sm font-medium">{label}</span>
+            </div>
+          ))}
+        </div>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/eletmodorvoslas/maganszemelyek"
+            class="inline-flex items-center gap-2 bg-orange-500 hover:bg-blue-900 text-white font-semibold px-7 py-3 rounded-full transition-colors">
+            Magánszemélyek <span aria-hidden="true">→</span>
+          </a>
+          <a href="/eletmodorvoslas/cegeknek"
+            class="inline-flex items-center gap-2 bg-orange-500 hover:bg-blue-900 text-white font-semibold px-7 py-3 rounded-full transition-colors">
+            Vállalati megoldások <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Foglalkozás-egészségügy teaser -->
+    <section class="py-20 bg-blue-900">
+      <div class="container mx-auto px-4 max-w-5xl">
+        <div class="flex flex-col lg:flex-row gap-10 items-center">
+          <div class="lg:w-2/3">
+            <h2 class="text-2xl lg:text-3xl font-bold text-white mb-5">Foglalkozás-egészségügy a vállalatok számára</h2>
+            <p class="text-blue-200 leading-relaxed mb-6">
+              Egy jól szervezett foglalkozás-egészségügyi program nemcsak a dolgozók egészségét
+              védi, hanem hosszú távon hozzájárul a vállalat hatékonyságához. Szolgáltatásaim
+              segítik a cégeket abban, hogy megvalósítsák:
             </p>
-            <div class="flex flex-wrap gap-3 mb-10">
-              {lifestylePillars.map(({ icon, label }) => (
-                <div class="flex items-center gap-2 bg-blue-50 text-blue-800 rounded-full px-4 py-2 text-sm font-medium">
-                  <span>{icon}</span>
-                  <span>{label}</span>
-                </div>
+            <ul class="space-y-3 mb-8">
+              {[
+                'Munkavállalók egészségügyi problémáinak megelőzését',
+                'Helyes életmód kialakításának ösztönzését',
+                'Dolgozói elégedettség és jóllét növekedését',
+              ].map(item => (
+                <li class="flex items-start gap-3 text-blue-100 text-sm">
+                  <span class="text-orange-400 mt-0.5 shrink-0">✓</span>
+                  <span>{item}</span>
+                </li>
               ))}
-            </div>
-            <div class="flex flex-col sm:flex-row gap-3">
-              <a
-                href="/eletmodorvoslas/maganszemelyek"
-                class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors text-center"
-              >
-                Magánszemélyek
-              </a>
-              <a
-                href="/eletmodorvoslas/cegeknek"
-                class="border border-blue-300 text-blue-700 hover:bg-blue-50 font-medium px-6 py-3 rounded-lg transition-colors text-center"
-              >
-                Vállalati megoldások
-              </a>
-            </div>
+            </ul>
+            <a href="/foglalkozas-egeszsegugy"
+              class="inline-flex items-center gap-2 bg-orange-500 hover:bg-white hover:text-blue-900 text-white font-semibold px-7 py-3 rounded-full transition-colors">
+              Foglalkozás-egészségügy <span aria-hidden="true">→</span>
+            </a>
           </div>
-          <div class="lg:w-1/2">
-            <div class="bg-blue-900 rounded-2xl p-8 text-white">
-              <h3 class="text-xl font-bold mb-4">Foglalkozás-egészségügy a vállalatok számára</h3>
-              <p class="text-blue-200 leading-relaxed mb-6">
-                Egy jól szervezett foglalkozás-egészségügyi program nemcsak a dolgozók egészségét
-                védi, hanem hosszú távon hozzájárul a vállalat hatékonyságához. Szolgáltatásaim
-                segítik a cégeket abban, hogy megvalósítsák:
-              </p>
-              <ul class="space-y-3 mb-8">
-                {[
-                  'Munkavállalók egészségügyi problémáinak megelőzését',
-                  'Helyes életmód kialakításának ösztönzését',
-                  'Dolgozói elégedettség és jóllét növekedését',
-                ].map(item => (
-                  <li class="flex items-start gap-3 text-blue-100 text-sm">
-                    <span class="text-blue-400 mt-0.5 shrink-0">✓</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <a
-                href="/foglalkozas-egeszsegugy"
-                class="inline-block bg-blue-500 hover:bg-blue-400 text-white font-semibold px-6 py-2.5 rounded-lg transition-colors text-sm"
-              >
-                Foglalkozás-egészségügy →
-              </a>
+          <div class="lg:w-1/3 flex justify-center">
+            <div class="w-32 h-32 bg-blue-800 rounded-full flex items-center justify-center">
+              <i class="ekit-icon ekit-icon-manager text-7xl text-blue-300" aria-hidden="true"></i>
             </div>
           </div>
         </div>

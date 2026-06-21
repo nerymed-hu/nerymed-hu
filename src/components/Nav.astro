@@ -33,7 +33,7 @@ const current = Astro.url.pathname;
               href={child.href}
               class:list={[
                 'block px-4 py-2 text-sm hover:bg-blue-50 hover:text-blue-700 transition-colors',
-                current.startsWith(child.href) ? 'text-blue-700 font-medium' : 'text-blue-900',
+                current.startsWith(child.href) ? 'text-orange-500 font-medium' : 'text-blue-900',
               ]}
             >
               {child.label}
@@ -45,8 +45,8 @@ const current = Astro.url.pathname;
       <a
         href={link.href}
         class:list={[
-          'font-semibold text-base transition-colors hover:text-blue-700',
-          current === link.href || current.startsWith(link.href + '/') ? 'text-blue-700' : 'text-blue-900',
+          'font-semibold text-base transition-colors hover:text-orange-500',
+          current === link.href || current.startsWith(link.href + '/') ? 'text-orange-500' : 'text-blue-900',
         ]}
       >
         {link.label}
