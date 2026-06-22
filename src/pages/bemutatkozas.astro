@@ -56,7 +56,7 @@ const timeline = [
 
     <!-- Hero: white split layout matching original -->
     <section class="bg-white overflow-hidden">
-      <div class="flex flex-col lg:flex-row" style="min-height:620px;">
+      <div class="flex flex-col lg:flex-row" style="min-height:760px;">
 
         <!-- Left: text -->
         <div class="lg:w-1/2 flex flex-col justify-center py-16 px-8 lg:px-16">
@@ -87,21 +87,22 @@ const timeline = [
           </div>
         </div>
 
-        <!-- Right: background image with portrait centered bottom -->
-        <div class="lg:w-1/2 relative min-h-[420px]" style="min-height:420px;">
+        <!-- Right: two bordered images — exact pixel sizes from original measurement -->
+        <!-- Desk: 505×677px, right-0 top-0 -->
+        <!-- Klaudia: 320×392px, left-0, top:305px (bottom extends 20px below desk bottom: 305+392=697, desk bottom=677) -->
+        <div class="lg:w-1/2 relative">
           <img
             src="/images/footer-bg.png"
             alt=""
-            class="absolute inset-0 w-full h-full object-cover object-center"
+            class="absolute top-0 object-cover shadow-lg"
+            style="width:505px; height:677px; left:60px; top:60px;"
           />
-          <!-- Portrait: centered horizontally, pinned to bottom, large, white border -->
-          <div class="absolute bottom-0 left-1/2 -translate-x-1/2">
-            <img
-              src="/images/klaudia-uj.jpg"
-              alt="Dr. Nery Klaudia Krisztina"
-              class="h-[480px] lg:h-[560px] w-auto object-cover object-top border-[10px] border-white shadow-xl"
-            />
-          </div>
+          <img
+            src="/images/klaudia-uj.jpg"
+            alt="Dr. Nery Klaudia Krisztina"
+            class="absolute left-0 object-cover object-top border-[10px] border-white shadow-xl z-10"
+            style="width:320px; height:392px; top:365px;"
+          />
         </div>
 
       </div>
@@ -183,15 +184,15 @@ const timeline = [
     </section>
 
     <!-- Foglalkozás-egészségügy teaser -->
-    <section class="py-20 bg-blue-900">
+    <section class="py-20 bg-white">
       <div class="container mx-auto px-4 max-w-5xl">
-        <div class="flex flex-col lg:flex-row gap-10 items-center">
-          <div class="lg:w-2/3">
-            <h2 class="text-2xl lg:text-3xl font-bold text-white mb-5">Foglalkozás-egészségügy a vállalatok számára</h2>
-            <p class="text-blue-200 leading-relaxed mb-6">
+        <div class="flex flex-col lg:flex-row gap-12 items-center">
+          <div class="lg:w-3/5">
+            <h2 class="text-2xl lg:text-3xl font-bold text-blue-900 mb-5">Foglalkozás-egészségügy a vállalatok számára</h2>
+            <p class="text-gray-600 leading-relaxed mb-6">
               Egy jól szervezett foglalkozás-egészségügyi program nemcsak a dolgozók egészségét
-              védi, hanem hosszú távon hozzájárul a vállalat hatékonyságához. Szolgáltatásaim
-              segítik a cégeket abban, hogy megvalósítsák:
+              védi, hanem hosszú távon hozzájárul a <strong>vállalat hatékonyságához</strong>.
+              Szolgáltatásaim segítik a cégeket abban, hogy megvalósítsák:
             </p>
             <ul class="space-y-3 mb-8">
               {[
@@ -199,21 +200,23 @@ const timeline = [
                 'Helyes életmód kialakításának ösztönzését',
                 'Dolgozói elégedettség és jóllét növekedését',
               ].map(item => (
-                <li class="flex items-start gap-3 text-blue-100 text-sm">
-                  <span class="text-orange-400 mt-0.5 shrink-0">✓</span>
+                <li class="flex items-start gap-3 text-gray-600 text-sm">
+                  <span class="text-orange-500 mt-0.5 shrink-0 font-bold">✓</span>
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
             <a href="/foglalkozas-egeszsegugy"
-              class="inline-flex items-center gap-2 bg-orange-500 hover:bg-white hover:text-blue-900 text-white font-semibold px-7 py-3 rounded-full transition-colors">
+              class="inline-flex items-center gap-2 bg-orange-500 hover:bg-blue-900 text-white font-semibold px-7 py-3 rounded-full transition-colors">
               Foglalkozás-egészségügy <span aria-hidden="true">→</span>
             </a>
           </div>
-          <div class="lg:w-1/3 flex justify-center">
-            <div class="w-32 h-32 bg-blue-800 rounded-full flex items-center justify-center">
-              <i class="ekit-icon ekit-icon-manager text-7xl text-blue-300" aria-hidden="true"></i>
-            </div>
+          <div class="lg:w-2/5 flex justify-center">
+            <img
+              src="/images/foglalkozas-teaser.png"
+              alt="Foglalkozás-egészségügyi program"
+              class="w-full max-w-[320px] object-cover shadow-lg"
+            />
           </div>
         </div>
       </div>
