@@ -20,7 +20,8 @@ jobs:
           script: |
             set -e
             cd /srv/opt/www/kecskemethy.hu/nerymed.kecskemethy.hu
-            git pull origin main
+            git fetch origin main
+            git reset --hard origin/main
             npm run build
             find dist -type d -exec chmod 755 {} \;
             find dist -type f -exec chmod 644 {} \;
