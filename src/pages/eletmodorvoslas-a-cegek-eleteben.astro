@@ -45,14 +45,6 @@ const statBullets = [
   'Az egészségprogramokat előtérbe helyező vállalatok jobban teljesítenek (ROI 235% vs. S&P500 159%)!',
 ];
 
-const services = [
-  'Személyre szabott étrendi tanácsadás',
-  'Mozgásprogramok tervezése',
-  'Stresszkezelési módszerek',
-  'Alvásminőség javítása',
-  'Káros szenvedélyek kezelése',
-  'Támogató kapcsolatok építése',
-];
 ---
 
 <BaseLayout
@@ -167,14 +159,7 @@ const services = [
                 </li>
               ))}
             </ul>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
-              {services.map(s => (
-                <div class="flex items-center gap-2 text-gray-600 text-sm">
-                  <span class="text-blue-600 font-bold shrink-0">✓</span>
-                  <span>{s}</span>
-                </div>
-              ))}
-            </div>
+
             <p class="text-gray-600 leading-relaxed mb-8">
               Az életmódorvoslás alapelveinek támogatása tehát nemcsak a dolgozók egészségét, hanem
               a vállalati sikerességet is erősíti, így mindenképp érdemes invesztálni a munkavállalók
