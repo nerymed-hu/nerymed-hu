@@ -25,12 +25,12 @@ const pillars = [
   {
     svg: pillarSvgs[3],
     title: 'Stresszkezelés',
-    desc: 'A stressz nemcsak mentális, hanem fizikai betegségeket is okozhat. Segítek felismerni és kezelni a stressz okozta problémákat, valamint megtanítom a hatékony stresszkezelési technikákat, amelyek hosszú távon javítják az életminőséget.',
+    desc: 'A stressz nemcsak mentális, hanem fizikai betegségeket is okozhat. Dr. Nery Klaudia segít felismerni és kezelni a stressz okozta problémákat, valamint megtanítja a hatékony stresszkezelési technikákat, amelyek hosszú távon javítják az életminőséget.',
   },
   {
     svg: pillarSvgs[4],
     title: 'Alvás',
-    desc: 'A megfelelő mennyiségű és minőségű alvás nélkülözhetetlen az immunrendszer egészséges működéséhez. Tanácsokat adok arra vonatkozóan, hogyan javítsunk alvási szokásainkon a jobb pihenés érdekében.',
+    desc: 'A megfelelő mennyiségű és minőségű alvás nélkülözhetetlen az immunrendszer egészséges működéséhez. Dr. Nery Klaudia tanácsokat ad arra vonatkozóan, hogyan javítsunk alvási szokásainkon a jobb pihenés érdekében.',
   },
   {
     svg: pillarSvgs[5],
@@ -58,35 +58,40 @@ const successStories = [
 
   <main>
 
-    <!-- Hero -->
+    <!-- Hero: image left, text right -->
     <section class="bg-white overflow-hidden">
       <div class="container mx-auto px-4 max-w-[1200px]">
         <div class="flex flex-col lg:flex-row items-center">
 
-          <div class="lg:w-1/2 py-20 lg:pr-12">
-            <p class="text-orange-500 font-semibold text-sm uppercase tracking-widest mb-3">Longevity programok az egészségért és a jóllétért</p>
+          <!-- Image – left on desktop, bottom on mobile -->
+          <div class="lg:w-1/2 flex justify-start items-end pt-10 lg:pt-0 order-2 lg:order-1">
+            <img
+              src="/images/klaudia-uj-2.jpg"
+              alt="Dr. Nery Klaudia Krisztina – életmódorvoslás magánszemélyeknek"
+              class="h-[420px] lg:h-[560px] w-auto object-cover object-top rounded-t-2xl shadow-2xl"
+            />
+          </div>
+
+          <!-- Text – right on desktop, top on mobile -->
+          <div class="lg:w-1/2 py-20 lg:pl-12 order-1 lg:order-2">
             <h1 class="text-4xl lg:text-5xl font-bold text-blue-900 leading-tight mb-6">
               Életmódorvoslás<br />az egyének életében
             </h1>
+            <p class="text-gray-500 font-semibold mb-4">Longevity programok az egészségért és a jóllétért</p>
             <p class="text-gray-600 leading-relaxed mb-4">
-              Tudta? Az életmódorvoslás egy olyan tudományosan megalapozott módszer, amely az egészségtelen
-              szokásokat pozitív életmódbeli változtatásokkal helyettesíti. Célja nemcsak a betegségek
-              megelőzése, hanem azok kezelése és akár visszafordítása is.
+              Tudta? Az életmódorvoslás egy olyan tudományosan megalapozott módszer, amely az
+              egészségtelen szokásokat pozitív életmódbeli változtatásokkal helyettesíti. Célja
+              nemcsak a betegségek megelőzése, hanem azok kezelése és akár visszafordítása is.
+              Hiszem, hogy az életmódorvoslás hatékonyan támogatja az egészség megőrzését és
+              a krónikus betegségek kezelését, mint például a cukorbetegség, szív- és érrendszeri
+              betegségek vagy bizonyos autoimmun állapotok.
             </p>
             <p class="text-gray-600 leading-relaxed mb-8">
               Ismerje meg az életmódorvoslás előnyeit! Foglaljon konzultációs időpontot még ma!
             </p>
             <a href="#kapcsolat" class="inline-flex items-center gap-2 bg-orange-500 hover:bg-blue-900 text-white font-semibold px-7 py-3 rounded-full transition-colors">
-              Foglaljon konzultációs időpontot <span aria-hidden="true">→</span>
+              Kapcsolat <span aria-hidden="true">→</span>
             </a>
-          </div>
-
-          <div class="lg:w-1/2 flex justify-end items-end pt-10 lg:pt-0">
-            <img
-              src="/images/dr-nery-maganszemelyek.jpg"
-              alt="Dr. Nery Klaudia Krisztina – életmódorvoslás magánszemélyeknek"
-              class="h-[420px] lg:h-[560px] w-auto object-cover object-top rounded-t-2xl shadow-2xl"
-            />
           </div>
 
         </div>
@@ -126,7 +131,7 @@ const successStories = [
         <h2 class="text-3xl lg:text-4xl font-bold text-blue-900 mb-6">
           A longevity koncepciója az orvostudományban, a táplálkozástudományban és az életmódkutatásban
         </h2>
-        <p class="text-gray-600 leading-relaxed mb-4">
+        <p class="text-gray-600 leading-relaxed mb-10">
           A longevity, vagyis a hosszú és egészséges élet titka, az életmód tudatos alakításában rejlik.
           A tudományos kutatások egyre inkább igazolják, hogy a megfelelő táplálkozás, a rendszeres
           testmozgás és a stresszkezelési technikák kulcsfontosságúak a minőségi öregedés szempontjából.
@@ -135,9 +140,9 @@ const successStories = [
           és a mentális egészség megőrzése mind hozzájárulnak ahhoz, hogy az időskor ne a leépülés,
           hanem a vitalitás időszaka legyen.
         </p>
-        <div class="mt-10 text-center">
+        <div class="text-center">
           <img
-            src="/images/hitvallasom.png"
+            src="/images/Hitvallasom-az-eletmodvaltas-es-prevencio.png"
             alt="Dr. Nery Klaudia Krisztina hitvallása az életmódváltás és prevenció"
             class="inline-block rounded-2xl shadow-lg max-h-[500px] w-auto object-cover"
           />
@@ -150,12 +155,10 @@ const successStories = [
       <div class="container mx-auto px-4 max-w-[1200px] text-center">
         <h2 class="text-3xl font-bold mb-4">Miért fontos az életmódorvoslás?</h2>
         <div class="w-12 h-1 bg-blue-400 mx-auto rounded-full mb-8"></div>
-        <p class="text-blue-100 leading-relaxed text-lg mb-4">
+        <p class="text-blue-100 leading-relaxed text-lg mb-8 max-w-3xl mx-auto">
           Az életmódorvoslás célja az, hogy minden egyén kezébe vegye az egészsége irányítását,
           és tartós változtatásokat vezessen be a mindennapi életében. A megfelelő életmód támogatja
           a szervezet öngyógyító mechanizmusait, és megelőzi a súlyos betegségek kialakulását.
-        </p>
-        <p class="text-blue-200 leading-relaxed mb-10">
           Többéves szakmai tapasztalattal a hátam mögött segíthetek Önnek is az egészséges életmód
           kialakításában, amely hosszú távon biztosítja a jóllétet és az egészség fenntartását.
         </p>
@@ -170,8 +173,7 @@ const successStories = [
       <div class="container mx-auto px-4 max-w-[1200px]">
         <div class="text-center mb-12">
           <h2 class="text-3xl lg:text-4xl font-bold text-blue-900 mb-3">Eredmények</h2>
-          <div class="w-12 h-1 bg-blue-500 mx-auto rounded-full mb-4"></div>
-          <p class="text-gray-500 text-lg">Valós eredmények és sikertörténetek</p>
+          <div class="w-12 h-1 bg-blue-500 mx-auto rounded-full"></div>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {successStories.map(({ slug, title }) => (
