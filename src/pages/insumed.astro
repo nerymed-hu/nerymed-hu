@@ -263,13 +263,19 @@ const faqs = [
       </div>
     </section>
 
-    <!-- A terápia fő lépései -->
-    <section class="py-20 bg-[#F6FBFF]">
+    <!-- A terápia fő lépései: dark heading banner -->
+    <section class="py-14" style="background-color: #363636;">
+      <div class="container mx-auto px-4 max-w-[1200px] text-center">
+        <h2 class="text-3xl lg:text-4xl font-bold text-white">A terápia fő lépései</h2>
+      </div>
+    </section>
+
+    <!-- Step cards: white bg -->
+    <section class="py-20 bg-white">
       <div class="container mx-auto px-4 max-w-[1200px]">
-        <h2 class="text-3xl lg:text-4xl font-bold text-blue-900 mb-12 text-center">A terápia fő lépései</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           {steps.map(({ num, title, desc }) => (
-            <div class="bg-white rounded-xl p-8 shadow-sm border border-blue-50 hover:shadow-md transition-shadow">
+            <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
               <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg mb-5 shrink-0">
                 {num}
               </div>
