@@ -102,8 +102,8 @@ const legislation = [
 
           <div class="lg:w-1/2 flex justify-end items-end pt-10 lg:pt-0">
             <img
-              src="/images/foglalkozas-hero.png"
-              alt="Foglalkozás-egészségügyi vizsgálat"
+              src="/images/klaudia-uj.jpg"
+              alt="Dr. Nery Klaudia Krisztina – foglalkozás-egészségügy"
               class="h-[420px] lg:h-[560px] w-auto object-cover object-top rounded-t-2xl shadow-2xl"
             />
           </div>
@@ -146,6 +146,17 @@ const legislation = [
       </div>
     </section>
 
+    <!-- Alkalmassági kép -->
+    <section class="py-10 bg-blue-50">
+      <div class="container mx-auto px-4 max-w-[1200px]">
+        <img
+          src="/images/foglalkozas-egeszsgeugy-alkalmassagi.png"
+          alt="Foglalkozás-egészségügyi alkalmassági vizsgálat"
+          class="w-full rounded-2xl shadow-md"
+        />
+      </div>
+    </section>
+
     <!-- Exam types -->
     <section class="py-20 bg-white">
       <div class="container mx-auto px-4 max-w-[1200px]">
@@ -180,7 +191,7 @@ const legislation = [
               A foglalkozás-egészségügyi szolgáltatásunk további feladatokat is ellát, amelyek segítik
               a munkáltatókat a biztonságos és egészséges munkakörnyezet fenntartásában.
             </p>
-            <ul class="space-y-4">
+            <ul class="space-y-4 mb-8">
               {additionalServices.map(item => (
                 <li class="flex items-start gap-3 text-blue-100 text-sm">
                   <span class="text-blue-400 mt-0.5 shrink-0">✓</span>
@@ -188,6 +199,9 @@ const legislation = [
                 </li>
               ))}
             </ul>
+            <a href="#kapcsolat" class="inline-flex items-center gap-2 bg-orange-500 hover:bg-blue-900 text-white font-semibold px-7 py-3 rounded-full transition-colors">
+              Tekintse meg aktuális árlistánkat <span aria-hidden="true">→</span>
+            </a>
           </div>
           <div class="lg:w-1/2">
             <div class="bg-white/10 rounded-2xl p-8">
@@ -253,6 +267,21 @@ const legislation = [
           <a href="#kapcsolat" class="inline-block bg-orange-500 hover:bg-blue-900 text-white font-semibold px-7 py-3 rounded-full transition-colors">
             Foglaljon időpontot még ma!
           </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Akik már bizalmat szavaztak -->
+    <section class="py-16 bg-blue-50">
+      <div class="container mx-auto px-4 max-w-[1200px]">
+        <h2 class="text-2xl font-bold text-blue-900 text-center mb-10">Akik már bizalmat szavaztak</h2>
+        <div class="flex flex-wrap justify-center items-center gap-8">
+          <img src="/images/flashnetwork_logo-1.png" alt="Flash Network" class="h-10 object-contain grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100" />
+          <img src="/images/mundimed.jpg" alt="Mundimed" class="h-10 object-contain grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100" />
+          <img src="/images/magnolia_logo_vector_lgrey-2-scaled-1.jpg" alt="Magnolia" class="h-10 object-contain grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100" />
+          <img src="/images/compo-logo.png" alt="Compo" class="h-10 object-contain grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100" />
+          <img src="/images/pick-logo.png" alt="Pick" class="h-10 object-contain grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100" />
+          <img src="/images/MK-maganvervetel.png" alt="MK Magánvétel" class="h-10 object-contain grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100" />
         </div>
       </div>
     </section>
