@@ -114,9 +114,9 @@ const timeline = [
         <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">Specializációk</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {specializations.map(({ icon, title, desc }) => (
-            <div class="bg-white rounded-xl p-8 shadow-[0_0_30px_rgba(0,0,0,0.08)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.12)] transition-shadow border border-gray-50">
-              <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-5">
-                <i class={`${icon} text-3xl text-blue-600`} aria-hidden="true"></i>
+            <div class="bg-white rounded-xl p-8 shadow-[0_0_30px_rgba(0,0,0,0.08)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.12)] transition-shadow border border-gray-50 text-center">
+              <div class="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center mb-5 mx-auto">
+                <i class={`${icon} text-4xl text-blue-600`} aria-hidden="true"></i>
               </div>
               <h3 class="font-bold text-blue-900 text-lg mb-3">{title}</h3>
               <p class="text-gray-500 text-sm leading-relaxed">{desc}</p>
