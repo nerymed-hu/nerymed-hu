@@ -56,7 +56,7 @@ const timeline = [
 
     <!-- Hero: white split layout matching original -->
     <section class="bg-white overflow-hidden">
-      <div class="flex flex-col lg:flex-row max-w-[1200px] mx-auto w-full items-stretch">
+      <div class="flex flex-col lg:flex-row max-w-[1200px] mx-auto w-full" style="min-height:760px;">
 
         <!-- Left: text -->
         <div class="lg:w-1/2 flex flex-col justify-center py-16 px-8 lg:px-16">
@@ -87,12 +87,21 @@ const timeline = [
           </div>
         </div>
 
-        <!-- Right: hero portrait from WP original -->
-        <div class="lg:w-1/2 flex items-end justify-center lg:justify-end">
+        <!-- Right: two bordered images — exact pixel sizes from original measurement -->
+        <!-- Desk: 505×677px, right-0 top-0 -->
+        <!-- Klaudia: 320×392px, left-0, top:305px (bottom extends 20px below desk bottom: 305+392=697, desk bottom=677) -->
+        <div class="lg:w-1/2 relative">
           <img
-            src="/images/Nevtelen-terv-15-1-1.png"
+            src="/images/footer-bg.png"
+            alt=""
+            class="absolute top-0 object-cover shadow-lg"
+            style="width:505px; height:677px; left:60px; top:60px;"
+          />
+          <img
+            src="/images/klaudia-uj.jpg"
             alt="Dr. Nery Klaudia Krisztina"
-            class="w-full max-w-[560px] object-cover object-top"
+            class="absolute left-0 object-cover object-top border-[10px] border-white shadow-xl z-10"
+            style="width:320px; height:392px; top:365px;"
           />
         </div>
 
