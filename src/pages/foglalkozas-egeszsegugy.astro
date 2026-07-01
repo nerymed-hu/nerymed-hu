@@ -36,25 +36,37 @@ const additionalServices = [
 
 const categories = [
   {
-    label: 'A',
-    title: '"A" kategória',
-    desc: 'A bányászat, kohászat fizikai munkakörei; rákkeltőkkel exponáltak; sugárzó anyagokkal, állatkísérletes munkakörben foglalkoztatottak; korkedvezményre jogosító munkakörben foglalkoztatottak; vasúti, légi és vízi közlekedésben dolgozók.',
-  },
-  {
-    label: 'B',
     title: '"B" kategória',
-    desc: 'Mezőgazdaság, vadgazdálkodás, erdőgazdálkodás, építőipar, élelmiszer- és italgyártás, textil-, ruházati-, bőripar, fafeldolgozás, vegyipar, gumi- és műanyagipar, szállítás, egészségügyi és szociális ellátás fizikai munkakörei.',
+    items: [
+      'Az alábbi gazdasági tevékenységek fizikai munkaköreinek munkavállalói: mezőgazdaság, vadgazdálkodás, erdőgazdálkodás, építőipar, élelmiszerek és italok gyártása, dohánytermékek gyártása, textíliák gyártása, ruházati termékek gyártása, szőrmekikészítés és festés, bőrkikészítés, bőrtermékek és lábbeli gyártása, fafeldolgozás, kőolaj-feldolgozás és kokszgyártás, vegyi alapanyagok és termékek gyártása, gumi és műanyag termékek gyártása, nemfém ásványi termékek gyártása, nyersanyag visszanyerése hulladékból, szárazföldi és csővezetékes szállítás, vízi szállítás, légi szállítás, bútorgyártás, egészségügyi és szociális ellátás, állategészségügyi tevékenység, nyomdaipari termékek gyártása.',
+      'Azok, akik a „B" foglalkozás-egészségi osztályt indokoló munkakörnyezetben töltik munkaidejük több mint 50%-át.',
+    ],
   },
   {
-    label: 'C',
     title: '"C" kategória',
-    desc: 'Az "A" osztályba nem tartozó ipari, szolgáltató, kutató, illetve számítástechnikai tevékenységgel kapcsolatos fizikai munkakörök, valamint azon nem fizikai munkakörök, amelyek "C" osztályt indokló munkakörnyezetben végzett munkával járnak.',
+    items: [
+      'Az „A" foglalkozás-egészségi osztályba nem tartozó ipari, szolgáltató, kutató, illetve számítástechnikai tevékenységgel kapcsolatos fizikai munkakörei.',
+      'Valamint azon nem fizikai munkakörök munkavállalói, akik a „C" foglalkozás-egészségi osztályt indokoló munkakörnyezetben töltik munkaidejük több mint 50%-át.',
+    ],
   },
   {
-    label: 'D',
     title: '"D" kategória',
-    desc: 'Kutatás-szervezési, kulturális, oktatási és egyéb adminisztratív tevékenységet végző munkavállalók, valamint az "A", "B" és "C" osztályba sorolt tevékenységek nem fizikai munkaköreiben dolgozók.',
+    items: [
+      'A kutatás-szervezési, kulturális, oktatási és egyéb adminisztratív tevékenységet végző munkavállalók.',
+      '„A", „B" és „C" foglalkozás-egészségi osztályba sorolt tevékenységek nem fizikai munkaköreiben dolgozó, más osztályba nem sorolt munkavállalók.',
+    ],
   },
+
+];
+
+const logos = [
+  { src: '/images/damit.png', alt: 'Damit' },
+  { src: '/images/flashnetwork_logo-1.png', alt: 'Flash Network' },
+  { src: '/images/MK-maganvervetel.png', alt: 'MK Magánvétel' },
+  { src: '/images/mundimed.jpg', alt: 'Mundimed' },
+  { src: '/images/magnolia_logo_vector_lgrey-2-scaled-1.jpg', alt: 'Magnolia' },
+  { src: '/images/pick-logo.png', alt: 'Pick' },
+  { src: '/images/compo-logo.png', alt: 'Compo' },
 ];
 ---
 
@@ -217,20 +229,29 @@ const categories = [
       </div>
     </section>
 
-    <!-- Categories grid: white bg -->
+    <!-- Categories accordion: white bg -->
     <section class="py-20 bg-white">
       <div class="container mx-auto px-4 max-w-[1200px]">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
-          {categories.map(({ label, title, desc }) => (
-            <div class="rounded-xl border border-gray-100 p-7 hover:border-blue-200 hover:shadow-md transition-all">
-              <div class="flex items-center gap-4 mb-4">
-                <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center shrink-0">
-                  <span class="text-white font-bold text-xl">{label}</span>
-                </div>
-                <h3 class="font-bold text-blue-900 text-lg">{title}</h3>
+        <div class="rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.1)] overflow-hidden mb-10">
+          {categories.map(({ title, items }, i) => (
+            <details class="group border-b border-gray-200 last:border-b-0">
+              <summary class="flex items-center justify-between px-7 py-5 cursor-pointer list-none select-none hover:bg-gray-50 transition-colors">
+                <span class="font-semibold text-blue-900 text-base">{title}</span>
+                <svg class="w-5 h-5 text-gray-400 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </summary>
+              <div class="px-7 pb-6 pt-2">
+                <ul class="space-y-3">
+                  {items.map(item => (
+                    <li class="flex items-start gap-3 text-gray-600 text-sm leading-relaxed">
+                      <span class="text-blue-500 mt-0.5 shrink-0">•</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <p class="text-gray-500 text-sm leading-relaxed">{desc}</p>
-            </div>
+            </details>
           ))}
         </div>
         <p class="text-gray-600 leading-relaxed mb-6 max-w-3xl">
@@ -245,17 +266,24 @@ const categories = [
       </div>
     </section>
 
-    <!-- Akik már bizalmat szavaztak -->
-    <section class="py-16 bg-blue-50">
+    <!-- Akik már bizalmat szavaztak: logo slider -->
+    <section class="py-20 bg-blue-50">
       <div class="container mx-auto px-4 max-w-[1200px]">
         <h2 class="text-2xl font-bold text-blue-900 text-center mb-10">Akik már bizalmat szavaztak</h2>
-        <div class="flex flex-wrap justify-center items-center gap-8">
-          <img src="/images/flashnetwork_logo-1.png" alt="Flash Network" class="h-10 object-contain grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100" />
-          <img src="/images/mundimed.jpg" alt="Mundimed" class="h-10 object-contain grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100" />
-          <img src="/images/magnolia_logo_vector_lgrey-2-scaled-1.jpg" alt="Magnolia" class="h-10 object-contain grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100" />
-          <img src="/images/compo-logo.png" alt="Compo" class="h-10 object-contain grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100" />
-          <img src="/images/pick-logo.png" alt="Pick" class="h-10 object-contain grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100" />
-          <img src="/images/MK-maganvervetel.png" alt="MK Magánvétel" class="h-10 object-contain grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100" />
+        <div class="relative">
+          <button id="logos-prev" aria-label="Előző" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 z-10 w-11 h-11 bg-orange-500 hover:bg-orange-600 text-white shadow-md flex items-center justify-center transition-colors">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+          </button>
+          <button id="logos-next" aria-label="Következő" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-5 z-10 w-11 h-11 bg-orange-500 hover:bg-orange-600 text-white shadow-md flex items-center justify-center transition-colors">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </button>
+          <div id="logos-slider" class="logos-slider flex gap-8 overflow-x-auto items-center snap-x snap-mandatory scroll-smooth">
+            {logos.map(({ src, alt }) => (
+              <div class="flex-shrink-0 snap-start w-[190px] flex items-center justify-center">
+                <img src={src} alt={alt} class="max-h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100" loading="lazy" />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -266,3 +294,20 @@ const categories = [
 
   <Footer />
 </BaseLayout>
+
+<style>
+  .logos-slider::-webkit-scrollbar { display: none; }
+  .logos-slider { scrollbar-width: none; }
+  details summary::-webkit-details-marker { display: none; }
+</style>
+
+<script>
+  const logoSlider = document.getElementById('logos-slider');
+  const STEP = 218; // logo width (190) + gap (28)
+  document.getElementById('logos-prev')?.addEventListener('click', () => {
+    logoSlider?.scrollBy({ left: -STEP, behavior: 'smooth' });
+  });
+  document.getElementById('logos-next')?.addEventListener('click', () => {
+    logoSlider?.scrollBy({ left: STEP, behavior: 'smooth' });
+  });
+</script>
