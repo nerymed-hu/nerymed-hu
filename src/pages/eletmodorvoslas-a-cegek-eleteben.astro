@@ -38,11 +38,11 @@ const pillars = [
   },
 ];
 
-const stats = [
-  { value: '1,8', unit: 'nap', label: 'kevesebb betegszabadság évente egészségtudatos munkahelyeken' },
-  { value: '25%', unit: '', label: 'magasabb teljesítmény az egészségesen táplálkozó dolgozóknál' },
-  { value: '91%', unit: '', label: 'az egészségtudatos dolgozók motiváltnak érzik magukat' },
-  { value: '235%', unit: 'ROI', label: 'az egészségprogramokat előtérbe helyező vállalatoknál' },
+const statBullets = [
+  'Egészségtudatos munkahelyeken a dolgozók évente átlagosan 1,8 nappal kevesebb betegszabadságot vesznek ki!',
+  'Az egészségesen táplálkozó dolgozók teljesítménye átlagosan 25%-al magasabb!',
+  'Az egészségtudatos dolgozók 91%-a érzi magát motiváltnak a munkájában!',
+  'Az egészségprogramokat előtérbe helyező vállalatok jobban teljesítenek (ROI 235% vs. S&P500 159%)!',
 ];
 
 const services = [
@@ -63,32 +63,35 @@ const services = [
 
   <main>
 
-    <!-- Hero: split layout -->
+    <!-- Hero: image left, text right -->
     <section class="bg-white overflow-hidden">
       <div class="container mx-auto px-4 max-w-[1200px]">
         <div class="flex flex-col lg:flex-row items-center gap-0">
 
-          <div class="lg:w-1/2 flex justify-start items-end pt-10 lg:pt-0 lg:order-1 order-2">
+          <!-- Image – left on desktop, bottom on mobile -->
+          <div class="lg:w-1/2 flex justify-start items-end pt-10 lg:pt-0 order-2 lg:order-1">
             <img
-              src="/images/dr-nery-cegeknek.jpg"
+              src="/images/KLAUDIA-74-3.jpg"
               alt="Dr. Nery Klaudia Krisztina – életmódorvoslás cégeknek"
               class="h-[380px] lg:h-[520px] w-auto object-cover object-top rounded-t-2xl shadow-2xl"
             />
           </div>
 
-          <div class="lg:w-1/2 py-20 lg:pl-12 z-10 lg:order-2 order-1">
-            <p class="text-orange-500 font-semibold text-sm uppercase tracking-widest mb-3">Vállalati wellbeing programok</p>
-            <h1 class="text-4xl lg:text-5xl font-bold text-blue-900 leading-tight mb-6">
+          <!-- Text – right on desktop, top on mobile -->
+          <div class="lg:w-1/2 py-20 lg:pl-12 z-10 order-1 lg:order-2">
+            <h1 class="text-4xl lg:text-5xl font-bold text-blue-900 leading-tight mb-3">
               Életmódorvoslás<br />a cégek életében
             </h1>
+            <p class="text-gray-500 font-semibold mb-5">Vállalati wellbeing programok</p>
             <p class="text-gray-600 leading-relaxed mb-4 max-w-md">
-              Az életmódorvoslás tudományosan megalapozott módszer, amely segít az egészségtelen szokások
-              pozitív, egészséges életmódbeli változtatásokkal történő helyettesítésében.
+              Az életmódorvoslás tudományosan megalapozott módszer, amely segít az egészségtelen
+              szokások pozitív, egészséges életmódbeli változtatásokkal történő helyettesítésében.
+              Nemcsak a betegségek megelőzésében és kezelésében segít, hanem képes akár vissza is
+              fordítani bizonyos krónikus állapotokat.
             </p>
             <p class="text-gray-600 leading-relaxed mb-8 max-w-md">
-              Nemcsak a betegségek megelőzésében és kezelésében segít, hanem képes akár vissza is fordítani
-              bizonyos krónikus állapotokat. <strong>Célom, hogy a vállalatok számára is elérhetővé tegyem az
-              életmódorvoslás előnyeit, így támogatva a dolgozók egészségét és teljesítményét.</strong>
+              <strong>Célom, hogy a vállalatok számára is elérhetővé tegyem az életmódorvoslás
+              előnyeit, így támogatva a dolgozók egészségét és teljesítményét.</strong>
             </p>
             <a
               href="#kapcsolat"
@@ -140,7 +143,7 @@ const services = [
           <!-- Left: image -->
           <div class="lg:w-2/5 shrink-0">
             <img
-              src="/images/hitvallasom.png"
+              src="/images/Hitvallasom-az-eletmodvaltas-es-prevencio.png"
               alt="Hogyan támogatja céged sikerességét az életmódorvoslás"
               class="w-full rounded-2xl shadow-xl object-cover object-top"
             />
@@ -157,18 +160,21 @@ const services = [
             </p>
             <p class="font-bold text-gray-800 mb-5">Íme a top érveink, amiért érdemes befektetni a munkavállalóid egészségébe!</p>
             <ul class="space-y-4 mb-6">
-              {[
-                'Egészségtudatos munkahelyeken a dolgozók évente átlagosan 1,8 nappal kevesebb betegszabadságot vesznek ki!',
-                'Az egészségesen táplálkozó dolgozók teljesítménye átlagosan 25%-al magasabb!',
-                'Az egészségtudatos dolgozók 91%-a érzi magát motiváltnak a munkájában!',
-                'Az egészségprogramokat előtérbe helyező vállalatok jobban teljesítenek (ROI 235% vs. S&P500 159%)!',
-              ].map(item => (
+              {statBullets.map(item => (
                 <li class="flex items-start gap-3">
                   <span class="text-blue-600 font-bold text-xl leading-tight shrink-0">»</span>
                   <span class="text-gray-700 font-bold leading-relaxed">{item}</span>
                 </li>
               ))}
             </ul>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+              {services.map(s => (
+                <div class="flex items-center gap-2 text-gray-600 text-sm">
+                  <span class="text-blue-600 font-bold shrink-0">✓</span>
+                  <span>{s}</span>
+                </div>
+              ))}
+            </div>
             <p class="text-gray-600 leading-relaxed mb-8">
               Az életmódorvoslás alapelveinek támogatása tehát nemcsak a dolgozók egészségét, hanem
               a vállalati sikerességet is erősíti, így mindenképp érdemes invesztálni a munkavállalók
@@ -186,33 +192,31 @@ const services = [
       </div>
     </section>
 
-    <!-- Why important -->
+    <!-- Miért fontos -->
     <section class="py-20 bg-blue-50">
       <div class="container mx-auto px-4 max-w-[1200px]">
-        <div class="flex flex-col lg:flex-row gap-12 items-center">
-          <div class="lg:w-3/5">
-            <h2 class="text-3xl lg:text-4xl font-bold text-blue-900 mb-6">Miért fontos az életmódorvoslás a vállalati életben?</h2>
-            <p class="text-gray-600 leading-relaxed mb-4">
-              Alaptényként gondolom, hogy az egészséges munkavállalók hatékonyabbak, energikusabbak és motiváltabbak.
-              Az életmódorvoslás célja, hogy támogassa a dolgozók egészségét, csökkentse a munkahelyi hiányzásokat, ezáltal növelje a produktivitást.
-            </p>
-            <p class="text-gray-600 leading-relaxed mb-8">
-              Segítségemmel a vállalatok hosszú távon javíthatják a munkavállalóik teljesítményét és jól létét.
-            </p>
-            <a
-              href="#kapcsolat"
-              class="inline-flex items-center gap-2 bg-orange-500 hover:bg-blue-900 text-white font-semibold px-7 py-3 rounded-full transition-colors"
-            >
-              Szeretném támogatni cégem dolgozóit! <span aria-hidden="true">→</span>
-            </a>
-          </div>
-          <div class="lg:w-2/5">
-            <img
-              src="/images/eletmodorvoslas-naptar.png"
-              alt="Életmódorvoslás a vállalati életben"
-              class="w-full rounded-2xl shadow-md"
-            />
-          </div>
+        <h2 class="text-3xl lg:text-4xl font-bold text-blue-900 mb-6">Miért fontos az életmódorvoslás a vállalati életben?</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Alaptényként gondolom, hogy az egészséges munkavállalók hatékonyabbak, energikusabbak
+          és motiváltabbak. Az életmódorvoslás célja, hogy támogassa a dolgozók egészségét,
+          csökkentse a munkahelyi hiányzásokat, ezáltal növelje a produktivitást.
+        </p>
+        <p class="text-gray-600 leading-relaxed mb-8">
+          Segítségemmel a vállalatok hosszú távon javíthatják a munkavállalóik teljesítményét
+          és jól létét.
+        </p>
+        <a
+          href="#kapcsolat"
+          class="inline-flex items-center gap-2 bg-orange-500 hover:bg-blue-900 text-white font-semibold px-7 py-3 rounded-full transition-colors mb-10"
+        >
+          Szeretném támogatni cégem dolgozóit! <span aria-hidden="true">→</span>
+        </a>
+        <div class="mt-10">
+          <img
+            src="/images/eletmodorvoslas-a-vallalati-eletben-naptar-rajz-helyett-1.png"
+            alt="Életmódorvoslás a vállalati életben"
+            class="w-full rounded-2xl shadow-md"
+          />
         </div>
       </div>
     </section>
@@ -221,7 +225,7 @@ const services = [
     <section class="py-12 bg-white">
       <div class="container mx-auto px-4 max-w-[1200px]">
         <img
-          src="/images/eletmodorvoslas-tablazat.png"
+          src="/images/eletmodorvoslashoz-tablazat.png"
           alt="Az életmódorvoslás 6 pillére a wellbeing programok alapjait képezik"
           class="w-full rounded-2xl shadow-md"
         />
@@ -235,9 +239,17 @@ const services = [
           A <strong class="text-blue-900">vállalati wellbeing programok</strong> segítenek fenntartani
           a munkavállalók fizikai és mentális egészségét, miközben csökkentik a stresszt és növelik a teljesítményt.
         </p>
-        <p class="text-gray-600 leading-relaxed">
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Az egészségtudatosabb életmód támogatásával a dolgozók energikusabbá, motiváltabbá válnak,
+          és kevesebb betegszabadságot vesznek ki.
+        </p>
+        <p class="text-gray-600 leading-relaxed mb-4">
           A jól megtervezett programok a prevencióra és az életminőség javítására épülnek, beleértve
           a rendszeres szűréseket, mozgásprogramokat és táplálkozási tanácsadást.
+        </p>
+        <p class="text-gray-600 leading-relaxed">
+          Egy ilyen kezdeményezés nemcsak a dolgozók jól létét javítja, hanem erősíti a csapatkohéziót,
+          és hozzájárul a pozitív munkahelyi kultúra kialakításához.
         </p>
       </div>
     </section>
