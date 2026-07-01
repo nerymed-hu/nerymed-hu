@@ -6,14 +6,22 @@ import Testimonials from '../components/Testimonials.astro';
 import ContactForm from '../components/ContactForm.astro';
 
 const targets = [
-  'Túlsúlyosoknak',
-  'Cukorbetegeknek',
-  'Vegánoknak',
-  'Sportolóknak',
-  '65+ korosztálynak',
-  'Hiányos tápláltságúaknak',
-  'Inzulinrezisztenseknek',
-  'PCOS esetén',
+  {
+    title: 'Fogyni vágyóknak',
+    svg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-white"><path d="M3 6h18M3 12h18M3 18h18"/><circle cx="12" cy="12" r="9"/></svg>`,
+  },
+  {
+    title: 'Cukorbetegeknek',
+    svg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M12 8v4l3 3"/></svg>`,
+  },
+  {
+    title: 'Vegánoknak',
+    svg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-white"><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/><path d="M8 12s1-4 4-4 4 4 4 4"/><path d="M12 16v-4"/></svg>`,
+  },
+  {
+    title: 'Sportolóknak',
+    svg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-white"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>`,
+  },
 ];
 
 const steps = [
@@ -34,18 +42,43 @@ const steps = [
   },
 ];
 
+const results = [
+  { slug: 'az-en-tortenetem-hogyan-talaltam-vissza-onmagamhoz-32-kilo-fogyassal', title: 'Az én történetem – hogyan találtam vissza önmagamhoz 32 kiló fogyással', image: '/images/Rozsa1.jpg' },
+  { slug: 'atvaltozas-40-kg-fogyas-tortenet', title: 'Átváltozás, avagy a fogyásom története', image: '/images/zsuppan-dezso-2.jpg' },
+  { slug: 'koszonolevel-nery-klaudia-doktorno', title: 'Köszönőlevél Dr. Nery Klaudia doktornőnek', image: '/images/4-7.png' },
+  { slug: 'eletmodvaltas-dieta-fogyas', title: 'K. Zsófia életmódváltása: orvosi támogatással a tartós fogyásért', image: '/images/koller-zsofia-1.jpg' },
+  { slug: 'eletmodvaltas-gyerekkel-sikertortenet', title: 'Egy év, egy új élet – életmódváltás orvosi támogatással', image: '/images/1-12.png' },
+  { slug: '40-napos-bojt-sikertortenet', title: 'Sikertörténet: 40 napos húsvéti böjt – közös siker', image: '/images/3-8.png' },
+];
+
 const faqs = [
   {
     q: 'Mi az INSUMED?',
     a: 'Az INSUMED Németországban kifejlesztett, orvosok által felügyelt terápiás módszer, amely túlsúlyosoknak, cukorbetegeknek, hiányos tápláltsági állapotúaknak, vegánoknak és sportolóknak nyújt hatékony támogatást. A program alapja a rendszeres BIA-mérés.',
   },
   {
+    q: 'Mi az INSUMED diétaterápia célja, és kiknek ajánljuk?',
+    a: 'Túlsúllyal küzd? Magas a vércukorszintje? Sok diétát kipróbált már, de nem sikerült tartósan lefogynia? Állandó fáradtság, gyenge izomzat, étvágyproblémák gyötrik? Az INSUMED diétaterápia éppen Önnek szól! A terápia célja nem a koplalás, hanem az egészséges, fenntartható étkezés és életmód kialakítása.',
+  },
+  {
     q: 'A termékek alkalmasak a 2-es típusú cukorbetegek számára?',
     a: 'Igen, az INSUMED BASIC, BASIC PLUS és BESTFORM termékek a 2-es típusú cukorbetegek számára is ajánlottak. A tanácsadójával mindenképp konzultáljon a megfelelő használat érdekében.',
   },
   {
-    q: 'Mi az INSUMED diétaterápia célja?',
-    a: 'A terápia célja nem a koplalás, hanem az egészséges, fenntartható étkezés és életmód kialakítása. Mindenki más, ezért a táplálkozásnak is személyre szabottnak kell lennie. Nincs gyors megoldás, nincsenek szigorú szabályok vagy tiltások.',
+    q: 'Alkalmasak az INSUMED termékek sportolóknak?',
+    a: 'Az INSUMED BESTFORM és Trinkmahlzeit termékek sportolók számára is kiváló választást jelentenek. Fontos, hogy tanácsadójával egyeztessen a célzott felhasználásról és az optimális adagolásról.',
+  },
+  {
+    q: 'Mi a különbség az INSUMED BASIC, BASIC PLUS és a BESTFORM között?',
+    a: 'Az INSUMED termékek közötti különbség a célnak megfelelő tápanyag-összetételben rejlik. A BASIC a klasszikus választás, a BASIC PLUS alacsonyabb szénhidráttartalommal és magasabb rosttartalommal rendelkezik. A BESTFORM kifejezetten fehérjehiányos állapotokra, szarkopéniára és sportolóknak ajánlott.',
+  },
+  {
+    q: 'Mi a különbség a Trinkmahlzeit és a főétkezések között?',
+    a: 'Az INSUMED szoftver segít meghatározni a főétkezések (reggeli, ebéd, vacsora) tápanyag-összetételét, figyelembe véve az Ön egyéni igényeit. A Trinkmahlzeit étkezést helyettesítő ital, amely pontosan meghatározott fehérje-, szénhidrát- és zsírtartalommal rendelkezik.',
+  },
+  {
+    q: 'Az INSUMED termékek gyermekek számára is alkalmasak?',
+    a: 'A Trinkmahlzeit termékek dobozán a következő figyelmeztetés található: „Gyerekeknek 14 éves kortól, a gyermekorvos által meghatározott mennyiségben adható." 14 éves kor alatt kizárólag orvosi felügyelet mellett alkalmazható.',
   },
 ];
 ---
@@ -58,68 +91,72 @@ const faqs = [
 
   <main>
 
-    <!-- Hero -->
-    <section class="bg-blue-900 overflow-hidden">
+    <!-- Hero: insumed product image left, text right, white bg -->
+    <section class="bg-white overflow-hidden">
       <div class="container mx-auto px-4 max-w-[1200px]">
         <div class="flex flex-col lg:flex-row items-center gap-0">
 
-          <div class="lg:w-1/2 py-20 lg:pr-12">
-            <p class="text-blue-300 font-semibold text-sm uppercase tracking-widest mb-3">Orvosi diétaterápia</p>
-            <h1 class="text-4xl lg:text-5xl font-bold text-white leading-tight mb-3">
-              Mi az Insumed?
-            </h1>
-            <p class="text-blue-200 text-lg font-medium mb-4">
+          <!-- Left: product image -->
+          <div class="lg:w-1/2 flex justify-center items-center py-12 lg:py-0 order-2 lg:order-1">
+            <img
+              src="/images/insumed.png"
+              alt="INSUMED orvosi diétaterápia termékek"
+              class="w-full max-w-[460px] object-contain"
+            />
+          </div>
+
+          <!-- Right: text -->
+          <div class="lg:w-1/2 py-20 lg:pl-8 order-1 lg:order-2">
+            <p class="text-orange-500 font-semibold text-sm uppercase tracking-widest mb-3">Mi az Insumed?</p>
+            <h1 class="text-4xl lg:text-5xl font-bold text-blue-900 leading-tight mb-6">
               Az INSUMED orvosi diéta táplálkozási koncepciója
-            </p>
-            <p class="text-blue-100 leading-relaxed mb-8 max-w-md">
-              Az INSUMED egy orvosi diétaterápia túlsúlyosoknak, cukorbetegeknek, 65+, hiányos
-              tápláltságúaknak, vegánoknak, intoleranciával küzdőknek, inzulinrezisztenseknek,
-              PCOS esetén és sportolóknak. Németországban kifejlesztett, orvosok által kontrollált
-              diétás rendszer.
+            </h1>
+            <p class="text-gray-600 leading-relaxed mb-8">
+              Az INSUMED egy orvosi diétaterápia túlsúlyosoknak, cukorbetegeknek, 65+,
+              hiányos tápláltságúaknak, vegánoknak, intoleranciával küzdőknek,
+              inzulinrezisztenseknek, PCOS esetén és sportolóknak.
+              <strong class="text-gray-800">Németországban kifejlesztett, orvosok által kontrollált diétás rendszer.</strong>
             </p>
             <a href="#kapcsolat" class="inline-flex items-center gap-2 bg-orange-500 hover:bg-blue-900 text-white font-semibold px-7 py-3 rounded-full transition-colors">
               Kapcsolat <span aria-hidden="true">→</span>
             </a>
           </div>
 
-          <div class="lg:w-1/2 flex justify-end items-end pt-10 lg:pt-0">
-            <img
-              src="/images/insumed-hero.png"
-              alt="INSUMED diétaterápia"
-              class="w-full lg:w-auto h-[320px] lg:h-[480px] object-cover rounded-t-2xl shadow-2xl"
-            />
-          </div>
-
         </div>
       </div>
     </section>
 
-    <!-- Előnyök / Kiknek segít -->
+    <!-- Kiknek segít: 4 icon cards -->
     <section class="py-20 bg-[#F6FBFF]">
       <div class="container mx-auto px-4 max-w-[1200px]">
-        <p class="text-orange-500 font-semibold text-sm uppercase tracking-widest mb-2">Előnyök</p>
-        <h2 class="text-3xl lg:text-4xl font-bold text-blue-900 mb-8">Kiknek segít az INSUMED?</h2>
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-16">
-          {targets.map(label => (
-            <div class="flex items-center gap-3 bg-white rounded-xl px-4 py-3 shadow-sm border border-blue-50">
-              <span class="w-2 h-2 rounded-full bg-orange-500 shrink-0"></span>
-              <span class="text-blue-800 text-sm font-medium">{label}</span>
+        <p class="text-orange-500 font-semibold text-sm uppercase tracking-widest mb-2 text-center">Előnyök</p>
+        <h2 class="text-3xl lg:text-4xl font-bold text-blue-900 mb-10 text-center">Kiknek segít az INSUMED?</h2>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+          {targets.map(({ title, svg }) => (
+            <div class="bg-white rounded-xl p-8 shadow-sm border border-blue-50 flex flex-col items-center text-center hover:shadow-md transition-shadow">
+              <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mb-4" set:html={svg}></div>
+              <h3 class="font-bold text-blue-900 text-base">{title}</h3>
             </div>
           ))}
         </div>
+      </div>
+    </section>
 
-        <!-- Miért nem elég a mérleg -->
-        <div class="flex flex-col lg:flex-row gap-12 items-center mb-16">
-          <div class="lg:w-2/5 shrink-0">
+    <!-- Miért nem elég a mérleg -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4 max-w-[1200px]">
+        <div class="flex flex-col lg:flex-row gap-12 items-center">
+          <div class="lg:w-[45%] shrink-0">
             <img
               src="/images/merleg.png"
               alt="Miért nem elég a mérleg?"
               class="w-full rounded-2xl shadow-lg object-contain"
             />
           </div>
-          <div class="lg:w-3/5">
-            <h2 class="text-3xl font-bold text-blue-900 mb-5">Miért nem elég a mérleg?</h2>
-            <p class="text-gray-600 leading-relaxed mb-6">
+          <div class="lg:w-[55%]">
+            <h2 class="text-3xl lg:text-4xl font-bold text-blue-900 mb-5">Miért nem elég a mérleg?</h2>
+            <div class="w-12 h-1 bg-blue-500 rounded-full mb-6"></div>
+            <p class="text-gray-600 leading-relaxed mb-8">
               Sokan azt gondolják, hogy a mérleg mutatja a teljes igazságot az egészségünkkel
               kapcsolatban, de ez tévedés. A fürdőszobai mérlegek nem képesek megkülönböztetni a
               zsír-, izom- és víztartalmat, ezért nem adnak pontos képet a test állapotáról.
@@ -131,83 +168,90 @@ const faqs = [
             </a>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- INSUMED terápia lényege -->
-        <div class="bg-white rounded-2xl p-8 shadow-sm mb-10">
-          <h2 class="text-3xl font-bold text-blue-900 mb-4">Az INSUMED terápia lényege</h2>
-          <p class="text-gray-600 leading-relaxed mb-6">
-            Az terápia célja a zsírból történő fogyás, miközben az izomzat megmarad.
-            A BIA-méréssel folyamatosan nyomon követjük, hogy a fogyás valóban zsírból
-            történik-e, ezáltal elkerülve a jojó-effektust. Az eredmény: tartós súlycsökkenés
-            és egészséges testösszetétel, koplalás nélkül.
-          </p>
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
-            {['Zsírból fogyás', 'Izomzat megtartás', 'Tartós súlycsökkenés', 'Javuló egészségi állapot'].map(item => (
-              <div class="bg-blue-50 rounded-xl px-4 py-3 text-center">
-                <span class="text-blue-900 font-semibold text-sm">{item}</span>
-              </div>
-            ))}
-          </div>
-          <p class="text-gray-600 leading-relaxed mb-6">
-            Ha szeretné pontosan megismerni testének állapotát és belevágni az egészséges
-            életmódba éhezésmentesen, jelentkezzen egy INSUMED tanácsadásra!
-          </p>
-          <a href="#kapcsolat" class="inline-flex items-center gap-2 bg-orange-500 hover:bg-blue-900 text-white font-semibold px-7 py-3 rounded-full transition-colors">
-            Kapcsolat <span aria-hidden="true">→</span>
-          </a>
+    <!-- INSUMED terápia lényege -->
+    <section class="py-20 bg-[#F6FBFF]">
+      <div class="container mx-auto px-4 max-w-[1200px]">
+        <h2 class="text-3xl lg:text-4xl font-bold text-blue-900 mb-4">Az INSUMED terápia lényege</h2>
+        <div class="w-12 h-1 bg-blue-500 rounded-full mb-6"></div>
+        <p class="text-gray-600 leading-relaxed mb-8 max-w-3xl">
+          Az terápia célja a zsírból történő fogyás, miközben az izomzat megmarad.
+          A BIA-méréssel folyamatosan nyomon követjük, hogy a fogyás valóban zsírból
+          történik-e, ezáltal elkerülve a jojó-effektust. Az eredmény: tartós súlycsökkenés
+          és egészséges testösszetétel, koplalás nélkül.
+        </p>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+          {['Zsírból fogyás', 'Izomzat megtartás', 'Tartós súlycsökkenés', 'Javuló egészségi állapot'].map(item => (
+            <div class="bg-white rounded-xl px-5 py-4 text-center shadow-sm border border-blue-100">
+              <span class="text-blue-900 font-semibold text-sm">{item}</span>
+            </div>
+          ))}
         </div>
+        <p class="text-gray-600 leading-relaxed mb-8">
+          Ha szeretné pontosan megismerni testének állapotát és belevágni az egészséges
+          életmódba éhezésmentesen, jelentkezzen egy INSUMED tanácsadásra!
+        </p>
+        <a href="#kapcsolat" class="inline-flex items-center gap-2 bg-orange-500 hover:bg-blue-900 text-white font-semibold px-7 py-3 rounded-full transition-colors">
+          Kapcsolat <span aria-hidden="true">→</span>
+        </a>
       </div>
     </section>
 
     <!-- Vegán vagyok -->
     <section class="py-20 bg-white">
       <div class="container mx-auto px-4 max-w-[1200px]">
-        <h2 class="text-3xl lg:text-4xl font-bold text-blue-900 mb-2">Vegán vagyok. Jól csinálom?</h2>
-        <p class="text-lg font-semibold text-gray-700 mb-6">Az INSUMED segít a vegán táplálkozás tápanyagigényeinek kiegészítésében</p>
-        <p class="text-gray-600 leading-relaxed mb-8">
+        <p class="text-orange-500 font-semibold text-sm uppercase tracking-widest mb-2">Vegán vagyok. Jól csinálom?</p>
+        <h2 class="text-3xl lg:text-4xl font-bold text-blue-900 mb-2">Az INSUMED segít a vegán táplálkozás tápanyagigényeinek kiegészítésében</h2>
+        <div class="w-12 h-1 bg-blue-500 rounded-full mb-6 mt-4"></div>
+        <p class="text-gray-600 leading-relaxed mb-8 max-w-3xl">
           A vegán étrend követése sok előnnyel járhat, de ha nem megfelelően állítja össze az
           ételeit, az hiányállapotokhoz vezethet. Ha szeretné meggyőződni arról, hogy vegánként
-          a táplálkozása valóban megfelelő-e, érdemes ellátogatni hozzánk egy BIA-mérésre. Ez
-          a testösszetétel-vizsgálat megmutatja, hogy elég fehérjét visz-e be, vagy esetleg
-          fejlesztésre szorul-e az étrendje.
+          a táplálkozása valóban megfelelő-e, érdemes ellátogatni hozzánk egy BIA-mérésre.
         </p>
 
-        <p class="font-bold text-gray-800 mb-4">Mire érdemes odafigyelni az étrend kialakításakor?</p>
-        <ul class="space-y-3 mb-8">
-          {[
-            'Fehérjeszükséglet: Egy felnőttnek átlagosan napi 0,8 g/testsúly-kg fehérjére van szüksége, idősebb korban akár 1,2 g/testsúly-kg-ra.',
-            'Növényi fehérjeforrások kombinálása: A megfelelő aminosav-ellátáshoz fontos a különféle növényi alapanyagok helyes párosítása.',
-            'Fehérje- és tápanyaghiány veszélyei: A hiányos táplálkozás izomvesztéshez és egyéb egészségügyi kockázatokhoz vezethet.',
-          ].map(item => (
-            <li class="flex items-start gap-3 text-gray-600">
-              <span class="text-blue-600 font-bold text-xl leading-tight shrink-0">»</span>
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul>
-
-        <p class="font-bold text-gray-800 mb-4">Hogyan segít az INSUMED diétaterápia a helyes vegán táplálkozásban?</p>
-        <ul class="space-y-3 mb-8">
-          {[
-            'A BIA-mérés megmutatja, hogy szervezet mennyi izmot, zsírt és vizet tartalmaz. Ha fehérjehiányt tapasztalunk, segítünk korrigálni azt.',
-            'A tanácsadás során segítünk kialakítani a megfelelő fehérjebevitelt, miközben az étrend továbbra is vegán marad.',
-            'Segítünk a változatos vegán étrend kialakításában. Az INSUMED olyan termékeket is kínál, amelyek vegán és speciális igényekre szabott megoldásokat nyújtanak.',
-          ].map(item => (
-            <li class="flex items-start gap-3 text-gray-600">
-              <span class="text-blue-600 font-bold text-xl leading-tight shrink-0">»</span>
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul>
+        <div class="flex flex-col lg:flex-row gap-12">
+          <div class="lg:w-1/2">
+            <p class="font-bold text-gray-800 mb-4">Mire érdemes odafigyelni az étrend kialakításakor?</p>
+            <ul class="space-y-3 mb-8">
+              {[
+                'Fehérjeszükséglet: Egy felnőttnek átlagosan napi 0,8 g/testsúly-kg fehérjére van szüksége, idősebb korban akár 1,2 g/testsúly-kg-ra.',
+                'Növényi fehérjeforrások kombinálása: A megfelelő aminosav-ellátáshoz fontos a különféle növényi alapanyagok helyes párosítása.',
+                'Fehérje- és tápanyaghiány veszélyei: A hiányos táplálkozás izomvesztéshez és egyéb egészségügyi kockázatokhoz vezethet.',
+              ].map(item => (
+                <li class="flex items-start gap-3 text-gray-600">
+                  <span class="text-blue-600 font-bold text-xl leading-tight shrink-0">»</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div class="lg:w-1/2">
+            <p class="font-bold text-gray-800 mb-4">Hogyan segít az INSUMED diétaterápia?</p>
+            <ul class="space-y-3 mb-8">
+              {[
+                'A BIA-mérés megmutatja, hogy szervezet mennyi izmot, zsírt és vizet tartalmaz. Ha fehérjehiányt tapasztalunk, segítünk korrigálni azt.',
+                'A tanácsadás során segítünk kialakítani a megfelelő fehérjebevitelt, miközben az étrend továbbra is vegán marad.',
+                'Segítünk a változatos vegán étrend kialakításában. Az INSUMED olyan termékeket is kínál, amelyek vegán igényekre szabott megoldásokat nyújtanak.',
+              ].map(item => (
+                <li class="flex items-start gap-3 text-gray-600">
+                  <span class="text-blue-600 font-bold text-xl leading-tight shrink-0">»</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
 
         <div class="bg-blue-50 rounded-2xl p-7 mb-8">
           <p class="font-bold text-blue-900 mb-3">INSUMED Vegán termékek</p>
-          <p class="text-gray-600 leading-relaxed mb-2">
+          <p class="text-gray-600 leading-relaxed mb-3">
             Az orvosi diétaterápia részeként olyan magas fehérjetartalmú, alacsony
-            kalóriatartalmú vegán termékeket kínálunk, amelyek támogatják az optimális
-            testösszetételt.
+            kalóriatartalmú vegán termékeket kínálunk, amelyek támogatják az optimális testösszetételt.
+            A vegán táplálkozás és az INSUMED terápia jól kombinálható!
           </p>
-          <ul class="text-gray-600 text-sm space-y-1 mt-3">
+          <ul class="text-gray-600 text-sm space-y-1">
             <li class="flex items-center gap-2"><span class="text-green-600 font-bold">✓</span> Szójamentes vagy szójás és laktózmentes, gluténmentes opciók</li>
             <li class="flex items-center gap-2"><span class="text-green-600 font-bold">✓</span> Csökkentett zsírtartalom és alacsony glikémiás terhelés</li>
           </ul>
@@ -219,48 +263,50 @@ const faqs = [
       </div>
     </section>
 
-    <!-- A terápia fő lépései + BIA mérés -->
-    <section id="bia-meres" class="py-20 bg-[#F6FBFF]">
+    <!-- A terápia fő lépései -->
+    <section class="py-20 bg-[#F6FBFF]">
       <div class="container mx-auto px-4 max-w-[1200px]">
-
         <h2 class="text-3xl lg:text-4xl font-bold text-blue-900 mb-12 text-center">A terápia fő lépései</h2>
-
-        <div class="flex flex-col lg:flex-row gap-12 items-start">
-
-          <!-- Steps -->
-          <div class="lg:w-1/2">
-            <div class="space-y-6 mb-10">
-              {steps.map(({ num, title, desc }) => (
-                <div class="flex gap-4">
-                  <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center shrink-0 text-white font-bold">
-                    {num}
-                  </div>
-                  <div>
-                    <h3 class="font-bold text-blue-900 mb-1">{num}. lépés: {title}</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">{desc}</p>
-                  </div>
-                </div>
-              ))}
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {steps.map(({ num, title, desc }) => (
+            <div class="bg-white rounded-xl p-8 shadow-sm border border-blue-50 hover:shadow-md transition-shadow">
+              <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg mb-5 shrink-0">
+                {num}
+              </div>
+              <h3 class="font-bold text-blue-900 text-lg mb-3">{num}. lépés: {title}</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">{desc}</p>
             </div>
-          </div>
+          ))}
+        </div>
+      </div>
+    </section>
 
-          <!-- BIA mérés -->
-          <div class="lg:w-1/2">
+    <!-- BIA mérés -->
+    <section id="bia-meres" class="py-20 bg-white">
+      <div class="container mx-auto px-4 max-w-[1200px]">
+        <div class="flex flex-col lg:flex-row gap-12 items-center">
+
+          <!-- Image left (55%) -->
+          <div class="lg:w-[55%] shrink-0">
             <img
               src="/images/Insumed-Bia-mereshez-kep-3-1-1.png"
               alt="BIA mérés – bioimpedancia-analízis"
-              class="w-full rounded-2xl shadow-lg mb-8 object-cover"
+              class="w-full rounded-2xl shadow-lg object-cover"
             />
-            <h2 class="text-2xl font-bold text-blue-900 mb-4">Mi is az a BIA-mérés?</h2>
-            <p class="text-gray-600 leading-relaxed mb-4">
+          </div>
+
+          <!-- Text right (45%) -->
+          <div class="lg:w-[45%]">
+            <h2 class="text-3xl lg:text-4xl font-bold text-blue-900 mb-4">Mi is az a BIA-mérés?</h2>
+            <div class="w-12 h-1 bg-blue-500 rounded-full mb-6"></div>
+            <p class="text-gray-600 leading-relaxed mb-6">
               A BIA-mérés (bioimpedancia-analízis) gyors és pontos módja a testösszetétel
               elemzésének. Megmutatja, hogy a szervezet mennyi zsírt, izmot, víztartalmat és
               más komponenseket tartalmaz. Különösen hasznos túlsúly, cukorbetegség vagy
               alultápláltság esetén, de sportolók edzettségi állapotának felmérésére is kiváló.
-              INSUMED tanácsadóként az <strong>AKERN 101 BIA műszert</strong> használom, amely
-              rendkívül pontos eredményeket ad.
+              INSUMED tanácsadóként az <strong class="text-blue-900">AKERN 101 BIA műszert</strong> használom.
             </p>
-            <div class="bg-white rounded-xl p-5 shadow-sm border border-blue-100 mb-6">
+            <div class="bg-blue-50 rounded-xl p-6 mb-6">
               <h3 class="font-bold text-blue-900 mb-3">Hogyan zajlik a mérés?</h3>
               <p class="text-gray-600 text-sm leading-relaxed">
                 A méréshez Önnek egy ágyra kell feküdnie, és a kezére, illetve lábára
@@ -279,96 +325,154 @@ const faqs = [
     </section>
 
     <!-- Termékek -->
-    <section id="termekek" class="py-20 bg-white">
+    <section id="termekek" class="py-20 bg-[#F6FBFF]">
       <div class="container mx-auto px-4 max-w-[1200px]">
         <p class="text-orange-500 font-semibold text-sm uppercase tracking-widest mb-2">Túlsúlyosoknak, Cukorbetegeknek, Hiányos Tápláltságúaknak, Sportolóknak, Vegánoknak és Vegetáriánusoknak</p>
         <h2 class="text-3xl lg:text-4xl font-bold text-blue-900 mb-4">Insumed termékek</h2>
+        <div class="w-12 h-1 bg-blue-500 rounded-full mb-6"></div>
         <p class="text-gray-600 leading-relaxed mb-12 max-w-3xl">
-          A terápiás koncepciók alapvető eleme az INSUMED termékek alkalmazása. A termékek
-          gyártója a németországi INSUMED cég, amely az EU egészségügyi előírásainak megfelelően
-          készíti termékeit. A Magyarországon elérhető termékek OGYÉI-regisztrációval rendelkeznek.
+          A terápiás koncepciók alapvető eleme az INSUMED termékek alkalmazása, melyek célzottan
+          segítik a különböző táplálkozási igényekkel rendelkező személyeket. A termékek gyártója
+          a világszerte elismert németországi INSUMED cég, amely a német egészségügyi előírásainak
+          megfelelően készíti termékeit.
         </p>
 
         <!-- TRINKMAHLZEIT -->
-        <div class="flex flex-col lg:flex-row gap-10 items-start mb-16">
-          <div class="lg:w-2/5 shrink-0">
-            <img
-              src="/images/INSUMED_Trinkmahlzeiten.jpg"
-              alt="INSUMED Trinkmahlzeit termékek"
-              class="w-full rounded-2xl shadow-md object-cover"
-            />
-          </div>
-          <div class="lg:w-3/5">
-            <h3 class="text-xl font-bold text-blue-900 uppercase tracking-wide mb-3">TRINKMAHLZEIT</h3>
-            <p class="text-gray-600 leading-relaxed mb-6">
-              A Trinkmahlzeit egy speciális gyógyászati célra szánt étkezést helyettesítő
-              élelmiszerpor, amely részleges táplálásra szolgál. Az elhízás, kachexia vagy
-              szarkopénia kezelésére kiegészítő táplálékként alkalmazható, a tanácsadó által
-              javasolt étrenddel. Segíti a fogyókúrázók számára a megfelelő fehérje-, vitamin-
-              és tápanyagbevitel biztosítását.
-            </p>
-            <div class="space-y-4">
-              <div class="border border-gray-100 rounded-xl p-5 hover:border-blue-200 transition-colors">
-                <h4 class="font-bold text-blue-900 mb-2">INSUMED Trinkmahlzeit BASIC</h4>
-                <p class="text-gray-600 text-sm leading-relaxed">Speciális gyógyászati célra szánt élelmiszerek többféle fehérjekombinációval, alacsony zsír- és szénhidráttartalommal, valamint vitaminokkal, ásványi anyagokkal és nutrioze nevű élelmi rosttal gazdagítottak.</p>
-              </div>
-              <div class="border border-gray-100 rounded-xl p-5 hover:border-blue-200 transition-colors">
-                <h4 class="font-bold text-blue-900 mb-2">INSUMED Trinkmahlzeit Vegan SZÓJA nélkül</h4>
-                <p class="text-gray-600 text-sm leading-relaxed">Szójamentes, borsó-, napraforgó-, tök- és mandulafehérjét tartalmaz, laktóz- és gluténmentes. Kiváló választás vegánok számára, a növényi rostok segítik az ásványi anyagok felszívódását.</p>
-              </div>
-              <div class="border border-gray-100 rounded-xl p-5 hover:border-blue-200 transition-colors">
-                <h4 class="font-bold text-blue-900 mb-2">INSUMED Trinkmahlzeit BASIC PLUS</h4>
-                <p class="text-gray-600 text-sm leading-relaxed">A BASIC és a BASIC PLUS fehérje-összetétele hasonló, ám a BASIC PLUS alacsonyabb szénhidráttartalommal és magasabb élelmi rosttartalommal rendelkezik, mint a BASIC.</p>
+        <div class="bg-white rounded-2xl shadow-sm overflow-hidden mb-6">
+          <div class="flex flex-col lg:flex-row">
+            <div class="lg:w-[30%] shrink-0">
+              <img src="/images/INSUMED_Trinkmahlzeiten.jpg" alt="INSUMED Trinkmahlzeit" class="w-full h-full object-cover min-h-[200px]" />
+            </div>
+            <div class="lg:w-[70%] p-8">
+              <h3 class="text-xl font-bold text-blue-900 uppercase tracking-wide mb-3">TRINKMAHLZEIT</h3>
+              <p class="text-gray-600 leading-relaxed mb-5">
+                A Trinkmahlzeit egy speciális gyógyászati célra szánt étkezést helyettesítő
+                élelmiszerpor, amely részleges táplálásra szolgál. Az elhízás, kachexia vagy
+                szarkopénia kezelésére kiegészítő táplálékként alkalmazható.
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div class="border border-blue-100 rounded-xl p-4">
+                  <h4 class="font-bold text-blue-900 text-sm mb-2">BASIC</h4>
+                  <p class="text-gray-600 text-xs leading-relaxed">Többféle fehérjekombinációval, alacsony zsír- és szénhidráttartalommal, vitaminokkal és ásványi anyagokkal.</p>
+                </div>
+                <div class="border border-blue-100 rounded-xl p-4">
+                  <h4 class="font-bold text-blue-900 text-sm mb-2">VEGAN (szójamentes)</h4>
+                  <p class="text-gray-600 text-xs leading-relaxed">Borsó-, napraforgó-, tök- és mandulafehérjét tartalmaz, laktóz- és gluténmentes. Kiváló vegánoknak.</p>
+                </div>
+                <div class="border border-blue-100 rounded-xl p-4">
+                  <h4 class="font-bold text-blue-900 text-sm mb-2">BASIC PLUS</h4>
+                  <p class="text-gray-600 text-xs leading-relaxed">Alacsonyabb szénhidráttartalommal és magasabb élelmi rosttartalommal rendelkezik, mint a BASIC.</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
         <!-- BESTFORM -->
-        <div class="flex flex-col lg:flex-row-reverse gap-10 items-start mb-16">
-          <div class="lg:w-2/5 shrink-0">
-            <img
-              src="/images/476492270_930834015593922_203831418615443825_n.png"
-              alt="INSUMED BESTFORM"
-              class="w-full rounded-2xl shadow-md object-cover"
-            />
-          </div>
-          <div class="lg:w-3/5">
-            <h3 class="text-xl font-bold text-blue-900 uppercase tracking-wide mb-3">BESTFORM</h3>
-            <p class="text-gray-600 leading-relaxed">
-              A BESTFORM egy hatféle fehérjét tartalmazó koncentrátum, amely L-karnitint,
-              L-glutamint, természetes elágazó szénláncú aminosavakat (BCAA), vitaminokat,
-              ásványi anyagokat és édesítőt is tartalmaz. Segít a fehérjehiányos táplálkozás
-              tüneteinek mérséklésében, mivel 100 grammja 85 gramm fehérjét biztosít. Az
-              életkortól függetlenül ajánlott fehérjehiány, szarkopénia és katabolikus
-              állapotok kezelésére. A laktóz- és gluténmentes BESTFORM Vegan 100 grammja
-              78 gramm növényi fehérjét tartalmaz, biológiai hasznosíthatósága 140.
-            </p>
+        <div class="bg-white rounded-2xl shadow-sm overflow-hidden mb-6">
+          <div class="flex flex-col lg:flex-row">
+            <div class="lg:w-[30%] shrink-0">
+              <img src="/images/476492270_930834015593922_203831418615443825_n.png" alt="INSUMED BESTFORM" class="w-full h-full object-cover min-h-[200px]" />
+            </div>
+            <div class="lg:w-[70%] p-8">
+              <h3 class="text-xl font-bold text-blue-900 uppercase tracking-wide mb-3">BESTFORM</h3>
+              <p class="text-gray-600 leading-relaxed">
+                A BESTFORM egy hatféle fehérjét tartalmazó koncentrátum, amely L-karnitint,
+                L-glutamint, természetes elágazó szénláncú aminosavakat (BCAA), vitaminokat,
+                ásványi anyagokat és édesítőt is tartalmaz. Segít a fehérjehiányos táplálkozás
+                tüneteinek mérséklésében — 100 grammja <strong class="text-blue-900">85 gramm fehérjét</strong> biztosít.
+                Az életkortól függetlenül ajánlott fehérjehiány, szarkopénia és katabolikus
+                állapotok kezelésére. A laktóz- és gluténmentes BESTFORM Vegan 100 grammja
+                78 gramm növényi fehérjét tartalmaz.
+              </p>
+            </div>
           </div>
         </div>
 
-        <!-- SZELETEK, LEVESEK, PHYTOSHAKE -->
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-          <div class="rounded-xl border border-gray-100 overflow-hidden hover:border-blue-200 hover:shadow-md transition-all">
-            <img src="/images/INSUMED_BESTFORM_Protein-Riegel_Knusper_Nuss_2er.jpg" alt="INSUMED Szeletek" class="w-full h-48 object-cover" />
-            <div class="p-5">
-              <h4 class="font-bold text-blue-900 mb-2">INSUMED SZELETEK</h4>
-              <p class="text-gray-600 text-sm leading-relaxed">Fogyókúrát segítő élelmiszerek. Citrom-túró ízű (18 g fehérje/adag) és vanília-mogyoró ízű (11 g fehérje/adag) változatban.</p>
+        <!-- SZELETEK -->
+        <div class="bg-white rounded-2xl shadow-sm overflow-hidden mb-6">
+          <div class="flex flex-col lg:flex-row">
+            <div class="lg:w-[30%] shrink-0">
+              <img src="/images/INSUMED_BESTFORM_Protein-Riegel_Knusper_Nuss_2er.jpg" alt="INSUMED Szeletek" class="w-full h-full object-cover min-h-[180px]" />
+            </div>
+            <div class="lg:w-[70%] p-8">
+              <h3 class="text-xl font-bold text-blue-900 uppercase tracking-wide mb-3">INSUMED SZELETEK</h3>
+              <p class="text-gray-600 leading-relaxed">
+                Az INSUMED a fogyókúra során segítséget nyújtó élelmiszereket is kínál, amelyek
+                támogatják a testsúly-kontrollált táplálkozást. Két ízesítésben elérhetők:
+                citrom-túró ízű szelet adagonként 18 g fehérjével, és vanília-mogyoró ízű
+                szelet adagonként 11 g fehérjével.
+              </p>
             </div>
           </div>
-          <div class="rounded-xl border border-gray-100 overflow-hidden hover:border-blue-200 hover:shadow-md transition-all">
-            <img src="/images/INSUMED_BALANCE_Trinkbouillon-768x835-1.jpg" alt="INSUMED Levesek" class="w-full h-48 object-cover" />
-            <div class="p-5">
-              <h4 class="font-bold text-blue-900 mb-2">INSUMED LEVESEK</h4>
-              <p class="text-gray-600 text-sm leading-relaxed">A levesek ideálisak a fogyókúra során, mivel támogatják a testsúly csökkentését. A fogyókúra befejeztével segíthetnek fenntartani az elért testsúlyt.</p>
+        </div>
+
+        <!-- LEVESEK -->
+        <div class="bg-white rounded-2xl shadow-sm overflow-hidden mb-6">
+          <div class="flex flex-col lg:flex-row">
+            <div class="lg:w-[30%] shrink-0">
+              <img src="/images/INSUMED_BALANCE_Trinkbouillon-768x835-1.jpg" alt="INSUMED Levesek" class="w-full h-full object-cover min-h-[180px]" />
+            </div>
+            <div class="lg:w-[70%] p-8">
+              <h3 class="text-xl font-bold text-blue-900 uppercase tracking-wide mb-3">INSUMED LEVESEK</h3>
+              <p class="text-gray-600 leading-relaxed">
+                A levesek ideálisak a fogyókúra során, mivel támogatják a testsúly csökkentését.
+                A fogyókúra befejeztével pedig segíthetnek fenntartani az elért testsúlyt,
+                hozzájárulva a hosszú távú testsúly-kontrollált táplálkozáshoz.
+              </p>
             </div>
           </div>
-          <div class="rounded-xl border border-gray-100 overflow-hidden hover:border-blue-200 hover:shadow-md transition-all">
-            <img src="/images/insumed_phytoshake_.jpg" alt="INSUMED Phytoshake" class="w-full h-48 object-cover" />
-            <div class="p-5">
-              <h4 class="font-bold text-blue-900 mb-2">INSUMED PHYTOSHAKE – ÚJDONSÁG!</h4>
-              <p class="text-gray-600 text-sm leading-relaxed">Vegán és gluténmentes étrend-kiegészítő növényi fehérjékkel, másodlagos növényi hatóanyagokkal és enzimekkel. Kurkumin, tömjén és bromelain hatóanyagokkal gazdagítva – gyulladáscsökkentő hatású.</p>
+        </div>
+
+        <!-- PHYTOSHAKE -->
+        <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
+          <div class="flex flex-col lg:flex-row">
+            <div class="lg:w-[30%] shrink-0">
+              <img src="/images/insumed_phytoshake_.jpg" alt="INSUMED Phytoshake" class="w-full h-full object-cover min-h-[180px]" />
             </div>
+            <div class="lg:w-[70%] p-8">
+              <h3 class="text-xl font-bold text-blue-900 uppercase tracking-wide mb-3">INSUMED PHYTOSHAKE – ÚJDONSÁG!</h3>
+              <p class="text-gray-600 leading-relaxed">
+                INSUMED PHYTOSHAKE – gyulladáscsökkentő étrend-kiegészítő. A PHYTOSHAKE egy
+                vegán és gluténmentes étrend-kiegészítő, mely növényi fehérjékkel, másodlagos
+                növényi hatóanyagokkal és enzimekkel gazdagított. A benne található fehérjék
+                hozzájárulnak az izomzat fenntartásához, miközben a kurkumin, tömjén és bromelain
+                hatóanyagok gyulladáscsökkentő hatásúak.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Eredmények slider -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4 max-w-[1200px]">
+        <h2 class="text-3xl lg:text-4xl font-bold text-blue-900 mb-3 text-center">Eredmények</h2>
+        <div class="w-12 h-1 bg-blue-500 mx-auto rounded-full mb-10"></div>
+        <div class="relative">
+          <button id="results-prev" aria-label="Előző" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 z-10 w-11 h-11 bg-orange-500 hover:bg-orange-600 text-white shadow-md flex items-center justify-center transition-colors">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+          </button>
+          <button id="results-next" aria-label="Következő" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-5 z-10 w-11 h-11 bg-orange-500 hover:bg-orange-600 text-white shadow-md flex items-center justify-center transition-colors">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </button>
+          <div id="results-slider" class="results-slider flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scroll-smooth">
+            {results.map(({ slug, title, image }) => (
+              <div class="flex flex-col rounded-xl overflow-hidden border border-gray-100 bg-white shadow-sm hover:shadow-md transition-shadow flex-shrink-0 snap-start w-[300px] sm:w-[320px]">
+                <img src={image} alt={title} class="w-full h-48 object-cover" loading="lazy" />
+                <div class="flex flex-col flex-1 p-5">
+                  <p class="text-gray-800 font-semibold leading-snug mb-5 flex-1">{title}</p>
+                  <a
+                    href={`/blog/${slug}`}
+                    class="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold text-sm px-5 py-2.5 rounded-full transition-colors self-start"
+                  >
+                    Elolvasom <span aria-hidden="true">→</span>
+                  </a>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -380,25 +484,46 @@ const faqs = [
     <section class="py-20 bg-white">
       <div class="container mx-auto px-4 max-w-[1200px]">
         <div class="text-center mb-12">
-          <h2 class="text-3xl font-bold text-blue-900 mb-2">GYIK</h2>
-          <p class="text-xl font-semibold text-blue-900 mb-3">Gyakori Kérdések</p>
+          <p class="text-orange-500 font-semibold text-sm uppercase tracking-widest mb-2">GYIK</p>
+          <h2 class="text-3xl lg:text-4xl font-bold text-blue-900 mb-3">Gyakori Kérdések</h2>
           <div class="w-12 h-1 bg-blue-500 mx-auto rounded-full"></div>
           <p class="text-gray-500 mt-4">Általános kérdése van a szolgáltatással kapcsolatban?</p>
         </div>
-        <div class="space-y-4 max-w-3xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-5xl mx-auto">
           {faqs.map(({ q, a }) => (
-            <div class="border border-gray-100 rounded-xl p-6 hover:border-blue-200 hover:shadow-sm transition-all">
-              <h3 class="font-bold text-blue-900 mb-3">{q}</h3>
-              <p class="text-gray-600 text-sm leading-relaxed">{a}</p>
-            </div>
+            <details class="group border border-gray-100 rounded-xl hover:border-blue-200 hover:shadow-sm transition-all">
+              <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer list-none font-bold text-blue-900">
+                <span>{q}</span>
+                <svg class="w-5 h-5 text-blue-600 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </summary>
+              <p class="px-6 pb-6 text-gray-600 text-sm leading-relaxed">{a}</p>
+            </details>
           ))}
         </div>
       </div>
     </section>
 
-    <ContactForm />
+    <ContactForm description="Kérjen időpontot INSUMED tanácsadásra – írjon nekem vagy hívjon a <a href='tel:+36204625517' class='font-bold text-blue-900 hover:text-orange-500 transition-colors'>+36 20 462 5517</a> telefonszámon!" />
 
   </main>
 
   <Footer />
 </BaseLayout>
+
+<style>
+  .results-slider::-webkit-scrollbar { display: none; }
+  .results-slider { scrollbar-width: none; }
+</style>
+
+<script>
+  const slider = document.getElementById('results-slider');
+  const STEP = 344;
+  document.getElementById('results-prev')?.addEventListener('click', () => {
+    slider?.scrollBy({ left: -STEP, behavior: 'smooth' });
+  });
+  document.getElementById('results-next')?.addEventListener('click', () => {
+    slider?.scrollBy({ left: STEP, behavior: 'smooth' });
+  });
+</script>
