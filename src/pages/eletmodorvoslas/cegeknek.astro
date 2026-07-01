@@ -64,35 +64,38 @@ const services = [
   <main>
 
     <!-- Hero: split layout -->
-    <section class="bg-blue-900 overflow-hidden">
+    <section class="bg-white overflow-hidden">
       <div class="container mx-auto px-4 max-w-[1200px]">
         <div class="flex flex-col lg:flex-row items-center gap-0">
 
-          <div class="lg:w-1/2 py-20 lg:pr-12 z-10">
-            <p class="text-blue-300 font-semibold text-sm uppercase tracking-widest mb-3">Életmódorvoslás</p>
-            <h1 class="text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
-              Életmódorvoslás<br />a cégek életében
-            </h1>
-            <p class="text-blue-100 leading-relaxed mb-8 max-w-md">
-              Az életmódorvoslás tudományosan megalapozott módszer, amely segít az egészségtelen szokások
-              pozitív, egészséges életmódbeli változtatásokkal történő helyettesítésében. Célom, hogy
-              a vállalatok számára is elérhetővé tegyem az életmódorvoslás előnyeit, így támogatva
-              a dolgozók egészségét és teljesítményét.
-            </p>
-            <a
-              href="#kapcsolat"
-              class="inline-block bg-orange-500 hover:bg-blue-900 text-white font-semibold px-7 py-3 rounded-full transition-colors"
-            >
-              Ajánlatot kérek
-            </a>
-          </div>
-
-          <div class="lg:w-1/2 flex justify-end items-end pt-10 lg:pt-0">
+          <div class="lg:w-1/2 flex justify-start items-end pt-10 lg:pt-0 lg:order-1 order-2">
             <img
               src="/images/dr-nery-cegeknek.jpg"
               alt="Dr. Nery Klaudia Krisztina – életmódorvoslás cégeknek"
               class="h-[380px] lg:h-[520px] w-auto object-cover object-top rounded-t-2xl shadow-2xl"
             />
+          </div>
+
+          <div class="lg:w-1/2 py-20 lg:pl-12 z-10 lg:order-2 order-1">
+            <p class="text-orange-500 font-semibold text-sm uppercase tracking-widest mb-3">Vállalati wellbeing programok</p>
+            <h1 class="text-4xl lg:text-5xl font-bold text-blue-900 leading-tight mb-6">
+              Életmódorvoslás<br />a cégek életében
+            </h1>
+            <p class="text-gray-600 leading-relaxed mb-4 max-w-md">
+              Az életmódorvoslás tudományosan megalapozott módszer, amely segít az egészségtelen szokások
+              pozitív, egészséges életmódbeli változtatásokkal történő helyettesítésében.
+            </p>
+            <p class="text-gray-600 leading-relaxed mb-8 max-w-md">
+              Nemcsak a betegségek megelőzésében és kezelésében segít, hanem képes akár vissza is fordítani
+              bizonyos krónikus állapotokat. <strong>Célom, hogy a vállalatok számára is elérhetővé tegyem az
+              életmódorvoslás előnyeit, így támogatva a dolgozók egészségét és teljesítményét.</strong>
+            </p>
+            <a
+              href="#kapcsolat"
+              class="inline-flex items-center gap-2 bg-orange-500 hover:bg-blue-900 text-white font-semibold px-7 py-3 rounded-full transition-colors"
+            >
+              Kapcsolat <span aria-hidden="true">→</span>
+            </a>
           </div>
 
         </div>
