@@ -222,11 +222,11 @@ const services = [
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {services.map(({ icon, title, desc, href }) => (
           <a href={href} class="bg-white hover:shadow-md rounded-xl p-6 transition-all flex items-start gap-4 group border border-gray-100 hover:border-orange-200">
-            <div class="w-12 h-12 bg-blue-600 group-hover:bg-orange-500 rounded-lg flex items-center justify-center shrink-0 transition-colors">
-              <i class={`${icon} text-xl text-white`} aria-hidden="true"></i>
+            <div class="w-16 h-16 bg-blue-600 group-hover:bg-orange-500 rounded-lg flex items-center justify-center shrink-0 transition-colors">
+              <i class={`${icon} text-2xl text-white`} aria-hidden="true"></i>
             </div>
             <div>
-              <h3 class="font-bold text-blue-900 text-base mb-2">{title}</h3>
+              <h3 class="font-bold text-blue-900 text-lg mb-2">{title}</h3>
               <p class="text-gray-500 text-sm leading-relaxed" set:html={desc}></p>
             </div>
           </a>
