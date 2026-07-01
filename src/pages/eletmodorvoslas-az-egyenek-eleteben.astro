@@ -180,21 +180,29 @@ const successStories = [
           <h2 class="text-3xl lg:text-4xl font-bold text-blue-900 mb-3">Eredmények</h2>
           <div class="w-12 h-1 bg-blue-500 mx-auto rounded-full"></div>
         </div>
-        <div class="stories-slider flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scroll-smooth">
-          {successStories.map(({ slug, title, image }) => (
-            <div class="flex flex-col rounded-xl overflow-hidden border border-gray-100 bg-white shadow-sm hover:shadow-md transition-shadow flex-shrink-0 snap-start w-[300px] sm:w-[320px]">
-              <img src={image} alt={title} class="w-full h-48 object-cover" loading="lazy" />
-              <div class="flex flex-col flex-1 p-5">
-                <p class="text-gray-800 font-semibold leading-snug mb-5 flex-1">{title}</p>
-                <a
-                  href={`/blog/${slug}`}
-                  class="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold text-sm px-5 py-2.5 rounded-full transition-colors self-start"
-                >
-                  Elolvasom <span aria-hidden="true">→</span>
-                </a>
+        <div class="relative">
+          <button id="stories-prev" aria-label="Előző" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 z-10 w-11 h-11 rounded-full bg-orange-500 hover:bg-orange-600 text-white shadow-md flex items-center justify-center transition-colors">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+          </button>
+          <button id="stories-next" aria-label="Következő" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-5 z-10 w-11 h-11 rounded-full bg-orange-500 hover:bg-orange-600 text-white shadow-md flex items-center justify-center transition-colors">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </button>
+          <div id="stories-slider" class="stories-slider flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scroll-smooth">
+            {successStories.map(({ slug, title, image }) => (
+              <div class="flex flex-col rounded-xl overflow-hidden border border-gray-100 bg-white shadow-sm hover:shadow-md transition-shadow flex-shrink-0 snap-start w-[300px] sm:w-[320px]">
+                <img src={image} alt={title} class="w-full h-48 object-cover" loading="lazy" />
+                <div class="flex flex-col flex-1 p-5">
+                  <p class="text-gray-800 font-semibold leading-snug mb-5 flex-1">{title}</p>
+                  <a
+                    href={`/blog/${slug}`}
+                    class="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold text-sm px-5 py-2.5 rounded-full transition-colors self-start"
+                  >
+                    Elolvasom <span aria-hidden="true">→</span>
+                  </a>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -212,3 +220,14 @@ const successStories = [
   .stories-slider::-webkit-scrollbar { display: none; }
   .stories-slider { scrollbar-width: none; }
 </style>
+
+<script>
+  const slider = document.getElementById('stories-slider');
+  const STEP = 344; // card width (320) + gap (24)
+  document.getElementById('stories-prev')?.addEventListener('click', () => {
+    slider?.scrollBy({ left: -STEP, behavior: 'smooth' });
+  });
+  document.getElementById('stories-next')?.addEventListener('click', () => {
+    slider?.scrollBy({ left: STEP, behavior: 'smooth' });
+  });
+</script>
