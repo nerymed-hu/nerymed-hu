@@ -132,45 +132,56 @@ const services = [
       </div>
     </section>
 
-    <!-- ROI stats -->
-    <section class="py-20 bg-blue-900 text-white">
+    <!-- Hogyan támogatja -->
+    <section class="py-20 bg-white">
       <div class="container mx-auto px-4 max-w-[1200px]">
-        <div class="text-center mb-14">
-          <h2 class="text-3xl font-bold mb-3">Hogyan támogatja céged sikerességét az életmódorvoslás?</h2>
-          <p class="text-blue-200 max-w-2xl mx-auto">
-            Az egészséges munkavállalók hatékonyabbak, energikusabbak és motiváltabbak. Íme a top érvek, amiért érdemes befektetni a munkavállalóid egészségébe!
-          </p>
-        </div>
+        <div class="flex flex-col lg:flex-row gap-12 items-start">
 
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-14">
-          {stats.map(({ value, unit, label }) => (
-            <div class="bg-white/10 rounded-xl p-6 text-center">
-              <p class="text-4xl font-bold text-white mb-1">
-                {value}<span class="text-blue-300 text-2xl ml-1">{unit}</span>
-              </p>
-              <p class="text-blue-200 text-sm leading-snug mt-2">{label}</p>
-            </div>
-          ))}
-        </div>
-
-        <div class="bg-white/10 rounded-2xl p-8">
-          <h3 class="text-xl font-bold text-white mb-6 text-center">Wellbeing szolgáltatásaim cégeknek</h3>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {services.map(item => (
-              <div class="flex items-start gap-3">
-                <span class="text-blue-400 font-bold mt-0.5 shrink-0">✓</span>
-                <span class="text-blue-100 text-sm">{item}</span>
-              </div>
-            ))}
+          <!-- Left: image -->
+          <div class="lg:w-2/5 shrink-0">
+            <img
+              src="/images/hitvallasom.png"
+              alt="Hogyan támogatja céged sikerességét az életmódorvoslás"
+              class="w-full rounded-2xl shadow-xl object-cover object-top"
+            />
           </div>
-          <div class="text-center mt-8">
+
+          <!-- Right: content -->
+          <div class="lg:w-3/5">
+            <h2 class="text-3xl lg:text-4xl font-bold text-blue-900 mb-4">Hogyan támogatja céged sikerességét az életmódorvoslás?</h2>
+            <p class="text-orange-500 font-semibold mb-6">Az egészséges munkavállalók előnyei a cég számára</p>
+            <ul class="space-y-3 mb-6">
+              {[
+                'Egészségtudatos munkahelyeken a dolgozók évente átlagosan 1,8 nappal kevesebb betegszabadságot vesznek ki!',
+                'Az egészségesen táplálkozó dolgozók teljesítménye átlagosan 25%-al magasabb!',
+                'Az egészségtudatos dolgozók 91%-a érzi magát motiváltnak a munkájában!',
+                'Az egészségprogramokat előtérbe helyező vállalatok jobban teljesítenek (ROI 235% vs. S&P500 159%)!',
+                'Személyre szabott étrendi tanácsadás',
+                'Mozgásprogramok tervezése',
+                'Stresszkezelési módszerek',
+                'Alvásminőség javítása',
+                'Káros szenvedélyek kezelése',
+                'Támogató kapcsolatok építése',
+              ].map(item => (
+                <li class="flex items-start gap-3">
+                  <span class="text-orange-500 font-bold mt-0.5 shrink-0">✓</span>
+                  <span class="text-gray-600 leading-relaxed">{item}</span>
+                </li>
+              ))}
+            </ul>
+            <p class="text-gray-600 leading-relaxed mb-8">
+              Az életmódorvoslás alapelveinek támogatása tehát nemcsak a dolgozók egészségét, hanem
+              a vállalati sikerességet is erősíti, így mindenképp érdemes invesztálni a munkavállalók
+              életmódbeli fejlődésébe.
+            </p>
             <a
               href="#kapcsolat"
-              class="inline-block bg-orange-500 hover:bg-blue-900 text-white font-semibold px-7 py-3 rounded-full transition-colors"
+              class="inline-flex items-center gap-2 bg-orange-500 hover:bg-blue-900 text-white font-semibold px-7 py-3 rounded-full transition-colors"
             >
-              Keressen bizalommal
+              Keressen bizalommal <span aria-hidden="true">→</span>
             </a>
           </div>
+
         </div>
       </div>
     </section>
