@@ -378,16 +378,41 @@ const faqsRight = [
         <div class="bg-white rounded-xl shadow-sm overflow-hidden">
           <div class="flex flex-col lg:flex-row">
 
-            <!-- Left: Map -->
-            <div class="lg:w-1/2 min-h-[380px]">
+            <!-- Left: Map + info cards -->
+            <div class="lg:w-1/2 flex flex-col">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2700.119938530736!2d18.913045!3d47.389545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741dce5efb4c8cb%3A0xa5a74cc49736cfe2!2sKossuth+Lajos+u.+42%2C+%C3%89rd%2C+2030!5e0!3m2!1shu!2shu!4v1"
-                class="w-full h-full min-h-[380px] border-0"
+                class="w-full flex-1 min-h-[300px] border-0"
                 allowfullscreen
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
                 title="NeryMed rendelő – Érd, Kossuth Lajos utca 42."
               ></iframe>
+              <div class="grid grid-cols-2 divide-x divide-gray-100 border-t border-gray-100">
+                <div class="flex items-center gap-3 p-5">
+                  <span class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center shrink-0">
+                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    </svg>
+                  </span>
+                  <div>
+                    <p class="text-xs text-gray-400 font-medium uppercase tracking-wide">Cím</p>
+                    <p class="text-sm font-semibold text-blue-900 leading-snug">Érd, Kossuth Lajos u. 42.</p>
+                  </div>
+                </div>
+                <a href="mailto:nerymedkft@gmail.com" class="flex items-center gap-3 p-5 hover:bg-blue-50 transition-colors">
+                  <span class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center shrink-0">
+                    <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 512 512">
+                      <path d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"/>
+                    </svg>
+                  </span>
+                  <div>
+                    <p class="text-xs text-gray-400 font-medium uppercase tracking-wide">E-mail</p>
+                    <p class="text-sm font-semibold text-blue-900 leading-snug">nerymedkft@gmail.com</p>
+                  </div>
+                </a>
+              </div>
             </div>
 
             <!-- Right: Form -->
@@ -399,19 +424,11 @@ const faqsRight = [
               </p>
 
               <form id="contact-form-hazirovos" class="flex flex-col gap-4" novalidate>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div class="flex flex-col gap-1">
-                    <label for="haz-name" class="text-sm font-medium text-gray-700">Név <span class="text-red-500">*</span></label>
-                    <input id="haz-name" name="name" type="text" required autocomplete="name"
-                      class="border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
-                      placeholder="Kovács János" />
-                  </div>
-                  <div class="flex flex-col gap-1">
-                    <label for="haz-company" class="text-sm font-medium text-gray-700">Cég neve</label>
-                    <input id="haz-company" name="company" type="text" autocomplete="organization"
-                      class="border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
-                      placeholder="Példa Kft." />
-                  </div>
+                <div class="flex flex-col gap-1">
+                  <label for="haz-name" class="text-sm font-medium text-gray-700">Név <span class="text-red-500">*</span></label>
+                  <input id="haz-name" name="name" type="text" required autocomplete="name"
+                    class="border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                    placeholder="Kovács János" />
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div class="flex flex-col gap-1">
