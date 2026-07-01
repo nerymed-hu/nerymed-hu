@@ -1,7 +1,7 @@
 ---
 title: "Vállalati wellbeing – Sikeres céges egészségprogram"
 pubDate: 2025-03-19
-description: "Egy h\\u00e1rom h\\u00f3napos c\\u00e9ges wellbeing eg\\u00e9szs\\u00e9gprogramba csatlakoztak informatikai ter\\u00fcleten dolgoz\\u00f3, f\\u0151k\\u00e9nt \\u00fcl\\u0151 \\u00e9letm\\u00f3d"
+description: "Egy h u00e1rom h u00f3napos c u00e9ges wellbeing eg u00e9szs u00e9gprogramba csatlakoztak informatikai ter u00fcleten dolgoz u00f3, f u0151k u00e9nt u00fcl u0151 u00e9letm u00f3dot"
 author: "Dr. Nery Klaudia Krisztina"
 image: "/images/doctors-are-talking-.jpg"
 category: "Aktuális híreink"

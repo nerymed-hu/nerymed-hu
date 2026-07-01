@@ -1,7 +1,7 @@
 ---
 title: "Az én történetem – hogyan találtam vissza önmagamhoz  32 kiló fogyással"
 pubDate: 2025-12-08
-description: "Ismerd meg Papdi R\\u00f3zsa t\\u00f6rt\\u00e9net\\u00e9t 50 \\u00e9v feletti n\\u0151k\\u00e9nt mindig fontos volt sz\\u00e1momra, hogy csinos legyek \\u00e9s odafigyeljek a megjelen\\u00e9"
+description: "Ismerd meg Papdi R u00f3zsa t u00f6rt u00e9net u00e9t 50 u00e9v feletti n u0151k u00e9nt mindig fontos volt sz u00e1momra, hogy csinos legyek u00e9s odafigyeljek a megjelen u00e9se"
 author: "Dr. Nery Klaudia Krisztina"
 image: "/images/Rozsa1.jpg"
 category: "Vélemények"

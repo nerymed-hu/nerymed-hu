@@ -1,7 +1,7 @@
 ---
 title: "A sportolók teljesítménynövelése Insumed étrenddel"
 pubDate: 2025-01-27
-description: "A versenysport, legyen sz\\u00f3 \\u00fasz\\u00e1sr\\u00f3l vagy b\\u00e1rmilyen m\\u00e1s intenz\\u00edv mozg\\u00e1sform\\u00e1r\\u00f3l, kiemelt feh\\u00e9rjesz\\u00fcks\\u00e9glettel j\\u00e"
+description: "A versenysport, legyen sz u00f3 u00fasz u00e1sr u00f3l vagy b u00e1rmilyen m u00e1s intenz u00edv mozg u00e1sform u00e1r u00f3l, kiemelt feh u00e9rjesz u00fcks u00e9glettel j u00e1"
 author: "Dr. Nery Klaudia Krisztina"
 image: "/images/A-sportolok-teljesitmenynovelese-Insumed-etrenddel.jpg"
 category: "Insumed"
