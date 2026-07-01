@@ -1,7 +1,7 @@
 ---
 title: "Vegán-növényi étrend: megéri odafigyelni a megfelelő tápanyagbevitelre"
 pubDate: 2025-01-27
-description: "A veg\\u00e1n \\u00e9letm\\u00f3d sok szempontb\\u00f3l lehet el\\u0151ny\\u00f6s, \\u00e1m k\\u00f6nnyen el\\u0151fordulhat, hogy bizonyos t\\u00e1panyagokb\\u00f3l, f\\u0151k\\u00e9nt feh\\u00"
+description: "A veg u00e1n u00e9letm u00f3d sok szempontb u00f3l lehet el u0151ny u00f6s, u00e1m k u00f6nnyen el u0151fordulhat, hogy bizonyos t u00e1panyagokb u00f3l, f u0151k u00e9nt feh u00e9"
 author: "Dr. Nery Klaudia Krisztina"
 image: "/images/Vegan-etrend-megeri-odafigyelni-a-megfelelo-tapanyagbevitelre.jpg"
 category: "Táplálkozás"
