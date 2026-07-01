@@ -1,4 +1,12 @@
 ---
+interface Props {
+  description?: string;
+}
+const { description } = Astro.props;
+const defaultDescription = `Amennyiben igénybe venné bármely orvosi szolgáltatásom vagy szeretne bejelentkezni orvosi rendelésre,
+            konzultációra – írjon nekem vagy hívjon a&nbsp;<a href="tel:+36204625517" class="font-bold text-blue-900 hover:text-orange-500 transition-colors">+36 20 462 5517</a>
+            telefonszámon. Kivéve háziorvosi rendelésre a <a href="tel:+3623362291" class="font-bold text-blue-900 hover:text-orange-500 transition-colors">06 23 362-291</a>,
+            vagy <a href="mailto:nerymedkft@gmail.com" class="font-bold text-blue-900 hover:text-orange-500 transition-colors">nerymedkft@gmail.com</a> elérhetőségek bármikor.`;
 ---
 
 <section id="kapcsolat" class="py-16 bg-blue-50">
@@ -9,12 +17,7 @@
       <div class="flex flex-col md:flex-row gap-8 mb-8">
         <div class="md:w-3/5">
           <h2 class="text-3xl font-bold text-blue-900 mb-4">Írjon nekem közvetlenül!</h2>
-          <p class="text-gray-600 leading-relaxed">
-            Amennyiben igénybe venné bármely orvosi szolgáltatásom vagy szeretne bejelentkezni orvosi rendelésre,
-            konzultációra – írjon nekem vagy hívjon a&nbsp;<a href="tel:+36204625517" class="font-bold text-blue-900 hover:text-orange-500 transition-colors">+36 20 462 5517</a>
-            telefonszámon. Kivéve háziorvosi rendelésre a <a href="tel:+3623362291" class="font-bold text-blue-900 hover:text-orange-500 transition-colors">06 23 362-291</a>,
-            vagy <a href="mailto:nerymedkft@gmail.com" class="font-bold text-blue-900 hover:text-orange-500 transition-colors">nerymedkft@gmail.com</a> elérhetőségek bármikor.
-          </p>
+          <p class="text-gray-600 leading-relaxed" set:html={description ?? defaultDescription}></p>
         </div>
         <div class="md:w-2/5 flex flex-col justify-center gap-4">
           <a href="tel:+36204625517" class="flex items-center gap-3 text-gray-700 hover:text-orange-500 transition-colors">
