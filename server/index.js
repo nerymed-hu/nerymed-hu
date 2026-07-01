@@ -20,7 +20,7 @@ const transport = nodemailer.createTransport({
 });
 
 app.post('/api/contact', async (req, res) => {
-  const { name, company, phone, email, message } = req.body ?? {};
+  const { name, company, phone, email, message, source } = req.body ?? {};
 
   if (!name?.trim() || !email?.trim() || !message?.trim()) {
     return res.status(400).json({ error: 'Hiányzó kötelező mezők: name, email, message' });
@@ -31,7 +31,10 @@ app.post('/api/contact', async (req, res) => {
     return res.status(400).json({ error: 'Érvénytelen e-mail cím' });
   }
 
-  const to = process.env.CONTACT_TO || 'dr.nery.klaudia@nerymed.hu';
+  // haziorvos rendelő routes to the practice inbox
+  const to = source === 'haziorvos'
+    ? (process.env.CONTACT_TO_HAZIRVOS || 'nerymedkft@gmail.com')
+    : (process.env.CONTACT_TO || 'dr.nery.klaudia@nerymed.hu');
   const from = process.env.CONTACT_FROM || 'noreply@nerymed.hu';
 
   const companyLine = company ? `\nCég: ${company}` : '';
