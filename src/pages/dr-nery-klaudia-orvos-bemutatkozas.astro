@@ -56,7 +56,7 @@ const timeline = [
 
     <!-- Hero: white split layout matching original -->
     <section class="bg-white overflow-hidden">
-      <div class="flex flex-col lg:flex-row max-w-[1200px] mx-auto w-full" style="min-height:760px;">
+      <div class="flex flex-col lg:flex-row max-w-[1200px] mx-auto w-full items-stretch">
 
         <!-- Left: text -->
         <div class="lg:w-1/2 flex flex-col justify-center py-16 px-8 lg:px-16">
@@ -87,21 +87,12 @@ const timeline = [
           </div>
         </div>
 
-        <!-- Right: two bordered images — exact pixel sizes from original measurement -->
-        <!-- Desk: 505×677px, right-0 top-0 -->
-        <!-- Klaudia: 320×392px, left-0, top:305px (bottom extends 20px below desk bottom: 305+392=697, desk bottom=677) -->
-        <div class="lg:w-1/2 relative">
+        <!-- Right: hero portrait from WP original -->
+        <div class="lg:w-1/2 flex items-end justify-center lg:justify-end">
           <img
-            src="/images/footer-bg.png"
-            alt=""
-            class="absolute top-0 object-cover shadow-lg"
-            style="width:505px; height:677px; left:60px; top:60px;"
-          />
-          <img
-            src="/images/klaudia-uj.jpg"
+            src="/images/Nevtelen-terv-15-1-1.png"
             alt="Dr. Nery Klaudia Krisztina"
-            class="absolute left-0 object-cover object-top border-[10px] border-white shadow-xl z-10"
-            style="width:320px; height:392px; top:365px;"
+            class="w-full max-w-[560px] object-cover object-top"
           />
         </div>
 
@@ -188,7 +179,7 @@ const timeline = [
       <div class="container mx-auto px-4 max-w-[1200px]">
         <div class="flex flex-col lg:flex-row gap-12 items-center">
           <div class="lg:w-3/5">
-            <h2 class="text-2xl lg:text-3xl font-bold text-blue-900 mb-5">Foglalkozás-egészségügy a vállalatok számára</h2>
+            <h2 class="text-2xl lg:text-3xl font-bold text-blue-900 mb-5">Foglalkozás egészségügy a vállalatok számára</h2>
             <p class="text-gray-600 leading-relaxed mb-6">
               Egy jól szervezett foglalkozás-egészségügyi program nemcsak a dolgozók egészségét
               védi, hanem hosszú távon hozzájárul a <strong>vállalat hatékonyságához</strong>.
@@ -208,14 +199,14 @@ const timeline = [
             </ul>
             <a href="/foglalkozas-egeszsegugy"
               class="inline-flex items-center gap-2 bg-orange-500 hover:bg-blue-900 text-white font-semibold px-7 py-3 rounded-full transition-colors">
-              Foglalkozás-egészségügy <span aria-hidden="true">→</span>
+              Foglalkozás egészségügy <span aria-hidden="true">→</span>
             </a>
           </div>
           <div class="lg:w-2/5 flex justify-center">
             <img
-              src="/images/foglalkozas-teaser.png"
-              alt="Foglalkozás-egészségügyi program"
-              class="w-full max-w-[320px] object-cover shadow-lg"
+              src="/images/Egyenre-szabott-eletmodtanacsadas.png"
+              alt="Egyénre szabott életmódtanácsadás"
+              class="w-full max-w-[380px] object-cover rounded-lg shadow-lg"
             />
           </div>
         </div>
