@@ -69,14 +69,18 @@ The contact server reads `/srv/opt/www/nerymed.hu/server/.env` on the EC2 (this 
 
 ```bash
 # server/.env
+PORT=3001
 SMTP_HOST=localhost
 SMTP_PORT=25
-MAIL_TO=nerymedkft@gmail.com
-MAIL_FROM=noreply@nerymed.hu
-PORT=3001
+CONTACT_TO=dr.nery.klaudia@nerymed.hu
+CONTACT_TO_HAZIRVOS=nerymedkft@gmail.com
+CONTACT_FROM=nerymed-noreply@kecskemethy.hu
+ALLOWED_ORIGIN=https://nerymed.hu
 ```
 
-On your home computer, create `server/.env` pointing to your local mail setup for testing.
+> **Why `CONTACT_FROM` is on `kecskemethy.hu`, not `nerymed.hu`:** the local SMTP relay isn't authoritative for `nerymed.hu` (no SPF/DKIM/MX records there) — it only has them for `kecskemethy.hu`. A `From:` address on `nerymed.hu` gets rejected/spam-flagged by major providers (Gmail etc.). Confirmed live 2026-08-10 after testing.
+
+On your home computer, create `server/.env` pointing to your local mail setup for testing (see `server/.env.example`).
 
 ---
 
