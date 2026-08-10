@@ -54,5 +54,5 @@ Last updated: 2026-08-10
 - [x] Rename Apache vhost to `300-nerymed.hu.conf`, issue own Let's Encrypt cert for `nerymed.hu`
 - [x] Move GitHub repo from `kecsi-san/nerymed` to `nerymed-hu/nerymed-hu` org
 - [x] Confirm `server/.env` on EC2 has `ALLOWED_ORIGIN=https://nerymed.hu` — fixed and `nerymed-contact` restarted 2026-08-10
-- [ ] Test contact form end-to-end on production (https://nerymed.hu)
+- [x] Test contact form end-to-end on production (https://nerymed.hu) — verified 2026-08-10, mail.log shows `250 2.6.0` accepted by nerymed.hu's Outlook/M365 MX; pending final check it lands in Inbox not Junk
 - [ ] Move local dev clone from `/usr/src/github.com/kecsi-san/nerymed` to `/usr/src/github.com/nerymed-hu/nerymed-hu` once everything else is settled
