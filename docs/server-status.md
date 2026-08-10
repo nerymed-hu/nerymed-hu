@@ -1,6 +1,6 @@
 # Server Status
 
-Last updated: 2026-06-11
+Last updated: 2026-08-10
 
 ## EC2 Instance
 
@@ -31,7 +31,7 @@ Last updated: 2026-06-11
 | `000-default.conf` | default | — |
 | `100-linuxbox.hu.conf` | linuxbox.hu | — |
 | `200-kecskemethy.hu.conf` | kecskemethy.hu, www, kepek, vault, zoltan | various |
-| `300-nerymed.kecskemethy.hu.conf` | nerymed.kecskemethy.hu | `/srv/opt/www/kecskemethy.hu/nerymed.kecskemethy.hu/dist` |
+| `300-nerymed.hu.conf` | nerymed.hu, www.nerymed.hu (canonical); nerymed.kecskemethy.hu (alias, 301→nerymed.hu) | `/srv/opt/www/nerymed.hu/dist` |
 
 ## SSL Certificates (Let's Encrypt)
 
@@ -40,24 +40,25 @@ Last updated: 2026-06-11
 | `kecskemethy.hu` | `*.kecskemethy.hu`, `kecskemethy.hu` | 2026-07-27 |
 | `linuxbox.hu` | `*.linuxbox.hu`, `linuxbox.hu` | 2026-07-27 |
 | `linuxbox.hu-0001` | `linuxbox.hu` | 2026-08-15 |
-
-`nerymed.kecskemethy.hu` is covered by the `*.kecskemethy.hu` wildcard — no separate cert needed.
+| `nerymed.hu` | `nerymed.hu` | issued via certbot 2026-08-10 (own cert, no longer riding the `*.kecskemethy.hu` wildcard) |
 
 ## NeryMed Site
 
-- **URL:** https://nerymed.kecskemethy.hu
-- **Status:** Live (holding page)
-- **DocumentRoot:** `/srv/opt/www/kecskemethy.hu/nerymed.kecskemethy.hu/dist`
-- **Project root:** `/srv/opt/www/kecskemethy.hu/nerymed.kecskemethy.hu`
-- **Vhost config:** `/etc/apache2/sites-available/300-nerymed.kecskemethy.hu.conf`
-- **DNS:** `nerymed.kecskemethy.hu` → `52.48.130.44` (A record, set 2026-06-11)
+- **URL:** https://nerymed.hu (production, live)
+- **Status:** Live
+- **DocumentRoot:** `/srv/opt/www/nerymed.hu/dist`
+- **Project root:** `/srv/opt/www/nerymed.hu`
+- **Vhost config:** `/etc/apache2/sites-available/300-nerymed.hu.conf`
+- **DNS:** `nerymed.hu` → `52.48.130.44` (A record)
+- **Legacy path:** `/srv/opt/www/kecskemethy.hu/nerymed.kecskemethy.hu` is now a symlink to `/srv/opt/www/nerymed.hu`, kept for continuity — treat `/srv/opt/www/nerymed.hu` as canonical for anything new
+- **Repo:** moved from `kecsi-san/nerymed` (personal) to `nerymed-hu/nerymed-hu` (org)
 
 ## Systemd Service: nerymed-contact
 
 - **Unit file:** `/etc/systemd/system/nerymed-contact.service`
-- **Status:** Registered, not yet started (waiting for `server/index.js` to be deployed)
+- **Status:** Running
 - **Runs as:** `kecsi`
-- **WorkingDirectory:** `/srv/opt/www/kecskemethy.hu/nerymed.kecskemethy.hu/server`
+- **WorkingDirectory:** `/srv/opt/www/nerymed.hu/server`
 - **Start:** `sudo systemctl start nerymed-contact`
 - **Enable on boot:** `sudo systemctl enable nerymed-contact`
 

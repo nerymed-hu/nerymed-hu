@@ -11,8 +11,8 @@
 ## First-Time Setup (home computer)
 
 ```bash
-git clone git@github.com:kecsi-san/nerymed.git
-cd nerymed
+git clone git@github.com:nerymed-hu/nerymed-hu.git
+cd nerymed-hu
 npm install
 ```
 
@@ -40,7 +40,7 @@ git push origin main
 SSH into the server, then:
 
 ```bash
-cd /srv/opt/www/kecskemethy.hu/nerymed.kecskemethy.hu
+cd /srv/opt/www/nerymed.hu
 git pull origin main
 npm ci
 npm ci --prefix server
@@ -65,7 +65,7 @@ sudo systemctl status nerymed-contact
 
 ## Environment Variables
 
-The contact server reads `/srv/opt/www/kecskemethy.hu/nerymed.kecskemethy.hu/server/.env` on the EC2 (this file is gitignored — set it manually on the server).
+The contact server reads `/srv/opt/www/nerymed.hu/server/.env` on the EC2 (this file is gitignored — set it manually on the server).
 
 ```bash
 # server/.env
@@ -84,8 +84,8 @@ On your home computer, create `server/.env` pointing to your local mail setup fo
 
 ```bash
 # Apache access + errors
-sudo tail -f /var/log/apache2/nerymed.kecskemethy.hu-access.log
-sudo tail -f /var/log/apache2/nerymed.kecskemethy.hu-error.log
+sudo tail -f /var/log/apache2/nerymed.hu-access.log
+sudo tail -f /var/log/apache2/nerymed.hu-error.log
 
 # Node.js contact service
 sudo journalctl -u nerymed-contact -f
@@ -95,7 +95,9 @@ sudo journalctl -u nerymed-contact -f
 
 ## Apache Vhost
 
-Config file: `/etc/apache2/sites-available/300-nerymed.kecskemethy.hu.conf`
+Config file: `/etc/apache2/sites-available/300-nerymed.hu.conf`
+
+`ServerAlias` still includes `nerymed.kecskemethy.hu` and `www.nerymed.hu` — both redirect (301) to the canonical `nerymed.hu` host. DocumentRoot: `/srv/opt/www/nerymed.hu/dist`.
 
 After editing the vhost:
 
@@ -108,10 +110,9 @@ sudo systemctl reload apache2
 
 ## SSL Certificate
 
-Covered by the existing `*.kecskemethy.hu` wildcard cert (Let's Encrypt).
+Own Let's Encrypt cert for `nerymed.hu` (issued via certbot, no longer relying on the `*.kecskemethy.hu` wildcard).
 
-- **Cert path:** `/etc/letsencrypt/live/kecskemethy.hu/`
-- **Expires:** 2026-07-27 (auto-renews via certbot timer)
+- **Cert path:** `/etc/letsencrypt/live/nerymed.hu/`
 - Check renewal: `sudo certbot renew --dry-run`
 
 ---

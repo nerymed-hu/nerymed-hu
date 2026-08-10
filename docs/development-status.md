@@ -1,6 +1,6 @@
 # Development Status
 
-Last updated: 2026-06-11
+Last updated: 2026-06-11 (stale scaffold snapshot — site is now live in production; see `docs/server-status.md` and `docs/todo.md` for current state)
 
 ## Development Machine
 
@@ -12,8 +12,8 @@ Last updated: 2026-06-11
 
 ## Project Location
 
-- **Local repo:** `/usr/src/github.com/kecsi-san/nerymed`
-- **Remote:** `git@github.com:kecsi-san/nerymed`
+- **Local repo:** `/usr/src/github.com/kecsi-san/nerymed` (directory name is historical; repo itself moved — see Remote below)
+- **Remote:** `git@github.com:nerymed-hu/nerymed-hu.git` (moved from personal `kecsi-san/nerymed` to the `nerymed-hu` org)
 - **Branch:** `main`
 
 ## Scaffold Status
