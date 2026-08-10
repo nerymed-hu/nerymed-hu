@@ -12,7 +12,7 @@ Last updated: 2026-06-11 (stale scaffold snapshot — site is now live in produc
 
 ## Project Location
 
-- **Local repo:** `/usr/src/github.com/kecsi-san/nerymed` (directory name is historical; repo itself moved — see Remote below)
+- **Local repo:** `/usr/src/github.com/nerymed-hu/nerymed-hu` (moved 2026-08-10 to match the GitHub org/repo layout)
 - **Remote:** `git@github.com:nerymed-hu/nerymed-hu.git` (moved from personal `kecsi-san/nerymed` to the `nerymed-hu` org)
 - **Branch:** `main`
 
