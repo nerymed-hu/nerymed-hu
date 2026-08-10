@@ -50,17 +50,27 @@ Last updated: 2026-08-10
 - **Project root:** `/srv/opt/www/nerymed.hu`
 - **Vhost config:** `/etc/apache2/sites-available/300-nerymed.hu.conf`
 - **DNS:** `nerymed.hu` → `52.48.130.44` (A record)
-- **Legacy path:** `/srv/opt/www/kecskemethy.hu/nerymed.kecskemethy.hu` is now a symlink to `/srv/opt/www/nerymed.hu`, kept for continuity — treat `/srv/opt/www/nerymed.hu` as canonical for anything new
+- **Legacy paths (symlinks to the canonical dir, kept for continuity, do not target directly):** `/srv/opt/www/kecskemethy.hu/nerymed.kecskemethy.hu`, `/var/www/nerymed.hu`
 - **Repo:** moved from `kecsi-san/nerymed` (personal) to `nerymed-hu/nerymed-hu` (org)
+- **Deploy:** automated via GitHub Actions (`.github/workflows/deploy.yml`) on every push to `main`, SSH'd in as the `nerymed` user — no longer a manual `kecsi` step (see Systemd/Ownership below)
+
+## System User: nerymed
+
+- `uid=1009(nerymed) gid=1009(nerymed)`, home `/home/nerymed`, shell `/bin/bash` (needs a real shell — SSH-exec commands from GitHub Actions run through it)
+- Owns the entire `/srv/opt/www/nerymed.hu` tree
+- `~/.ssh/authorized_keys` holds the public half of the GitHub Actions deploy key (`EC2_SSH_KEY` secret holds the private half, `EC2_USER=nerymed`)
+- `kecsi` is no longer involved in deploy or in running the service
 
 ## Systemd Service: nerymed-contact
 
 - **Unit file:** `/etc/systemd/system/nerymed-contact.service`
 - **Status:** Running
-- **Runs as:** `kecsi`
+- **Runs as:** `nerymed` (changed from `kecsi` 2026-08-10)
 - **WorkingDirectory:** `/srv/opt/www/nerymed.hu/server`
+- **EnvironmentFile:** `/srv/opt/www/nerymed.hu/server/.env`
 - **Start:** `sudo systemctl start nerymed-contact`
 - **Enable on boot:** `sudo systemctl enable nerymed-contact`
+- **Note:** GitHub Actions deploy only rebuilds `dist/`; it does **not** restart this service. If `server/index.js` or `server/.env` changes, restart manually: `sudo systemctl restart nerymed-contact`
 
 ## Local Mail Server
 
