@@ -4,8 +4,8 @@
 
 This is the Astro/Tailwind rebuild of **nerymed.hu** — a small private medical practice site for Dr. Nery Klaudia Krisztina (Érd, Hungary). The original is a WordPress/Elementor installation. The goal is a pixel-faithful static replacement with identical design, content, and imagery.
 
-**Staging:** nerymed.redacted-personal-domain.example (AWS EC2)  
-**Production (pending DNS cutover):** nerymed.hu → 203.0.113.10
+**Production:** nerymed.hu (AWS EC2, 203.0.113.10) — live since 2026-08-10  
+**Repo:** `git@github.com:nerymed-hu/nerymed-hu.git` (moved from the `kecsi-san` personal account to the `nerymed-hu` GitHub org)
 
 ---
 
@@ -164,7 +164,7 @@ When checking/fixing a page:
 2. Identify differences: wrong color, wrong layout, missing image, wrong font size, missing section
 3. Fix in the `.astro` source file
 4. Commit + push immediately
-5. Trigger a deploy on EC2 and verify on the staging URL
+5. Trigger a deploy on EC2 and verify on the live URL
 
 Do not batch multiple page fixes into one commit — one fix per commit makes it easy to bisect issues.
 

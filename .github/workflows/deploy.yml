@@ -19,7 +19,7 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             set -e
-            cd /srv/opt/www/redacted-personal-domain.example/nerymed.redacted-personal-domain.example
+            cd /srv/opt/www/nerymed.hu
             git fetch origin main
             git reset --hard origin/main
             npm run build
