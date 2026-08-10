@@ -117,6 +117,19 @@ Own Let's Encrypt cert for `nerymed.hu` (issued via certbot, no longer relying o
 
 ---
 
-## Future: Automated Deploy via GitHub Actions
+## Automated Deploy via GitHub Actions
 
-A workflow file (`.github/workflows/deploy.yml`) can automate the EC2 deploy on every push to `main`. See `docs/plan.md` for the template. Requires adding `EC2_HOST`, `EC2_USER`, and `EC2_SSH_KEY` as GitHub repository secrets.
+`.github/workflows/deploy.yml` deploys the EC2 box on every push to `main` — this is the live/primary deploy path as of 2026-08-10, not a future item. It SSHes into the box as the `nerymed` system user (via `appleboy/ssh-action`, credentials in the `EC2_HOST` / `EC2_USER=nerymed` / `EC2_SSH_KEY` repo secrets) and runs `git fetch && git reset --hard && npm run build` + the dist chmod fix.
+
+**Known limitation:** the workflow does not run `npm ci` or restart `nerymed-contact`. A `package.json` dependency change won't get installed automatically, and a `server/index.js`/`server/.env` change needs a manual `sudo systemctl restart nerymed-contact` on the box. Fold these into the workflow if that friction becomes a problem.
+
+### Gotcha: org "Deploy keys" policy blocks git access with a misleading error
+
+The `nerymed` user's own git-to-GitHub auth (separate from `EC2_SSH_KEY`, which only gets Actions *into* the box) uses a **deploy key** registered on the `nerymed-hu/nerymed-hu` repo (`~nerymed/.ssh/id_ed25519`, read-only). New GitHub orgs default to **Settings → Deploy keys → Disabled** org-wide (`deploy_keys_enabled_for_repositories: false` via the API).
+
+When that's disabled, `git fetch`/`git pull` using that key fails with:
+```
+ERROR: Repository not found.
+fatal: Could not read from remote repository.
+```
+— identical to the error for a genuinely missing/inaccessible repo. Every other signal looks fine (`ssh -T git@github.com` authenticates and shows `Hi nerymed-hu/nerymed-hu!`, the deploy key API shows `verified: true`, the repo isn't archived/disabled) — the org policy is the one thing none of those checks surface. If `git fetch` fails on the server with this exact error despite the deploy key looking correctly registered, check **org Settings → Deploy keys** first before re-registering/regenerating anything.
