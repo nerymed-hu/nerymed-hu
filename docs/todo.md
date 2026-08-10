@@ -53,6 +53,6 @@ Last updated: 2026-08-10
 - [x] Move site root on EC2 to `/srv/opt/www/nerymed.hu` (old path now a symlink)
 - [x] Rename Apache vhost to `300-nerymed.hu.conf`, issue own Let's Encrypt cert for `nerymed.hu`
 - [x] Move GitHub repo from `kecsi-san/nerymed` to `nerymed-hu/nerymed-hu` org
-- [ ] Confirm `server/.env` on EC2 has `ALLOWED_ORIGIN=https://nerymed.hu` (was likely set for staging domain)
+- [x] Confirm `server/.env` on EC2 has `ALLOWED_ORIGIN=https://nerymed.hu` — fixed and `nerymed-contact` restarted 2026-08-10
 - [ ] Test contact form end-to-end on production (https://nerymed.hu)
 - [ ] Move local dev clone from `/usr/src/github.com/kecsi-san/nerymed` to `/usr/src/github.com/nerymed-hu/nerymed-hu` once everything else is settled

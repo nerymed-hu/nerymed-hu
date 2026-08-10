@@ -121,7 +121,7 @@ Own Let's Encrypt cert for `nerymed.hu` (issued via certbot, no longer relying o
 
 `.github/workflows/deploy.yml` deploys the EC2 box on every push to `main` — this is the live/primary deploy path as of 2026-08-10, not a future item. It SSHes into the box as the `nerymed` system user (via `appleboy/ssh-action`, credentials in the `EC2_HOST` / `EC2_USER=nerymed` / `EC2_SSH_KEY` repo secrets) and runs `git fetch && git reset --hard && npm run build` + the dist chmod fix.
 
-**Known limitation:** the workflow does not run `npm ci` or restart `nerymed-contact`. A `package.json` dependency change won't get installed automatically, and a `server/index.js`/`server/.env` change needs a manual `sudo systemctl restart nerymed-contact` on the box. Fold these into the workflow if that friction becomes a problem.
+**By design**, the workflow only rebuilds the static `dist/`. It deliberately does not run `npm ci` or touch `nerymed-contact` — server-side changes (`package.json` deps, `server/index.js`, `server/.env`) are applied and restarted by hand on the box (`sudo systemctl restart nerymed-contact`), not automated. Keep it that way unless explicitly asked to change it.
 
 ### Gotcha: org "Deploy keys" policy blocks git access with a misleading error
 
