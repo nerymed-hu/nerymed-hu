@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-Astro/Tailwind rebuild of **nerymed.hu** — a small private medical practice site for Dr. Nery Klaudia Krisztina (Érd, Hungary), replacing a legacy WordPress/Elementor install. The rebuild is complete and live; nerymed.hu now serves this Astro site directly. Further work here is maintenance/incremental changes, not a from-scratch migration.
+Astro/Tailwind site for **nerymed.hu** — a small private medical practice site for Dr. Nery Klaudia Krisztina (Érd, Hungary). The build is complete and live; nerymed.hu serves this site directly. Further work here is maintenance/incremental changes, not a from-scratch build.
 
 **Production:** nerymed.hu (AWS EC2) — live since 2026-08-10. Server IP, deploy-key setup, and systemd service layout live in a separate private repo, not here.
 **Repo:** `git@github.com:nerymed-hu/nerymed-hu.git`
@@ -62,7 +62,7 @@ git push
 
 ## Design System
 
-Reverse-engineered from the original WordPress/Elementor site. Use as the source of truth for any future page work.
+The established design system for the site. Use as the source of truth for any future page work.
 
 ### Content Width
 
@@ -87,7 +87,7 @@ Reverse-engineered from the original WordPress/Elementor site. Use as the source
 
 ### Typography
 
-- Font: **Inter** (Google Fonts) — an intentional simplification from the WP original's Roboto/Jost; do not change
+- Font: **Inter** (Google Fonts) — a deliberate choice; do not change
 - Line-height: `leading-relaxed` (1.625) for body paragraphs
 - Heading sizes: `text-5xl` hero / `text-4xl` h2 / `text-3xl` h3 / `text-2xl`–`text-xl` sub-headings / `text-base` body
 - Section eyebrow labels (e.g. "Ismerj meg!"): `text-orange-500 font-semibold text-sm uppercase tracking-widest`
@@ -108,7 +108,7 @@ Reverse-engineered from the original WordPress/Elementor site. Use as the source
 
 ### Images
 
-- **White border on portrait images:** `border-[10px] border-white shadow-xl` (signature WP style)
+- **White border on portrait images:** `border-[10px] border-white shadow-xl` (a consistent element across the site)
 - Use `object-cover object-top` for portrait/face photos
 - Background section images always use absolute positioning + `w-full h-full object-cover`
 
@@ -133,7 +133,7 @@ Custom circular SVG icons (112.5×112.5 viewBox, `blue-600` fill circle backgrou
 
 ## Page Work Workflow
 
-There's no live WP original to compare against anymore (nerymed.hu now serves this site). For any visual fix or new section, match the Design System values above rather than reverse-engineering from a reference site.
+For any visual fix or new section, match the Design System values above.
 
 1. Identify the change needed
 2. Fix in the `.astro` source file, following Design System conventions

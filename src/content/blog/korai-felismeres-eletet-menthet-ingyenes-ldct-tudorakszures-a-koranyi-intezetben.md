@@ -35,4 +35,4 @@ telefon: 06 30 1530951 (a hívást nem veszik fel, minden hívószámot 2-3 napo
 
 Üdvözlettel: Doktornő
 
-![](https://nerymed.hu/wp-content/uploads/2025/04/NeryHir02-1.png)
+![](/images/NeryHir02-1.png)
