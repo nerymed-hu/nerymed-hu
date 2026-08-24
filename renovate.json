@@ -3,13 +3,11 @@
   "extends": ["config:recommended"],
   "dependencyDashboard": false,
   "timezone": "Europe/Budapest",
-  "schedule": ["before 6am on monday"],
   "labels": ["dependencies"],
   "assignees": ["kecsi-san"],
   "prConcurrentLimit": 5,
   "lockFileMaintenance": {
-    "enabled": true,
-    "schedule": ["before 6am on monday"]
+    "enabled": true
   },
   "vulnerabilityAlerts": {
     "enabled": true,
