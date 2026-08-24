@@ -508,6 +508,15 @@ const faqsRight = [
           btn.textContent = 'Küldés';
         }
       });
+
+      const newsSlider = document.getElementById('news-slider');
+      const NEWS_STEP = 344;
+      document.getElementById('news-prev')?.addEventListener('click', () => {
+        newsSlider?.scrollBy({ left: -NEWS_STEP, behavior: 'smooth' });
+      });
+      document.getElementById('news-next')?.addEventListener('click', () => {
+        newsSlider?.scrollBy({ left: NEWS_STEP, behavior: 'smooth' });
+      });
     </script>
 
   </main>
@@ -517,4 +526,6 @@ const faqsRight = [
 
 <style>
   details summary::-webkit-details-marker { display: none; }
+  .news-slider::-webkit-scrollbar { display: none; }
+  .news-slider { scrollbar-width: none; }
 </style>
