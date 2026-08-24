@@ -148,3 +148,6 @@ dist/
 
 # Contact server env
 server/.env
+
+# Local Claude Code settings (machine-specific paths, never meant to be shared)
+.claude/settings.local.json

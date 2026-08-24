@@ -4,8 +4,8 @@
 
 This is the Astro/Tailwind rebuild of **nerymed.hu** — a small private medical practice site for Dr. Nery Klaudia Krisztina (Érd, Hungary). The original is a WordPress/Elementor installation. The goal is a pixel-faithful static replacement with identical design, content, and imagery.
 
-**Production:** nerymed.hu (AWS EC2, 203.0.113.10) — live since 2026-08-10  
-**Repo:** `git@github.com:nerymed-hu/nerymed-hu.git` (moved from the `kecsi-san` personal account to the `nerymed-hu` GitHub org)
+**Production:** nerymed.hu (AWS EC2) — live since 2026-08-10. Operational/infra detail (server IP, deploy-key setup, systemd service layout) lives in a separate private repo, not here.
+**Repo:** `git@github.com:nerymed-hu/nerymed-hu.git` (moved from a personal account to the `nerymed-hu` GitHub org; previous local clone path was under `development-repo-path`)
 
 ---
 
@@ -175,7 +175,7 @@ Do not batch multiple page fixes into one commit — one fix per commit makes it
 - POST to `/api/contact` (proxied by Apache to Node.js on port 3001)
 - Fields: name, company, phone, email, message
 - Recipient: `nerymedkft@gmail.com`
-- Backend: `server/index.js` — runs as `nerymed-contact` systemd service
+- Backend: `server/index.js` — runs as a systemd service on the production host
 - `.env` in `server/` holds SMTP config (gitignored)
 
 ---
