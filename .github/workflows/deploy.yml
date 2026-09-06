@@ -30,3 +30,6 @@ jobs:
             npm run build
             find dist -type d -exec chmod 755 {} \;
             find dist -type f -exec chmod 644 {} \;
+            cd server
+            npm ci --omit=dev
+            sudo systemctl restart nerymed-contact.service
