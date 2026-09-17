@@ -33,8 +33,8 @@ Az influenza súlyos szövődményeket okozhat, különösen a rizikócsoportba 
 
 **Az influenzaoltás beadására minden rendelési napon, az utolsó fél órában lehet érkezni időpontfoglalás nélkül.**
 
-**Kérjük, vegyék figyelembe:**Amennyiben az oltáson kívül **egyéb ügyintézést is szeretnének** (pl. receptírás, leletmegbeszélés, panasz kivizsgálása stb.), **mindenképpen kérjenek előzetesen időpontot**, mert **időpont nélkül kizárólag az influenzaoltás beadására van lehetőség.**
+**Kérjük, vegyék figyelembe:** Amennyiben az oltáson kívül **egyéb ügyintézést is szeretnének** (pl. receptírás, leletmegbeszélés, panasz kivizsgálása stb.), **mindenképpen kérjenek előzetesen időpontot**, mert **időpont nélkül kizárólag az influenzaoltás beadására van lehetőség.**
 
-Köszönöm együttműködésüket a gördülékeny rendelés érdekében!Várom Önöket az oltásra!
+Köszönöm együttműködésüket a gördülékeny rendelés érdekében! Várom Önöket az oltásra!
 
 Üdvözlettel: dr. Nery Klaudia
