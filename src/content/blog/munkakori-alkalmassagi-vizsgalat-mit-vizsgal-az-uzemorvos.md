@@ -1,7 +1,7 @@
 ---
 title: "Munkaköri alkalmassági vizsgálat: mit vizsgál az üzemorvos?"
 pubDate: 2026-03-12
-description: "A munkába állás vagy egy adott munkakör betöltése előtt sok esetben kötelező a munkaköri alkalmassági vizsgálat . A vizsgálat célja annak megállapítása, hogy a munkavállaló egészsé"
+description: "A munkába állás vagy egy adott munkakör betöltése előtt sok esetben kötelező a munkaköri alkalmassági vizsgálat. A vizsgálat célja annak megállapítása, hogy a munkavállaló egészsé"
 author: "Dr. Nery Klaudia Krisztina"
 image: "/images/tamimt9b-doctor-9964865_1280-1.jpg"
 category: "Aktuális híreink"
@@ -129,13 +129,10 @@ A vizsgálat végén az üzemorvos **alkalmassági véleményt** állít ki.
 
 Ez lehet:
 
-**Alkalmas**A munkavállaló egészségi állapota megfelelő az adott munkakörhöz.
-
-**Korlátozással alkalmas**A munkavállaló dolgozhat, de bizonyos feltételek mellett.
-
-**Ideiglenesen nem alkalmas**Az egészségi állapot átmenetileg nem teszi lehetővé a munkavégzést.
-
-**Nem alkalmas**A munkakör ellátása egészségügyi okokból nem javasolt.
+- **Alkalmas:** A munkavállaló egészségi állapota megfelelő az adott munkakörhöz.
+- **Korlátozással alkalmas:** A munkavállaló dolgozhat, de bizonyos feltételek mellett.
+- **Ideiglenesen nem alkalmas:** Az egészségi állapot átmenetileg nem teszi lehetővé a munkavégzést.
+- **Nem alkalmas:** A munkakör ellátása egészségügyi okokból nem javasolt.
 
 ---
 
@@ -155,4 +152,4 @@ Segítenek:
 
 ---
 
-✔ **Összefoglalva:**A munkaköri alkalmassági vizsgálat célja annak megállapítása, hogy a munkavállaló egészségi állapota megfelel-e az adott munkakör követelményeinek. Az üzemorvos a vizsgálat során figyelembe veszi a munkakör kockázatait és a dolgozó egészségi állapotát, majd alkalmassági véleményt ad ki.
+✔ **Összefoglalva:** A munkaköri alkalmassági vizsgálat célja annak megállapítása, hogy a munkavállaló egészségi állapota megfelel-e az adott munkakör követelményeinek. Az üzemorvos a vizsgálat során figyelembe veszi a munkakör kockázatait és a dolgozó egészségi állapotát, majd alkalmassági véleményt ad ki.
