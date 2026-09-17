@@ -35,4 +35,6 @@ Az emlékeztető oltás háziorvosi rendelésen keresztül is elérhető. Kérem
 
 **A szamárköhögés megelőzhető – védje saját magát és a legkisebbeket is egy egyszerű oltással!**
 
-Üdvözlettel:*Dr. Nery Klaudia*Háziorvos
+Üdvözlettel,
+
+dr. Nery Klaudia, háziorvos
