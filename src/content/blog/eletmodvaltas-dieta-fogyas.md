@@ -13,7 +13,7 @@ A diagnózis világos volt, a megoldáshoz azonban nem elég az elhatározás �
 
 ## Hogyan kezdődött a változás?
 
-Zsófia először egy rutinszerű, jogosítvány megújításához szükséges orvosi vizsgálaton találkozott Dr. Nery Klaudia doktornővel. **„A szokásos vizsgálatokon felül a doktornő szükségességét látta további vizsgálatok elvégzésének is, mint a 24 órás vérnyomásmérés és a cukorterheléses laborvizsgálat” **– emlékszik vissza. A részletes vizsgálatokból kiderült, hogy magas a vérnyomása, és inzulinrezisztenciával is küzd.
+Zsófia először egy rutinszerű, jogosítvány megújításához szükséges orvosi vizsgálaton találkozott Dr. Nery Klaudia doktornővel. **„A szokásos vizsgálatokon felül a doktornő szükségességét látta további vizsgálatok elvégzésének is, mint a 24 órás vérnyomásmérés és a cukorterheléses laborvizsgálat”** – emlékszik vissza. A részletes vizsgálatokból kiderült, hogy magas a vérnyomása, és inzulinrezisztenciával is küzd.
 
 ## Mindig az első lépés a legnehezebb
 
@@ -41,13 +41,13 @@ Az egészséges életmód nem csupán a mérlegen látható.
 
 Zsófiának fél év alatt sikerült megszabadulnia a vérnyomáscsökkentőtől, mivel az értékei normalizálódtak. A cukorterheléses laborvizsgálatok pedig azt igazolták, hogy az inzulinrezisztencia területén is jelentős javulást ért el.
 
-Az egyik legnagyobb mérföldkő azonban a fogyás volt: **„A kilencedik hónapnál mínusz 27 kg-nál járok, egyre közelebb a célhoz” **– osztotta meg büszkén.
+Az egyik legnagyobb mérföldkő azonban a fogyás volt: **„A kilencedik hónapnál mínusz 27 kg-nál járok, egyre közelebb a célhoz”** – osztotta meg büszkén.
 
 ![Koller Zsófia belevágott az életmódváltásba](/images/Kep2.png)
 
 ![Koller Zsófia az életmódváltásnak köszönhetően energikus és számos kilót is leadott.](/images/Kep3.jpg)
 
-Zsófi így foglalja össze a tapasztalatait:** „Köszönöm a támogatást a doktornőnek és hozzám közel állóknak, mindenkinek olyan orvost és barátokat kívánok, mint akik mellettem álltak.”**
+Zsófi így foglalja össze a tapasztalatait: **„Köszönöm a támogatást a doktornőnek és hozzám közel állóknak, mindenkinek olyan orvost és barátokat kívánok, mint akik mellettem álltak.”**
 
 Az Insumed módszere bizonyította hatékonyságát: nemcsak fogyásban segít, hanem hozzájárul a vérnyomás és a vércukorértékek optimalizálásához is, így tartós eredményeket és jobb életminőséget kínál azoknak, akik készek változtatni. Ha téged is hasonló problémák érintenek, bátran kérj segítséget szakembertől, mert az életmódváltás nemcsak a felesleges kilók leadásáról, hanem az egészséged megőrzéséről is szól.
 
@@ -68,4 +68,4 @@ Ez nem csupán esztétikai kérdés, hanem az életminőség javításának egyi
 
 Koller Zsófia esete is azt bizonyítja: valódi változást elérni idő, türelem és elkötelezettség kérdése. Az életmódváltás útja nem mindig könnyű, de az eredmények hosszú távon fenntarthatók – és minden egyes lépés megéri.
 
-Ha szeretne többet megtudni az orvosi háttérrel támogatott életmódváltásról vagy hasonló problémákkal küzd, vegye fel velünk a**[kapcsolatot](https://nerymed.hu/dr-nery-klaudia-orvos-bemutatkozas/#kapcsolat)**!
+Ha szeretne többet megtudni az orvosi háttérrel támogatott életmódváltásról vagy hasonló problémákkal küzd, vegye fel velünk a **[kapcsolatot](https://nerymed.hu/dr-nery-klaudia-orvos-bemutatkozas/#kapcsolat)**!
