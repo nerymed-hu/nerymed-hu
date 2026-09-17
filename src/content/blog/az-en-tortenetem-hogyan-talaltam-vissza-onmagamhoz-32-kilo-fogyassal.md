@@ -1,5 +1,5 @@
 ---
-title: "Az én történetem – hogyan találtam vissza önmagamhoz  32 kiló fogyással"
+title: "Az én történetem – hogyan találtam vissza önmagamhoz 32 kiló fogyással"
 pubDate: 2025-12-08
 description: "Ismerd meg Papdi Rózsa történetét – 50 év feletti nőként mindig fontos volt számomra, hogy csinos legyek és odafigyeljek a megjelenésemre."
 author: "Dr. Nery Klaudia Krisztina"
