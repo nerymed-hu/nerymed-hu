@@ -8,7 +8,7 @@ category: "Táplálkozás"
 ---
 
 A vegán életmód sok szempontból lehet előnyös, ám könnyen előfordulhat, hogy bizonyos tápanyagokból, főként fehérjéből nem visz be elegendőt a szervezetébe.  Rendkívül lényeges, hogy teljes értékű fehérjeforrásokat is fogyasszon, hiszen a szervezete folyamatosan igényli az esszenciális aminosavakat az izomzat fenntartásához, az immunrendszer megfelelő működéséhez és az általános jó közérzethez.
-Ha szeretné megtudni, hogy vajon jól állította-e össze étrendjét, az [**INSUMED** ](https://nerymed.hu/insumed/)BIA-mérése segíthet kideríteni, mennyi fehérjére, szénhidrátra és zsírra van szüksége, illetve mely területeken érdemes módosítania.
+Ha szeretné megtudni, hogy vajon jól állította-e össze étrendjét, az [**INSUMED**](https://nerymed.hu/insumed/) BIA-mérése segíthet kideríteni, mennyi fehérjére, szénhidrátra és zsírra van szüksége, illetve mely területeken érdemes módosítania.
 
 ## Miért lényeges a megfelelő fehérjebevitel?
 
