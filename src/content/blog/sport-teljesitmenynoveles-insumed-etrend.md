@@ -17,7 +17,7 @@ A versenysport, legyen szó úszásról vagy bármilyen más intenzív mozgásfo
 
 ## Insumed étrendkiegészítők: BESTFORM fehérjekoncentrátum
 
-Az**[ Insumed BESTFORM](https://nerymed.hu/insumed/)** kiemelkedő minőségű, hatféle fehérjeforrás gondosan összeállított keverékéből készül. Tartalmazza az összes esszenciális aminosavat, köztük a BCAA-kat, amelyek kulcsfontosságúak az izomanyagcsere szempontjából. Emellett vitaminokkal és ásványi anyagokkal is kiegészül, hogy a sportolók szervezete minden szükséges tápanyaghoz hozzájusson. Alkalmazza Ön is az Insumed étrend kiegészítőit!
+Az **[Insumed BESTFORM](https://nerymed.hu/insumed/)** kiemelkedő minőségű, hatféle fehérjeforrás gondosan összeállított keverékéből készül. Tartalmazza az összes esszenciális aminosavat, köztük a BCAA-kat, amelyek kulcsfontosságúak az izomanyagcsere szempontjából. Emellett vitaminokkal és ásványi anyagokkal is kiegészül, hogy a sportolók szervezete minden szükséges tápanyaghoz hozzájusson. Alkalmazza Ön is az Insumed étrend kiegészítőit!
 
 ## Fogyasztása sportolóknak
 
@@ -27,5 +27,5 @@ Az**[ Insumed BESTFORM](https://nerymed.hu/insumed/)** kiemelkedő minőségű, 
 
 ## Az Insumed hatékonysága a gyakorlatban
 
-Egy fiatal diák sportoló, **Marosi Bálint**, a VUK SE növendéke, Dr. Nery Klaudia doktornővel együttműködve építette fel a helyes sporttáplálkozását. Bálint **Normandiában**, a Gymnaziade első napján 50 méter háton **ezüstérmet** szerzett, majd a 4x100 méteres gyorsváltóval **világbajnoki címet** is nyert. Felkészülése során kiemelt hangsúlyt kapott az **Insumed **étrend, amely hozzájárult a fizikális és mentális erőnlét javításához.
+Egy fiatal diák sportoló, **Marosi Bálint**, a VUK SE növendéke, Dr. Nery Klaudia doktornővel együttműködve építette fel a helyes sporttáplálkozását. Bálint **Normandiában**, a Gymnaziade első napján 50 méter háton **ezüstérmet** szerzett, majd a 4x100 méteres gyorsváltóval **világbajnoki címet** is nyert. Felkészülése során kiemelt hangsúlyt kapott az **Insumed** étrend, amely hozzájárult a fizikális és mentális erőnlét javításához.
 Az efféle sikerek jól mutatják, hogy a sportolók fehérjeigényének kielégítése elengedhetetlen a kiváló eredmények eléréséhez. Az **Insumed** termékek – köztük a BESTFORM fehérjekoncentrátum – megkönnyíthetik ennek a célnak a megvalósítását, így Ön is biztos lehet abban, hogy a lehető legtöbbet hozza ki edzéseiből és regenerációjából.
