@@ -313,7 +313,7 @@ const faqsRight = [
           </button>
           <div id="news-slider" class="news-slider flex gap-6 overflow-x-auto pb-2 snap-x snap-mandatory scroll-smooth">
             {recentNews.map(({ slug, title, image }) => (
-              <div class="flex flex-col rounded-xl overflow-hidden border border-gray-100 bg-white shadow-sm hover:shadow-md transition-shadow flex-shrink-0 snap-start w-[300px] sm:w-[320px]">
+              <div class="flex flex-col rounded-xl overflow-hidden border border-gray-100 bg-white shadow-xs hover:shadow-md transition-shadow shrink-0 snap-start w-[300px] sm:w-[320px]">
                 <img src={image} alt={title} class="w-full h-48 object-cover" loading="lazy" />
                 <div class="flex flex-col flex-1 p-5">
                   <p class="text-gray-800 font-semibold leading-snug mb-5 flex-1">{title}</p>
@@ -372,7 +372,7 @@ const faqsRight = [
     <!-- Map + Contact Form -->
     <section id="kapcsolat" class="py-16 bg-blue-50">
       <div class="container mx-auto px-4 max-w-[1200px]">
-        <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+        <div class="bg-white rounded-xl shadow-xs overflow-hidden">
           <div class="flex flex-col lg:flex-row">
 
             <!-- Left: Map + info cards -->
@@ -425,27 +425,27 @@ const faqsRight = [
                 <div class="flex flex-col gap-1">
                   <label for="haz-name" class="text-sm font-medium text-gray-700">Név <span class="text-red-500">*</span></label>
                   <input id="haz-name" name="name" type="text" required autocomplete="name"
-                    class="border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                    class="border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
                     placeholder="Kovács János" />
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div class="flex flex-col gap-1">
                     <label for="haz-phone" class="text-sm font-medium text-gray-700">Telefonszám</label>
                     <input id="haz-phone" name="phone" type="tel" autocomplete="tel"
-                      class="border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                      class="border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
                       placeholder="+36 20 123 4567" />
                   </div>
                   <div class="flex flex-col gap-1">
                     <label for="haz-email" class="text-sm font-medium text-gray-700">E-mail cím <span class="text-red-500">*</span></label>
                     <input id="haz-email" name="email" type="email" required autocomplete="email"
-                      class="border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                      class="border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
                       placeholder="pelda@email.hu" />
                   </div>
                 </div>
                 <div class="flex flex-col gap-1">
                   <label for="haz-message" class="text-sm font-medium text-gray-700">Üzenet <span class="text-red-500">*</span></label>
                   <textarea id="haz-message" name="message" required rows="4"
-                    class="border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition resize-y"
+                    class="border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:border-transparent transition resize-y"
                     placeholder="Írja le röviden, miben tudunk segíteni..."></textarea>
                 </div>
 

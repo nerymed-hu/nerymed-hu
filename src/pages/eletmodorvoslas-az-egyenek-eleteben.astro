@@ -188,7 +188,7 @@ const successStories = [
           </button>
           <div id="stories-slider" class="stories-slider flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scroll-smooth">
             {successStories.map(({ slug, title, image }) => (
-              <div class="flex flex-col rounded-xl overflow-hidden border border-gray-100 bg-white shadow-sm hover:shadow-md transition-shadow flex-shrink-0 snap-start w-[300px] sm:w-[320px]">
+              <div class="flex flex-col rounded-xl overflow-hidden border border-gray-100 bg-white shadow-xs hover:shadow-md transition-shadow shrink-0 snap-start w-[300px] sm:w-[320px]">
                 <img src={image} alt={title} class="w-full h-48 object-cover" loading="lazy" />
                 <div class="flex flex-col flex-1 p-5">
                   <p class="text-gray-800 font-semibold leading-snug mb-5 flex-1">{title}</p>

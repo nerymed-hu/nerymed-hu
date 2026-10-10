@@ -9,7 +9,7 @@ export interface Props {
 const { title, description, icon, href } = Astro.props;
 ---
 
-<div class="bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow p-6 flex flex-col gap-3">
+<div class="bg-white rounded-xl border border-gray-100 shadow-xs hover:shadow-md transition-shadow p-6 flex flex-col gap-3">
   {icon && (
     <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center text-2xl">
       {icon}

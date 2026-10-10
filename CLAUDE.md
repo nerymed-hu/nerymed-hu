@@ -28,7 +28,7 @@ git push
 | Layer | Technology |
 |---|---|
 | Static site generator | Astro v4 |
-| CSS | Tailwind CSS v3 |
+| CSS | Tailwind CSS v4 (via `@tailwindcss/vite`) |
 | Contact form backend | Node.js + Express + Nodemailer (`server/`) |
 | Web server | Apache2 (serves `dist/`, reverse-proxies `/api/contact`) |
 | Hosting | AWS EC2 |
@@ -55,7 +55,7 @@ git push
 | `src/pages/haziorvos.astro` | General practice |
 | `src/pages/insumed.astro` | Insumed diet therapy |
 | `src/pages/blog/[...slug].astro` | Blog posts (content in `src/content/blog/`) |
-| `tailwind.config.mjs` | Extends blue-900 to `#0F4469` |
+| `src/styles/global.css` | Tailwind v4 `@theme`: Inter font, pinned v3 hex palette, blue-900 `#0F4469` |
 | `server/index.js` | POST /api/contact handler |
 
 ---

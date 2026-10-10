@@ -153,7 +153,7 @@ const logos = [
             </p>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
               {examTypes.map(({ title, desc }) => (
-                <div class="p-5 rounded-xl border border-gray-100 hover:border-blue-200 hover:shadow-sm transition-all">
+                <div class="p-5 rounded-xl border border-gray-100 hover:border-blue-200 hover:shadow-xs transition-all">
                   <h3 class="font-bold text-blue-900 text-base mb-2">{title}</h3>
                   <p class="text-gray-500 text-sm leading-relaxed" set:html={desc}></p>
                 </div>
@@ -175,7 +175,7 @@ const logos = [
         </p>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
           {additionalServices.map(item => (
-            <div class="p-4 rounded-xl border border-gray-100 hover:border-blue-200 hover:shadow-sm transition-all text-sm text-gray-600 leading-relaxed" set:html={item}></div>
+            <div class="p-4 rounded-xl border border-gray-100 hover:border-blue-200 hover:shadow-xs transition-all text-sm text-gray-600 leading-relaxed" set:html={item}></div>
           ))}
         </div>
         <a
@@ -196,7 +196,7 @@ const logos = [
           Az alkalmassági vizsgálatokat rugalmasan biztosítjuk az Ön és cége igényei szerint.
         </p>
         <div class="flex flex-col sm:flex-row gap-6 max-w-2xl">
-          <div class="flex items-start gap-4 p-5 bg-white rounded-xl shadow-sm flex-1">
+          <div class="flex items-start gap-4 p-5 bg-white rounded-xl shadow-xs flex-1">
             <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center shrink-0">
               <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
@@ -207,7 +207,7 @@ const logos = [
               <p class="text-gray-500 text-sm">Érd, Kossuth Lajos utca 42.</p>
             </div>
           </div>
-          <div class="flex items-start gap-4 p-5 bg-white rounded-xl shadow-sm flex-1">
+          <div class="flex items-start gap-4 p-5 bg-white rounded-xl shadow-xs flex-1">
             <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center shrink-0">
               <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
@@ -285,7 +285,7 @@ const logos = [
           </button>
           <div id="logos-slider" class="logos-slider flex gap-8 overflow-x-auto items-center snap-x snap-mandatory scroll-smooth">
             {logos.map(({ src, alt }) => (
-              <div class="flex-shrink-0 snap-start w-[190px] flex items-center justify-center">
+              <div class="shrink-0 snap-start w-[190px] flex items-center justify-center">
                 <img src={src} alt={alt} class="max-h-28 w-auto object-contain" loading="lazy" />
               </div>
             ))}

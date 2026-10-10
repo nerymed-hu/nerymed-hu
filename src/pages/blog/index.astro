@@ -27,7 +27,7 @@ const posts = (await getCollection('blog')).sort(
         ) : (
           <div class="grid grid-cols-1 gap-8">
             {posts.map(post => (
-              <article class="bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col sm:flex-row">
+              <article class="bg-white rounded-xl border border-gray-100 shadow-xs hover:shadow-md transition-shadow overflow-hidden flex flex-col sm:flex-row">
                 {post.data.image && (
                   <img
                     src={post.data.image}

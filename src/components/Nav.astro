@@ -63,7 +63,7 @@ const current = Astro.url.pathname;
         <div>
           <span class="block px-2 py-1 text-xs font-semibold uppercase tracking-wider text-gray-400">{link.label}</span>
           {link.children.map(child => (
-            <a href={child.href} class="block px-4 py-2 text-blue-900 hover:text-blue-700 hover:bg-blue-50 rounded transition-colors">
+            <a href={child.href} class="block px-4 py-2 text-blue-900 hover:text-blue-700 hover:bg-blue-50 rounded-sm transition-colors">
               {child.label}
             </a>
           ))}

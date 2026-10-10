@@ -132,7 +132,7 @@ const faqs = [
         <h2 class="text-3xl lg:text-4xl font-bold text-blue-900 mb-10 text-center">Kiknek segít az INSUMED?</h2>
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
           {targets.map(({ title, svg }) => (
-            <div class="bg-white rounded-xl p-8 shadow-sm border border-blue-50 flex flex-col items-center text-center hover:shadow-md transition-shadow">
+            <div class="bg-white rounded-xl p-8 shadow-xs border border-blue-50 flex flex-col items-center text-center hover:shadow-md transition-shadow">
               <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mb-4" set:html={svg}></div>
               <h3 class="font-bold text-blue-900 text-base">{title}</h3>
             </div>
@@ -183,7 +183,7 @@ const faqs = [
         </p>
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
           {['Zsírból fogyás', 'Izomzat megtartás', 'Tartós súlycsökkenés', 'Javuló egészségi állapot'].map(item => (
-            <div class="bg-white rounded-xl px-5 py-4 text-center shadow-sm border border-blue-100">
+            <div class="bg-white rounded-xl px-5 py-4 text-center shadow-xs border border-blue-100">
               <span class="text-blue-900 font-semibold text-sm">{item}</span>
             </div>
           ))}
@@ -274,7 +274,7 @@ const faqs = [
       <div class="container mx-auto px-4 max-w-[1200px]">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           {steps.map(({ num, title, desc }) => (
-            <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="bg-white rounded-xl p-8 shadow-xs border border-gray-100 hover:shadow-md transition-shadow">
               <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg mb-5 shrink-0">
                 {num}
               </div>
@@ -343,7 +343,7 @@ const faqs = [
         </p>
 
         <!-- TRINKMAHLZEIT -->
-        <div class="bg-white rounded-2xl shadow-sm overflow-hidden mb-6">
+        <div class="bg-white rounded-2xl shadow-xs overflow-hidden mb-6">
           <div class="flex flex-col lg:flex-row">
             <div class="lg:w-[30%] shrink-0">
               <img src="/images/INSUMED_Trinkmahlzeiten.jpg" alt="INSUMED Trinkmahlzeit" class="w-full h-full object-cover min-h-[200px]" />
@@ -374,7 +374,7 @@ const faqs = [
         </div>
 
         <!-- BESTFORM -->
-        <div class="bg-white rounded-2xl shadow-sm overflow-hidden mb-6">
+        <div class="bg-white rounded-2xl shadow-xs overflow-hidden mb-6">
           <div class="flex flex-col lg:flex-row">
             <div class="lg:w-[30%] shrink-0">
               <img src="/images/476492270_930834015593922_203831418615443825_n.png" alt="INSUMED BESTFORM" class="w-full h-full object-cover min-h-[200px]" />
@@ -395,7 +395,7 @@ const faqs = [
         </div>
 
         <!-- SZELETEK -->
-        <div class="bg-white rounded-2xl shadow-sm overflow-hidden mb-6">
+        <div class="bg-white rounded-2xl shadow-xs overflow-hidden mb-6">
           <div class="flex flex-col lg:flex-row">
             <div class="lg:w-[30%] shrink-0">
               <img src="/images/INSUMED_BESTFORM_Protein-Riegel_Knusper_Nuss_2er.jpg" alt="INSUMED Szeletek" class="w-full h-full object-cover min-h-[180px]" />
@@ -413,7 +413,7 @@ const faqs = [
         </div>
 
         <!-- LEVESEK -->
-        <div class="bg-white rounded-2xl shadow-sm overflow-hidden mb-6">
+        <div class="bg-white rounded-2xl shadow-xs overflow-hidden mb-6">
           <div class="flex flex-col lg:flex-row">
             <div class="lg:w-[30%] shrink-0">
               <img src="/images/INSUMED_BALANCE_Trinkbouillon-768x835-1.jpg" alt="INSUMED Levesek" class="w-full h-full object-cover min-h-[180px]" />
@@ -430,7 +430,7 @@ const faqs = [
         </div>
 
         <!-- PHYTOSHAKE -->
-        <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
+        <div class="bg-white rounded-2xl shadow-xs overflow-hidden">
           <div class="flex flex-col lg:flex-row">
             <div class="lg:w-[30%] shrink-0">
               <img src="/images/insumed_phytoshake_.jpg" alt="INSUMED Phytoshake" class="w-full h-full object-cover min-h-[180px]" />
@@ -465,7 +465,7 @@ const faqs = [
           </button>
           <div id="results-slider" class="results-slider flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scroll-smooth">
             {results.map(({ slug, title, image }) => (
-              <div class="flex flex-col rounded-xl overflow-hidden border border-gray-100 bg-white shadow-sm hover:shadow-md transition-shadow flex-shrink-0 snap-start w-[300px] sm:w-[320px]">
+              <div class="flex flex-col rounded-xl overflow-hidden border border-gray-100 bg-white shadow-xs hover:shadow-md transition-shadow shrink-0 snap-start w-[300px] sm:w-[320px]">
                 <img src={image} alt={title} class="w-full h-48 object-cover" loading="lazy" />
                 <div class="flex flex-col flex-1 p-5">
                   <p class="text-gray-800 font-semibold leading-snug mb-5 flex-1">{title}</p>
@@ -496,7 +496,7 @@ const faqs = [
         </div>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-5xl mx-auto">
           {faqs.map(({ q, a }) => (
-            <details class="group border border-gray-100 rounded-xl hover:border-blue-200 hover:shadow-sm transition-all">
+            <details class="group border border-gray-100 rounded-xl hover:border-blue-200 hover:shadow-xs transition-all">
               <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer list-none font-bold text-blue-900">
                 <span>{q}</span>
                 <svg class="w-5 h-5 text-blue-600 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
