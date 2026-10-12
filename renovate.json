@@ -25,6 +25,11 @@
     {
       "matchPackageNames": ["astro", "tailwindcss"],
       "addLabels": ["core-framework"]
+    },
+    {
+      "description": "Hold TypeScript at 6.x until @typescript-eslint/parser and @astrojs/check allow 7 in their peer ranges",
+      "matchPackageNames": ["typescript"],
+      "allowedVersions": "<7"
     }
   ]
 }
