@@ -50,6 +50,7 @@ app.post('/api/contact', async (req, res) => {
   // the header while test mode is off or the token is wrong gets 403, never the live inbox.
   const testMode = testRequestState(req);
   if (testMode === null) {
+    console.warn('Contact rejected: invalid or unconfigured test token');
     return res.status(403).json({ error: 'Érvénytelen teszt token' });
   }
   const to = testMode
@@ -76,6 +77,7 @@ app.post('/api/contact', async (req, res) => {
       ].join('\n'),
     });
 
+    console.log(`Contact mail sent to=${to} source=${source || 'default'}${testMode ? ' (test)' : ''}`);
     res.json({ ok: true });
   } catch (err) {
     console.error('Mail send error:', err);
