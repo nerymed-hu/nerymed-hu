@@ -40,7 +40,7 @@ app.post('/api/contact', async (req, res) => {
   }
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(email)) {
+  if (email.length > 254 || !emailRegex.test(email)) {
     return res.status(400).json({ error: 'Érvénytelen e-mail cím' });
   }
 
