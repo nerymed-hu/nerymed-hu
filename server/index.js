@@ -21,10 +21,10 @@ const transport = nodemailer.createTransport({
 });
 
 // Returns true (divert to test address), false (no test header: normal delivery) or
-// null (test header sent but test mode is off or token wrong: must not reach the live inbox).
+// null (test header sent but test mode is off, token empty or wrong: must not reach the live inbox).
 function testRequestState(req) {
   const given = req.get('x-test-token');
-  if (!given) return false;
+  if (given === undefined) return false;
   const { CONTACT_TEST_TO, CONTACT_TEST_TOKEN } = process.env;
   if (!CONTACT_TEST_TO || !CONTACT_TEST_TOKEN) return null;
   const a = Buffer.from(given);
